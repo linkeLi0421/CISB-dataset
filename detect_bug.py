@@ -64,8 +64,8 @@ def bug_not_trigger(check_type, input, test_str, section_start, section_end='>:'
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('file', type=argparse.FileType('r'), help='It is the test file name.')
-    parser.add_argument('-n', default=1, type=int, help='For user to choose which config is applied to the test file.')
-    parser.add_argument('-opt', default=None, type=argparse.FileType('r'), help='Users can choose whether or not to use default option')
+    parser.add_argument('-n', default=1, type=int, help='For user to choose which config in config.yml is applied to the test file, 1 default.')
+    parser.add_argument('-opt', default=None, type=argparse.FileType('r'), help='Users can choose whether or not to add options in testing.')
     args = parser.parse_args()
     file = args.file.name
     num = args.n
@@ -107,4 +107,6 @@ if __name__ == '__main__':
             # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
         print(cc + ' ' + args + ' ' + file_name)
         if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
-            print('Bug detected!')
+            print('Successfully detect a bug!')
+        else:
+            print('No bug detected!')
