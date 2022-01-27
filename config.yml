@@ -1,0 +1,790 @@
+b_1-redefine_strcmp.c-1:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input: 
+    check_type: 3
+    test_str: "test   %rdi,%rdi"
+    section_name: "<strcmp>:"
+    
+b_1-redefine_strcmp.c-2:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-7
+    opti_level: O2
+    input: 
+    check_type: 3
+    test_str: "test   %rdi,%rdi"
+    section_name: "<strcmp>:"
+    
+b_1-redefine_strcmp.c-3:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-8
+    opti_level: O1
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0,-0x8(%rbp)"
+    section_name: "<strcmp>:"
+    
+b_1-redefine_strcmp.c-4:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-9
+    opti_level: O1
+    input: 
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+
+b_1-redefine_strcmp.c-5:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-7
+    opti_level: O0
+    input:
+    check_type: 3
+    test_str: "cmpq   $0x0"
+    section_name: "<strcmp>:"
+
+b_1-redefine_strcmp.c-6:
+    file_name: "b_1-redefine_strcmp.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "test   %rdi,%rdi"
+    section_name: "<strcmp>:"
+
+b_2-builtin_ctz.c-1:
+    file_name: "b_2-builtin_ctz.c"
+    cc: gcc-4.9
+    opti_level: O2
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    
+b_2-builtin_ctz.c-2:
+    file_name: "b_2-builtin_ctz.c"
+    cc: gcc-8
+    opti_level: O1
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name: 
+    
+b_2-builtin_ctz.c-3:
+    file_name: "b_2-builtin_ctz.c"
+    cc: gcc-8
+    opti_level: O2
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name:
+
+b_2-builtin_ctz.c-4:
+    file_name: "b_2-builtin_ctz.c"
+    cc: gcc-4.9
+    opti_level: O3
+    input: 0
+    check_type: 1
+    test_str: ok
+    section_name:
+
+b_2-builtin_ctz.c-5:
+    file_name: "b_2-builtin_ctz.c"
+    cc: clang-3.9
+    opti_level: O1
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    
+b_3-strlen-oob.c-1:
+    file_name: "b_3-strlen-oob.c"
+    cc: gcc-8
+    opti_level: O2
+    input:
+    check_type: 1
+    test_str: ok
+    section_name: 
+
+b_3-strlen-oob.c-2:
+    file_name: "b_3-strlen-oob.c"
+    cc: gcc-8
+    opti_level: O0
+    input:
+    check_type: 1
+    test_str: ok
+    section_name:
+
+b_3-strlen-oob.c-3:
+    file_name: "b_3-strlen-oob.c"
+    cc: gcc-8
+    opti_level: O3
+    input:
+    check_type: 1
+    test_str: ok
+    section_name:
+
+b_4-int_overflow.c-1:
+    file_name: "b_4-int_overflow.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input: 2147483647
+    check_type: 2
+    test_str: ok
+    section_name:
+
+b_4-int_overflow.c-2:
+    file_name: "b_4-int_overflow.c"
+    cc: gcc-4.8
+    opti_level: O0
+    input: 2147483647
+    check_type: 2
+    test_str: ok
+    section_name:
+
+b_4-int_overflow.c-3:
+    file_name: "b_4-int_overflow.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input: 2147483647
+    check_type: 2
+    test_str: ok
+    section_name:
+
+b_4-int_overflow.c-4:
+    file_name: "b_4-int_overflow.c"
+    cc: clang-3.9
+    opti_level: O1
+    input: 2147483647
+    check_type: 2
+    test_str: ok
+    section_name:
+    
+b_5-ptr_sub_to_0.c-1:
+    file_name: "b_5-ptr_sub_to_0.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 1
+    test_str: "check 0"
+    section_name:
+
+b_5-ptr_sub_to_0.c-2:
+    file_name: "b_5-ptr_sub_to_0.c"
+    cc: gcc-9
+    opti_level: O0
+    input:
+    check_type: 1
+    test_str: "check 0"
+    section_name:
+
+b_5-ptr_sub_to_0.c-3:
+    file_name: "b_5-ptr_sub_to_0.c"
+    cc: gcc-9
+    opti_level: O1
+    input:
+    check_type: 1
+    test_str: "check 0"
+    section_name:
+    
+b_6-modify_constPtr.c-1:
+    file_name: "b_6-modify_constPtr.c"
+    cc: gcc-8
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+    
+b_6-modify_constPtr.c-2:
+    file_name: "b_6-modify_constPtr.c"
+    cc: gcc-8
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+
+b_6-modify_constPtr.c-3:
+    file_name: "b_6-modify_constPtr.c"
+    cc: gcc-8
+    opti_level: O0
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+
+b_6-modify_constPtr.c-4:
+    file_name: "b_6-modify_constPtr.c"
+    cc: gcc-5
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+
+b_6-modify_constPtr.c-5:
+    file_name: "b_6-modify_constPtr.c"
+    cc: gcc-5
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+
+b_6-modify_constPtr.c-6:
+    file_name: "b_6-modify_constPtr.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<hello_start>:"
+
+b_7-int_promotion.c-1:
+    file_name: "b_7-int_promotion.c"
+    cc: gcc-5
+    opti_level: O2
+    input: 255
+    check_type: 3
+    test_str: "%dil"
+    section_name: "<test>:"
+
+b_7-int_promotion.c-2:
+    file_name: "b_7-int_promotion.c"
+    cc: gcc-5
+    opti_level: O0
+    input: 255
+    check_type: 3
+    test_str: "cmp    $0xffffffff"
+    section_name: "<test>:"
+
+b_7-int_promotion.c-3:
+    file_name: "b_7-int_promotion.c"
+    cc: clang-3.9
+    opti_level: O1
+    input: 255
+    check_type: 3
+    test_str: "%dil"
+    section_name: "<test>:"
+
+b_7-int_promotion.c-4:
+    file_name: "b_7-int_promotion.c"
+    cc: gcc-5
+    opti_level: O3
+    input: 255
+    check_type: 3
+    test_str: "%dil"
+    section_name: "<test>:"
+    
+b_8.c-1:
+    file_name: "b_8.c"
+    cc: gcc-5
+    opti_level: O2
+    input: 0
+    check_type: 3
+    test_str: "test"
+    section_name: "<bad_code>:"
+
+b_8.c-2:
+    file_name: "b_8.c"
+    cc: gcc-8
+    opti_level: O2
+    input: 0
+    check_type: 3
+    test_str: "test"
+    section_name: "<bad_code>:"
+
+b_8.c-3:
+    file_name: "b_8.c"
+    cc: gcc-8
+    opti_level: O3
+    input: 0
+    check_type: 3
+    test_str: "test"
+    section_name: "<bad_code>:"
+    
+b_9.c-1:
+    file_name: "b_9.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input: 0
+    check_type: 2
+    test_str: "ok"
+    section_name:
+
+b_9.c-2:
+    file_name: "b_9.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input: 0
+    check_type: 2
+    test_str: "ok"
+    section_name:
+    
+b_10.c-1:
+    file_name: "b_10.c"
+    cc: gcc-4.4
+    opti_level: O2
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<main>:"
+    
+b_10.c-2:
+    file_name: "b_10.c"
+    cc: gcc-8
+    opti_level: O1
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<main>:"
+    
+b_10.c-3:
+    file_name: "b_10.c"
+    cc: gcc-4.8
+    opti_level: O1
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<main>:"
+    
+b_10.c-4:
+    file_name: "b_10.c"
+    cc: gcc-8
+    opti_level: O2
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<main>:"
+
+b_10.c-5:
+    file_name: "b_10.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<main>:"
+    
+b_11_for_loop.c-1:
+    file_name: "b_11_for_loop.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "cmp    $0xa"
+    section_name: "<main>:"
+
+b_11_for_loop.c-2:
+    file_name: "b_11_for_loop.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "cmp    $0xa"
+    section_name: "<main>:"
+
+b_12.c-1:
+    file_name: "b_12.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 6
+    test_str: "jmp\t.LBB1_1"
+    section_name: ".LBB1_1:"
+    default_option: "-pthread"
+
+b_12.c-2:
+    file_name: "b_12.c"
+    cc: gcc-4.9
+    opti_level: O3
+    input:
+    check_type: 6
+    test_str: "jmp\t.L6"
+    section_name: ".L6:"
+    default_option: "-pthread"
+
+b_12.c-3:
+    file_name: "b_12.c"
+    cc: gcc-4.9
+    opti_level: O2
+    input:
+    check_type: 6
+    test_str: "jl\t.L3"
+    section_name: ".L3:"
+    default_option: "-pthread"
+
+b_13.c-1:
+    file_name: "b_13.c"
+    cc: gcc-7
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "movl   $0x0"
+    section_name: "between 0x4( 0xc("
+
+b_13.c-2:
+    file_name: "b_13.c"
+    cc: gcc-7
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "movl   $0x0"
+    section_name: "between 0x4( 0xc("
+
+
+b_20.c-1:
+    file_name: "b_20.c"
+    cc: gcc-4.4
+    opti_level: O1
+    input:
+    check_type: 7
+    test_str: "panic"
+    section_name: "%dil"
+    
+b_20.c-2:
+    file_name: "b_20.c"
+    cc: gcc-4.4
+    opti_level: O2
+    input:
+    check_type: 7
+    test_str: "panic"
+    section_name: "%dil"
+
+b_20.c-3:
+    file_name: "b_20.c"
+    cc: gcc-4.4
+    opti_level: O3
+    input:
+    check_type: 7
+    test_str: "panic"
+    section_name: "%dil"
+    
+b_21-dse_memset.c-1:
+    file_name: "b_21-dse_memset.c"
+    cc: gcc-5
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+    
+b_21-dse_memset.c-2:
+    file_name: "b_21-dse_memset.c"
+    cc: gcc-5
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+
+b_21-dse_memset.c-3:
+    file_name: "b_21-dse_memset.c"
+    cc: gcc-5
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+    
+b_21-dse_memset.c-4:
+    file_name: "b_21-dse_memset.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+    
+l_1-mcp_null.c-1:
+    file_name: "l_1-mcp_null.c"
+    cc: gcc-5
+    opti_level: O2
+    input: aa 0
+    check_type: 1
+    test_str: "ok"
+    section_name:
+    
+l_1-mcp_null.c-2:
+    file_name: "l_1-mcp_null.c"
+    cc: clang
+    opti_level:
+    input: aa 0
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_1-mcp_null.c-3:
+    file_name: "l_1-mcp_null.c"
+    cc: gcc-5
+    opti_level: O3
+    input: aa 0
+    check_type: 1
+    test_str: "ok"
+    section_name:
+    
+b_22.c-1:
+    note: 可以研究一下
+    
+l_2-modify_constVar.c-1:
+    file_name: "l_2-modify_constVar.c"
+    cc: gcc-5
+    opti_level: O1
+    input:
+    check_type: 2
+    test_str: "ok"
+    section_name:
+
+l_2-modify_constVar.c-2:
+    file_name: "l_2-modify_constVar.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 2
+    test_str: "ok"
+    section_name:
+    
+l_6.c-1:
+    file_name: "l_6.c"
+    cc: gcc-7
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "memcmp"
+    section_name: "<main>:"
+    
+l_6.c-2:
+    file_name: "l_6.c"
+    cc: clang
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "memcmp"
+    section_name: "<main>:"
+
+l_6.c-3:
+    file_name: "l_6.c"
+    cc: gcc-7
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "memcmp"
+    section_name: "<main>:"
+    
+l_8-oversized_shift.c-1:
+    file_name: "l_8-oversized_shift.c"
+    cc: clang
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "cmpl   $0x0,"
+    section_name: "<main>:"
+    
+l_13.c-1:
+    file_name: "l_13.c"
+    cc: gcc-9
+    opti_level: O1
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+    
+l_13.c-2:
+    file_name: "l_13.c"
+    cc: gcc-9
+    opti_level: O2
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_13.c-3:
+    file_name: "l_13.c"
+    cc: gcc-9
+    opti_level: O3
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_15.c-1:
+    file_name: "l_15.c"
+    cc: gcc-4.9
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+
+l_15.c-2:
+    file_name: "l_15.c"
+    cc: gcc-4.9
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+
+l_15.c-3:
+    file_name: "l_15.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "memset"
+    section_name: "<main>:"
+
+l_18.c-1:
+    file_name: "l_18.c"
+    cc: clang-3.9
+    opti_level: O0
+    input:
+    check_type: 4
+    test_str: "memcpy"
+    section_name: "<foo>:"
+
+l_19.c-1:
+    file_name: "l_19.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_19.c-2:
+    file_name: "l_19.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_19.c-3:
+    file_name: "l_19.c"
+    cc: clang-3.9
+    opti_level: O3
+    input:
+    check_type: 1
+    test_str: "ok"
+    section_name:
+
+l_24.c-1:
+    file_name: "l_24.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<main>:"
+
+l_24.c-2:
+    file_name: "l_24.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "test"
+    section_name: "<main>:"
+    
+l_29.c-1:
+    file_name: "l_29.c"
+    note: "to be done"
+
+l_30.c-1:
+    file_name: "l_30.c"
+    cc: gcc-4.4
+    opti_level: O1
+    input:
+    check_type: 2
+    test_str: "101 102"
+    section_name:
+    default_option: "-m32 -pthread"
+
+l_30.c-2:
+    file_name: "l_30.c"
+    cc: clang-3.9
+    opti_level: O1
+    input:
+    check_type: 2
+    test_str: "101 102"
+    section_name:
+    default_option: "-m32 -pthread"
+
+
+l_37.c-1:
+    file_name: "l_37.c"
+    cc: gcc-4.8
+    opti_level: O2
+    input:
+    check_type: 3
+    test_str: "sub"
+    section_name: "<main>:"
+
+l_37.c-2:
+    file_name: "l_37.c"
+    cc: gcc-4.8
+    opti_level: O1
+    input:
+    check_type: 3
+    test_str: "sub"
+    section_name: "<main>:"
+
+l_37.c-3:
+    file_name: "l_37.c"
+    cc: gcc-4.8
+    opti_level: O3
+    input:
+    check_type: 3
+    test_str: "sub"
+    section_name: "<main>:"
+
+l_37.c-4:
+    file_name: "l_37.c"
+    cc: gcc-4.8
+    opti_level: O0
+    input:
+    check_type: 3
+    test_str: "addl   $0x1"
+    section_name: "<main>:"
+
+l_41.c-1:
+    file_name: "l_41.c"
+    cc: gcc-5
+    opti_level: O1
+    input:
+    check_type: 5
+    test_str: "call\thave_cpuid_p"
+    section_name: "between call\tfoo2 puts"
+    default_option: "-m32"
+
+l_41.c-2:
+    file_name: "l_41.c"
+    cc: gcc-5
+    opti_level: O2
+    input:
+    check_type: 5
+    test_str: "call\thave_cpuid_p"
+    section_name: "between call\tfoo2 puts"
+    default_option: "-m32"
+
+l_41.c-3:
+    file_name: "l_41.c"
+    cc: gcc-5
+    opti_level: O3
+    input:
+    check_type: 5
+    test_str: "call\thave_cpuid_p"
+    section_name: "between call\tfoo2 puts"
+    default_option: "-m32"
+
+l_43.c-1:
+    file_name: "l_43.c"
+    cc: clang
+    opti_level: O1
+    input:
+    check_type: 4
+    test_str: "memset"
+    section_name: "<main>:"
