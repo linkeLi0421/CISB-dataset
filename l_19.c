@@ -1,3 +1,8 @@
+/*
+	x86-64 gcc4.3-4.9 -O1
+	Compile and run the program, if the result is not "ok", there is a bug.
+*/
+
 #include <stdio.h>
 #define PROT_READ 1
 #define errno 1

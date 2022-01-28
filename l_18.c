@@ -1,3 +1,8 @@
+/*
+	Compile and generate the disassembly code of this program, if section "<foo>:" contains "memcpy", it means the compiler changes assignment to memset, so there is a bug.
+*/
+
+
 struct bar {
     int a[100];
 };

@@ -1,3 +1,8 @@
+/*
+	x86-64 gcc4.1-12.0.1 -O1
+	x86-64 clang3.0.0-14.0.0 -O1
+	Compile and run the exe file, if the output is "101 102", there is a bug.
+*/
 #include<stdio.h>
 #include<pthread.h>
 int x = 1;

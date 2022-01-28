@@ -85,7 +85,7 @@ if __name__ == '__main__':
         check_type = config['check_type']
         test_str = config['test_str']
         section_name = config['section_name']
-        if section_name.split(' ')[0] == 'between':
+        if section_name and section_name.split(' ')[0] == 'between':
             section_start = section_name.split(' ')[1]
             section_end = section_name.split(' ')[2]
         else:

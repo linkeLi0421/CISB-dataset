@@ -3,6 +3,7 @@
 // smac:1122334455667788
 // dmac:1020304050607080
 // result:80 70 60 50 40 30 88 77 66 55 44 33 
+// if output is something else, there is a bug.
 
 #include <stdio.h>
 #include <strings.h>

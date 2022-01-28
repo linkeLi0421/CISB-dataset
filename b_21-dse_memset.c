@@ -1,6 +1,7 @@
 /*successful
-    x86-64 gcc 5-trunk -O1
-    x86-64 clang 3.0.0-trunk -O1
+    x86-64 4.1-12.0.1 -O1
+    x86-64 clang 3.0.0-14.0.0 -O1
+  	Compile and get disassembly code of this program. If section "<main>:" doesn't contains instruction "memset", then function memset is optimized, so there is a bug.
 */
 #include <stdio.h>
 #include <string.h>

@@ -1,3 +1,8 @@
+/*
+	x86-64 gcc4.8.1-12.0.1 -O2
+	Compile and get disassembly code of this program. If section "<main>:" doesn't contains instruction "cmp    $0xa", "i<10" is removed, so there is a bug.
+*/
+
 #include <stdio.h>
 
 int main()

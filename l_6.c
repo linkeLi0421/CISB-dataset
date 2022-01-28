@@ -5,7 +5,7 @@
 	
 */
 
-#include<stdio.h>
+#include <stdio.h>
 #include <string.h>
 
 unsigned int a[100];

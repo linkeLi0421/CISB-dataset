@@ -524,27 +524,6 @@ l_1-mcp_null.c-3:
     test_str: "ok"
     section_name:
     
-b_22.c-1:
-    note: 可以研究一下
-    
-l_2-modify_constVar.c-1:
-    file_name: "l_2-modify_constVar.c"
-    cc: gcc-5
-    opti_level: O1
-    input:
-    check_type: 2
-    test_str: "ok"
-    section_name:
-
-l_2-modify_constVar.c-2:
-    file_name: "l_2-modify_constVar.c"
-    cc: clang-3.9
-    opti_level: O1
-    input:
-    check_type: 2
-    test_str: "ok"
-    section_name:
-    
 l_6.c-1:
     file_name: "l_6.c"
     cc: gcc-7
@@ -574,13 +553,22 @@ l_6.c-3:
     
 l_8-oversized_shift.c-1:
     file_name: "l_8-oversized_shift.c"
-    cc: clang
+    cc: clang-3.9
     opti_level: O1
     input:
     check_type: 3
     test_str: "cmpl   $0x0,"
     section_name: "<main>:"
-    
+
+l_11.c-1:
+    file_name: "l_11.c"
+    cc: clang-3.9
+    opti_level: O0
+    input:
+    check_type: 2
+    test_str: "16"
+    section_name:
+
 l_13.c-1:
     file_name: "l_13.c"
     cc: gcc-9

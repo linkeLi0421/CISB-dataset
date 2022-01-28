@@ -7,7 +7,7 @@ For Linux the correct command is: gcc -pthread b_12.c
 if there is something like         
 .L7:
 jmp .L7
-in assembly code
+in assembly code，there is a bug.
 */
 
 

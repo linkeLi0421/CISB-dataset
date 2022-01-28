@@ -1,3 +1,8 @@
+/*
+	x86-64gcc 10.1-12.0.1 -O2
+	x86-64clang 3.0.0-14.0.0 -O1 
+*/
+
 #include <stdio.h>
 void* vgPlain_memset( void *destV, int c, int sz )
 {

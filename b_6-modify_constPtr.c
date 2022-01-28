@@ -1,6 +1,8 @@
 /*
 	successful
-	x86-64 gcc5-gcc11.2 O1
+	x86-64 gcc 4.1-12.0.1 -O1
+	x86-64 clang 3.0.0-14.0.0 -O1
+	Compile and get disassembly code of this program. If there is no "test" instruction in section  "<hello_start>:" there is a bug.
 */
 #include <stdlib.h>
 #include <string.h>

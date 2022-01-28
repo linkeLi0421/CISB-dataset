@@ -1,5 +1,7 @@
 /*
-	x86-64 gcc4.1-11.2 -O2
+	x86-64 gcc4.1-12.0.1 -O1
+	x86-64 clang3.0.0-14.0.0 -O1
+	Compile and run the program, if output is "ok", it means assert(a+100 > a) is removed, so there is a bug.
 */
 #include <stdio.h>
 #include <assert.h>

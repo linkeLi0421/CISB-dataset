@@ -1,5 +1,7 @@
 #include<stdio.h>
-
+/*
+"if ((!s1 && s2) || (s1 && !s2))" will be removed in 4.1.2-10.1 -O1. We can check the disassembly code if section ""<strcmp>:" contains instruction "test   %rdi,%rdi" as it corresponds to "if ((!s1 && s2) || (s1 && !s2))".
+*/
 int strcmp (const char *s1, const char *s2)
 {
 

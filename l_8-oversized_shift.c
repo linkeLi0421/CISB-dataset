@@ -1,7 +1,7 @@
 /*successful
     X86-64 gcc 4.1.2-10.1 -O2
-    x86-64 clang 3.0.0-11.0.0 -O2
-    arm gcc 4.5.4-9.2.1 -O2
+    x86-64 clang 3.0-14.0.0 -O1
+    Compile and get disassembly code of this program. If section "<main>:" doesn't contains instruction "cmpl   $0x0,"， check "if (g == 0" is removed, so there is a bug.
 */
 #include <stdlib.h>
 #include <string.h>

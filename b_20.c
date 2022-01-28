@@ -1,8 +1,11 @@
+/*
+	x86-64 gcc4.4.7
+	Generate the assembly code of this program. If string "panic" is in the next line of string "%dil", there is a bug.
+*/
+
 #include<stdio.h>
 
 #define DMA_ADDR_REG		(*(unsigned volatile *) 0xffff1000)
-
-extern void panic(void);
 
 static void inner_func(void *data, unsigned size)
 {

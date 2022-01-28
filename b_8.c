@@ -1,11 +1,11 @@
 /*
-	x86-64 gcc4.5.3-7.1 O2
-	x86-64 gcc8- O1
+	x86-64 gcc4.5.3-7.1 -O2 
+	x86-64 8-12.0.1 -O1
 	arm gcc4-7 O2 
 	arm gcc8- O1
+	Compile and get disassembly code of this program. If sections "<bad_code>:" doesn't contains "test", there is a bug.
 */
 
-//比较bad_code段里有没有test指令
 #include <stdio.h>
 
 void bad_code(void *a)

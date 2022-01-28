@@ -1,3 +1,9 @@
+/*
+	x86-64 gcc4.6.4-12.0.1 -O1; 4.4 -O2
+	x86-64 clang 3.0.0-14.0.0 -O1
+	Compile and get disassembly code of this program. If section "<main>:" doesn't contains instruction "cmp", "while (x<10000000000)" is removed,so there is a bug.
+*/
+
 #include    <stdio.h>
 
 int main (void)
