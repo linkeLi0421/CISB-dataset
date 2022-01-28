@@ -1,6 +1,6 @@
 # CISB_detecter
 
-This repo records all the information of CISBs we collect in bugzilla and linux kernel. We also provide a way to automatically detect whether a test case compiled with some options tigger the bug.
+This repo records all the information of CISBs we collect in bugzilla and linux kernel. We also provide a empirical way to automatically detect whether a test case compiled with some options tigger the bug.
 
 ## Features
 
