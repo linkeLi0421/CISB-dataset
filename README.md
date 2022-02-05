@@ -1,6 +1,6 @@
 # CISB_detecter
 
-This repo records all the information of CISBs we collect in bugzilla and linux kernel. We also provide a empirical way to automatically detect whether a test case compiled with some options tigger the bug.
+This repo records all the information of CISB we collect in bugzilla and linux kernel. We also provide a empirical way to automatically detect whether a test case compiled with some options tigger the bug.
 
 ## Features
 
@@ -99,30 +99,29 @@ b-20 | success | 4.4.7 | |b_20.c|yes
 b-21/l-9 | success | 4.1-12.0.1 -O1 | 3.0.0-14.0.0 -O1 |b_21-dse_memset.c|yes
 b-22 | success | 4.6-12.0.1 -O0 | 3.0-14.0.0 -O0 |b_22.c|no
 b-26 | success | arm all version -O0 | arm all version -O0 |b_26.c|no
-l_2 | success | 4.1-12.0.1 -O1 | 11.0.0-14.0.0 -O1 |l_2-modify_constVar.c|no
-l_4 | fail |  |  ||
-l_6 | success | 7.1-12.0.1 -O2 | 5.0.0-14.0.0 -O1 |l_6.c|yes
-l_8 | success |  | 3.0-14.0.0 -O1 |l_8-oversized_shift.c|yes
-l_11 | success | 4.1.2-12.0.1 -O0 | 3.0.0-14.0.0 -O0 |l_11.c|yes
-l_13 | success | 4.1.2 -O0 9.1-12.0.1  -O1 | 3.3 - 14.0.0   -O1 |l_13.c|yes
-l_15 | success | 4.4-12.0.1 -O1 | 3.0.0-14.0.0 -O1 |l_15.c|yes
-l_16 | success | 4.1.2 -O2 |  |l-16(prefetch).c|no
-l_18 | success | 4.1.2 -O0 |  |l_18.c|yes
-l_19 | success | 4.3-4.9 -O1 |  |l_19.c|yes
-l_20 | fail |  |  ||
-l_21 | fail |  |  ||
-l_22 | success | arm all version -O0 | arm all version -O0 |l-22(mrc ret reg).c|no
-l_23 | success | arm all version -O0 | arm all version -O0 |l-23(memcpy-ldr-x0).c|no
-l_24 | success | 4.1.2-12.0.1 -O2 | 3.0.0-3.4.1 -O1; 3.0.0-14.0.0 -O2 |l_24.c|yes
-l_29 | success | 4.6.4-12.0.1 -O0 | 3.4.1-14.0.0 -O0 |l_29.c|yes
-l_30 | success | 4.1-12.0.1 -O1 | 3.0.0-14.0.0 -O1 |l_30.c|yes
-l_35 | fail |  |  ||
-l_37 | success | 4.5-12.0.1 -O2 | 3.0.0-14.0.0 -O1 |l_37.c|yes
-l_38 | fail |  |  ||
-l_40 | fail |  |  ||
-l_41 | success | 4.1.2-12.0.1 -O1 | 3.7-14.0.0 -O1 |l_41.c|yes
-l_43 | success |  | 3.0.0-14.0.0 -O1 |l_43.c|yes
-l_44 | fail |  |  ||
-l_46 | fail |  |  ||
-l_47 | fail |  |  ||
-l_48 | fail |  |  ||
+l-2 | success | 4.1-12.0.1 -O1 | 11.0.0-14.0.0 -O1 |l_2-modify_constVar.c|no
+l-4 | fail |  |  ||
+l-6 | success | 7.1-12.0.1 -O2 | 5.0.0-14.0.0 -O1 |l_6.c|yes
+l-8 | success |  | 3.0-14.0.0 -O1 |l_8-oversized_shift.c|yes
+l-11 | success | 4.1.2-12.0.1 -O0 | 3.0.0-14.0.0 -O0 |l_11.c|yes
+l-13 | success | 4.1.2 -O0 9.1-12.0.1  -O1 | 3.3 - 14.0.0   -O1 |l_13.c|yes
+l-15 | success | 4.4-12.0.1 -O1 | 3.0.0-14.0.0 -O1 |l_15.c|yes
+l-16 | success | 4.1.2 -O2 |  |l-16(prefetch).c|no
+l-18 | success | 4.1.2 -O0 |  |l_18.c|yes
+l-19 | success | 4.3-4.9 -O1 |  |l_19.c|yes
+l-20 | fail |  |  ||
+l-21 | fail |  |  ||
+l-22 | success | arm all version -O0 | arm all version -O0 |l-22(mrc ret reg).c|no
+l-23 | success | arm all version -O0 | arm all version -O0 |l-23(memcpy-ldr-x0).c|no
+l-24 | success | 4.1.2-12.0.1 -O2 | 3.0.0-3.4.1 -O1; 3.0.0-14.0.0 -O2 |l_24.c|yes
+l-30 | success | 4.1-12.0.1 -O1 | 3.0.0-14.0.0 -O1 |l_30.c|yes
+l-35 | fail |  |  ||
+l-37 | success | 4.5-12.0.1 -O2 | 3.0.0-14.0.0 -O1 |l_37.c|yes
+l-38 | fail |  |  ||
+l-40 | fail |  |  ||
+l-41 | success | 4.1.2-12.0.1 -O1 | 3.7-14.0.0 -O1 |l_41.c|yes
+l-43 | success |  | 3.0.0-14.0.0 -O1 |l_43.c|yes
+l-44 | fail |  |  ||
+l-46 | fail |  |  ||
+l-47 | fail |  |  ||
+l-48 | fail |  |  ||

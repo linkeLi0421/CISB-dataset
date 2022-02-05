@@ -677,10 +677,6 @@ l_24.c-2:
     test_str: "test"
     section_name: "<main>:"
     
-l_29.c-1:
-    file_name: "l_29.c"
-    note: "to be done"
-
 l_30.c-1:
     file_name: "l_30.c"
     cc: gcc-4.4
