@@ -64,10 +64,10 @@ def bug_not_trigger(check_type, input, test_str, section_start, section_end='>:'
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('file', type=argparse.FileType('r'), help='It is the test file name.')
-    parser.add_argument('-n', default=1, type=int, help='For user to choose which config in config.yml is applied to the test file, 1 default.')
+    parser.add_argument('-n', default=1, type=int, help='For user to choose which config of one c program in config.yml is applied to the test file, 1 default.')
     parser.add_argument('-opt', default=None, type=argparse.FileType('r'), help='Users can choose whether or not to add options in testing.')
     args = parser.parse_args()
-    file = args.file.name
+    file = args.file.name.split('/')[-1]
     num = args.n
     argss = ''
     section_end = '>:'
@@ -100,12 +100,14 @@ if __name__ == '__main__':
         if check_type == 5 or check_type == 6 or check_type == 7:
             section_end = ':'
             args += ' -S -o temp.s '
-            os.system(cc + ' ' + args + ' ' + file_name)
+            ret_code = os.system(cc + ' ' + args + ' /reproduce_set/' + file_name)
+            assert( retcode == 0 and 'error')
             # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
         else:
-            os.system(cc + ' ' + args + ' ' + file_name)
+            ret_code = os.system(cc + ' ' + args + ' /reproduce_set/' + file_name)
+            assert( retcode == 0 and 'error')
             # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
-        print(cc + ' ' + args + ' ' + file_name)
+        print(cc + ' ' + args + ' /reproduce_set/' + file_name)
         if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
             print('Successfully detect a bug!')
         else:

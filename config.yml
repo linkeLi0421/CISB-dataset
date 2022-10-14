@@ -676,7 +676,7 @@ l_24.c-2:
     check_type: 3
     test_str: "test"
     section_name: "<main>:"
-    
+
 l_30.c-1:
     file_name: "l_30.c"
     cc: gcc-4.4
@@ -696,7 +696,6 @@ l_30.c-2:
     test_str: "101 102"
     section_name:
     default_option: "-m32 -pthread"
-
 
 l_37.c-1:
     file_name: "l_37.c"
