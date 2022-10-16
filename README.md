@@ -168,8 +168,9 @@ table3 CISB-dataset-reproduce.csv
 | Column | Header                     | Description                                                  |
 | ------ | -------------------------- | ------------------------------------------------------------ |
 | 1      | key                        | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
-| 2      | repro version:gcc          | The compiler(gcc) version we successfully reproduce the bug. |
-| 3      | repro version:llvm         | The compiler(llvm) version we successfully reproduce the bug. |
-| 4      | compiler explorer snapshot | An online compiler snapshot that preserve the code to reproduce bugs. |
-| 5      | fit remove/reorder         | The effect of the bug. (remove or reorder)                   |
+| 2      | result                     | Whether we reproduce it.                                     |
+| 3      | repro version:gcc          | The compiler(gcc) version we successfully reproduce the bug. |
+| 4      | repro version:llvm         | The compiler(llvm) version we successfully reproduce the bug. |
+| 5      | compiler explorer snapshot | An online compiler snapshot that preserve the code to reproduce bugs. |
+| 6      | fit remove/reorder         | The effect of the bug. (remove or reorder)                   |
 
