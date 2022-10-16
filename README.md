@@ -1,52 +1,61 @@
-# CISB_detecter
+# CISB-dataset
 
 This repo records all the information of CISB we collect in bugzilla and linux kernel. We also provide a empirical way to automatically detect whether a test case compiled with some options tigger the bug.
 
-## Features
-
 ## Dependencies
 
-This tool requires multiple versions of gcc and clang to trigger different bugs.
+1. This tool requires multiple versions of gcc and clang to trigger different bugs.
 
-Here are some compilers we need:
+   Here are some compilers we need:
 
-- gcc-4.4
-- gcc-4.8
-- gcc-4.9
-- gcc-5
-- gcc-7
-- gcc-8
-- gcc-9
-- clang-3.9
+   gcc-4.4
 
-We also provide our own script to install these compilers in CISB_detecter/scirpt/auto_get_compiler.sh. Use it with
+   gcc-4.8
 
-```
-chomod +x auto_get_compiler.sh
-sudo ./auto_get_compiler.sh
-```
+   gcc-4.9
 
-And this tool is written in python, python3 is required.
+   gcc-5
+
+   gcc-7
+
+   gcc-8
+
+   gcc-9
+
+   clang-3.9
+
+   We also provide our own script to install these compilers in CISB_detecter/scirpt/auto_get_compiler.sh. Use it with
+
+   ```
+   chomod +x auto_get_compiler.sh
+   sudo ./auto_get_compiler.sh
+   ```
+
+2. Setup a python 3.x environment and install requirements:
+
+   ```
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
 1. Download the repo
-2. Run `python3 detect_bug.py -h` to know the options used in this tool
-3. Run `python3 detect_bug.py -n number_in_config_file -opt options_file test_case.c`
+2. Run `python3 reproduction-tester.py -h` to know the options used in this tool
+3. Run `python3 reproduction-tester.py -n number_in_config_file -opt options_file test_case.c`
 
-   This tool will test test_case.c with CISB_decter/config.yml and options_file. The argument number_in_config_file means use *test_case.c-(`number_in_config_file`)* in config.yml.
-4. Before run detect_bug.py, user should edit options_file to options to be tested. We perserve the options that can avoid bugs in CISB List.
+   This tool will test test_case.c with CISB-dataset/config.yml and options_file. The argument number_in_config_file means use *test_case.c-(`number_in_config_file`)* in config.yml.
+4. Before run reproduction-tester.py, user should edit *options_file* as the options to be tested. 
 
 ## Output
 
 ```shell
-root@d0eba27d1e6a:/# python3 detect_bug.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
+root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
 gcc-4.8 -O2 b_1-redefine_strcmp.c
-Successfully detect a bug!
+One CISB here!
 
-root@d0eba27d1e6a:/# python3 detect_bug.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
+root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
 gcc-4.8 -O2 -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps b_1-redefine_strcmp.c
-No bug detected!
+No CISB here!
 ```
 
 ## Config
@@ -70,6 +79,8 @@ We write oracles and information of some test cases in *config.yml*. It has the 
 - section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
 
 ## CISB List
+
+This is a brief table of CISB. More details in *CISB-dataset/data.tat.gz*.
 
 | Number   | Reproduce | gcc                                 | llvm                              | File name             | Have oracle |
 | :------- | :-------- | ----------------------------------- | --------------------------------- | --------------------- | ----------- |
@@ -121,3 +132,44 @@ We write oracles and information of some test cases in *config.yml*. It has the 
 | l-46     | fail      |                                     |                                   |                       |             |
 | l-47     | fail      |                                     |                                   |                       |             |
 | l-48     | fail      |                                     |                                   |                       |             |
+
+## Dataset Format
+
+CISB-dataset/data.tat.gz has three tables.
+
+table1 CISB-dataset-classification.csv
+
+| Column | Header                          | Description                                                  |
+| ------ | ------------------------------- | ------------------------------------------------------------ |
+| 1      | Root cause                      | The root cause of CISB, layer1 in three-layer classification. |
+| 2      | Insecure optimization behaviors | Insecure optimizations behaviors of CISB, layer2 in three-layer classification. |
+| 3      | Security consequences           | Security consequences of CISB, layer3 in three-layer classification. |
+| 4      | Result                          | Specific effect of the bug.                                  |
+| 5      | unique bug id                   | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
+| 6      | frequency                       | The number of times that we find this kind of bug.           |
+
+table2 CISB-dataset-detailed info.csv
+
+| Column | Header              | Description                                                  |
+| ------ | ------------------- | ------------------------------------------------------------ |
+| 1      | unique bug id       | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
+| 2      | unique bug name     | We give each kind of bug a name.                             |
+| 3      | occurence           | The number of times that we find a unique bug.               |
+| 4      | source              | From where we find the bug.                                  |
+| 5      | commit/bugzilla ID  | Linux kernel git commit log or llvm/gcc bugzilla ID.         |
+| 6      | year                | Time when the bug is submitted.                              |
+| 7      | first appearance    | Time when this kind of bugs is submitted.                    |
+| 8      | possible effects    | Possible effects of the bug.                                 |
+| 9      | special cause       | The causes of implicit-specification. No-UB, default-behavior or environment assumption. |
+| 10     | count of  bug class | The number of times that we find this kind of bug totally.   |
+
+table3 CISB-dataset-reproduce.csv
+
+| Column | Header                     | Description                                                  |
+| ------ | -------------------------- | ------------------------------------------------------------ |
+| 1      | key                        | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
+| 2      | repro version:gcc          | The compiler(gcc) version we successfully reproduce the bug. |
+| 3      | repro version:llvm         | The compiler(llvm) version we successfully reproduce the bug. |
+| 4      | compiler explorer snapshot | An online compiler snapshot that preserve the code to reproduce bugs. |
+| 5      | fit remove/reorder         | The effect of the bug. (remove or reorder)                   |
+
