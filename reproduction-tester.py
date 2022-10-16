@@ -100,15 +100,15 @@ if __name__ == '__main__':
         if check_type == 5 or check_type == 6 or check_type == 7:
             section_end = ':'
             args += ' -S -o temp.s '
-            ret_code = os.system(cc + ' ' + args + ' /reproduce_set/' + file_name)
-            assert( retcode == 0 and 'error')
+            ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+            assert( ret_code == 0 and 'error')
             # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
         else:
-            ret_code = os.system(cc + ' ' + args + ' /reproduce_set/' + file_name)
-            assert( retcode == 0 and 'error')
+            ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+            assert( ret_code == 0 and 'error')
             # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
-        print(cc + ' ' + args + ' /reproduce_set/' + file_name)
+        print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
         if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
-            print('Successfully detect a bug!')
+            print('One CISB here!')
         else:
-            print('No bug detected!')
+            print('No CISB here!')
