@@ -1,84 +1,10 @@
+A dataset of Compiler-Introduced-Security-bugs (CISB) with reproduction materials.
+These CISBs are manually collected from the GCC/Clang bugzilla and Linux kernel 
+through an empirical study.
+
+See our paper (to appear) for more information on the CISB taxonomy and collection methodology. 
+
 # CISB-dataset
-
-This repo records all the information of CISB we collect in bugzilla and linux kernel. We also provide a empirical way to automatically detect whether a test case compiled with some options tigger the bug.
-
-## Dependencies
-
-1. This tool requires multiple versions of gcc and clang to trigger different bugs.
-
-   Here are some compilers we need:
-
-   gcc-4.4
-
-   gcc-4.8
-
-   gcc-4.9
-
-   gcc-5
-
-   gcc-7
-
-   gcc-8
-
-   gcc-9
-
-   clang-3.9
-
-   We also provide our own script to install these compilers in CISB_detecter/scirpt/auto_get_compiler.sh. Use it with
-
-   ```
-   chomod +x auto_get_compiler.sh
-   sudo ./auto_get_compiler.sh
-   ```
-
-2. Setup a python 3.x environment and install requirements:
-
-   ```
-   pip install -r requirements.txt
-   ```
-
-## Usage
-
-1. Download the repo
-2. Run `python3 reproduction-tester.py -h` to know the options used in this tool
-3. Run `python3 reproduction-tester.py -n number_in_config_file -opt options_file test_case.c`
-
-   This tool will test test_case.c with CISB-dataset/config.yml and options_file. The argument number_in_config_file means use *test_case.c-(`number_in_config_file`)* in config.yml.
-4. Before run reproduction-tester.py, user should edit *options_file* as the options to be tested. 
-
-## Output
-
-```shell
-root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
-gcc-4.8 -O2 b_1-redefine_strcmp.c
-One CISB here!
-
-root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
-gcc-4.8 -O2 -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps b_1-redefine_strcmp.c
-No CISB here!
-```
-
-## Config
-
-We write oracles and information of some test cases in *config.yml*. It has the following items:
-
-- file_name: The file name of the test program.
-- cc: C compiler name.
-- opti_level: Optimization level of the test program.
-- input: Some test programs need compile and run and it is the input string.
-- check_type:
-
-  - 1: if output is not test_str, the bug triggers.
-  - 2: if output is test_str, the bug triggers.
-  - 3: if the disassembly code doesn't contain test_str in section section_name, the bug triggers.
-  - 4: if the disassembly code contains test_str in section section_name, the bug triggers.
-  - 5: Generate assembly code, if the assembly code doesn't contain test_str in section section_name, the bug triggers.
-  - 6: Generate assembly code, if the assembly code contains test_str in section section_name, the bug triggers.
-  - 7: Generate assembly code, if the assembly code contains test_str in the next line of section_name, the bug triggers.
-- test_str: String used in detecting bugs.
-- section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
-
-## CISB List
 
 This is a brief table of CISB. More details in *CISB-dataset/data.tat.gz*.
 
@@ -174,3 +100,85 @@ table3 CISB-dataset-reproduce.csv
 | 5      | compiler explorer snapshot | An online compiler snapshot that preserve the code to reproduce bugs. |
 | 6      | fit remove/reorder         | The effect of the bug. (remove or reorder)                   |
 
+
+
+# Reproduction Material
+We provide the following reproduction materials:
+- test code for all the reproducted CISB
+- an automatic tool to test whether one CISB is triggered with pre-defined oracles
+
+## Dependencies
+
+1. Different versions of gcc and clang to be tested
+
+   Here are some compilers we have tested:
+
+   gcc-4.4
+
+   gcc-4.8
+
+   gcc-4.9
+
+   gcc-5
+
+   gcc-7
+
+   gcc-8
+
+   gcc-9
+
+   clang-3.9
+
+   We also provide our own script to install these compilers in CISB_detecter/scirpt/auto_get_compiler.sh. Use it with
+
+   ```
+   chomod +x auto_get_compiler.sh
+   sudo ./auto_get_compiler.sh
+   ```
+
+2. Setup a python 3.x environment and install requirements:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+1. Download the repo
+2. Run `python3 reproduction-tester.py -h` to know the options used in this tool
+3. Run `python3 reproduction-tester.py -n number_in_config_file -opt options_file test_case.c`
+
+   This tool will test test_case.c with CISB-dataset/config.yml and options_file. The argument number_in_config_file means use *test_case.c-(`number_in_config_file`)* in config.yml.
+4. Before run reproduction-tester.py, user should edit *options_file* as the options to be tested. 
+
+## Output
+
+```shell
+root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
+gcc-4.8 -O2 b_1-redefine_strcmp.c
+One CISB here!
+
+root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
+gcc-4.8 -O2 -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps b_1-redefine_strcmp.c
+No CISB here!
+```
+
+## Config
+
+We write oracles and information of some test cases in *config.yml*. It has the following items:
+
+- file_name: The file name of the test program.
+- cc: C compiler name.
+- opti_level: Optimization level of the test program.
+- input: Some test programs need compile and run and it is the input string.
+- check_type:
+
+  - 1: if output is not test_str, the bug triggers.
+  - 2: if output is test_str, the bug triggers.
+  - 3: if the disassembly code doesn't contain test_str in section section_name, the bug triggers.
+  - 4: if the disassembly code contains test_str in section section_name, the bug triggers.
+  - 5: Generate assembly code, if the assembly code doesn't contain test_str in section section_name, the bug triggers.
+  - 6: Generate assembly code, if the assembly code contains test_str in section section_name, the bug triggers.
+  - 7: Generate assembly code, if the assembly code contains test_str in the next line of section_name, the bug triggers.
+- test_str: String used in detecting bugs.
+- section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
