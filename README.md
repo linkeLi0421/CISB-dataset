@@ -6,7 +6,7 @@ See our paper (to appear) for more information on the CISB taxonomy and collecti
 
 # CISB-dataset
 
-This is a brief table of CISB. More details in *CISB-dataset/data.tat.gz*.
+This is a brief table of CISB. More details in *CISB-dataset/dataset*.
 
 | Number   | Reproduce | gcc                                 | llvm                              | File name             | Have oracle |
 | :------- | :-------- | ----------------------------------- | --------------------------------- | --------------------- | ----------- |
@@ -61,7 +61,7 @@ This is a brief table of CISB. More details in *CISB-dataset/data.tat.gz*.
 
 ## Dataset Format
 
-CISB-dataset/data.tat.gz has three tables.
+CISB-dataset/dataset has three tables.
 
 table1 CISB-dataset-classification.csv
 
