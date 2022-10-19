@@ -1,5 +1,4 @@
 Root cause,Insecure optimization behaviors,Security consequences,Result,unique bug id,frequency
-,,,,,
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,l-13,1(linux)
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,l-8,1(linux)
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,b-1,1(gcc)
@@ -59,4 +58,4 @@ Orthogonal specification,Making sensitive data out of bound,Violation of sensiti
 Orthogonal specification,Breaking timing guarantees,Introduction of the time side channel,information leak by time inference,l-6,3(linux)
 Orthogonal specification,Breaking timing guarantees,Disordered concurrency sequence due to modification of duration,"loop removed by DCE, synchronization fail",l-37,2(linux)
 Orthogonal specification,Breaking timing guarantees,Disordered concurrency sequence due to modification of duration,"loop removed by DCE, synchronization fail",l-37,2(linux)
-Orthogonal specification,Introducing insecure micro-architectural side effect,Introduction of bounds check bypass vulnerability,lose the no-specification protection,l-25,2(linux)
+Orthogonal specification,Introducing insecure micro-architectural side effect,Introduction of bounds check bypass vulnerability,introduce one risky indirect jump,l-25,1(linux)

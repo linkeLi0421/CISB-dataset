@@ -128,7 +128,6 @@ l-6,time side channel,3(linux),linux,fe8c8a126806fea4465c43d62a1f9d273a572bf5,20
 l-6,time side channel,3(linux),linux,613317bd212c585c20796c10afe5daaa95d4b0a1,2016,2013,info leak,
 l-37,noop loop for time order(concurrency),2(linux),linux,8690ba446defe2e2b81803756c099d2943dfd5fd,2007,2007,crash,
 l-6,noop loop for time order(concurrency),2(linux),linux,71f0bdcab69ab36b1e939d36063aaf6c4a164ed3,2008,2007,crash,
-l-25,volatile spec,2(linux),linux,eab6870fee877258122a042bfd99ee7908c40280,2018,2018,crash,
-l-25,volatile spec,2(linux),linux,a9d57ef15cbe327fe54416dd194ee0ea66ae53a4,2019,2018,info leak,
+l-25,switch jump table,1(linux),linux,a9d57ef15cbe327fe54416dd194ee0ea66ae53a4,2019,2018,info leak,
 "count of  bug class: 6(b:2 l:6) kinds of unique bug
-28(b:2 l:26) unique bugs",,,,,,,,
+27(b:2 l:25) unique bugs",,,,,,,,
