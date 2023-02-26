@@ -634,7 +634,7 @@ l_18.c-1:
 
 l_19.c-1:
     file_name: "l_19.c"
-    cc: gcc-4.8
+    cc: gcc-4.9
     opti_level: O2
     input:
     check_type: 1
