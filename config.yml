@@ -629,7 +629,7 @@ l_18.c-1:
     opti_level: O0
     input:
     check_type: 4
-    test_str: "memcpy"
+    test_str: "memset"
     section_name: "<foo>:"
 
 l_19.c-1:
