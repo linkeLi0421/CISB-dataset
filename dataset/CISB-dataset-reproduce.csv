@@ -20,7 +20,7 @@ b-20,successful,4.4.7 -O1,,https://godbolt.org/z/r3ePbT81n,
 b-21/l-9,successful,4.1-12.0.1 -O1,3.0.0-14.0.0 -O1,https://godbolt.org/z/5n8c318PP,remove
 b-22,successful,4.6-12.0.1 -O0,3.0-14.0.0 -O0,https://godbolt.org/z/Tsx3v8v8o,no
 b-26,successful,arm all version -O0,arm all version -O0,https://godbolt.org/z/a1WKbT458,?
-l-2,successful,,,https://godbolt.org/z/EYrM3PTaT,remove
+l-2,successful,4.1-12.0.1 -O1,11.0.0-14.0.0 -O1,https://godbolt.org/z/EYrM3PTaT,remove
 l-6,successful,7.1-11.2 -O2,5.0.0-13.0.0 -O1,https://godbolt.org/z/dP9qG1YqM,no
 l-8,successful,,3.0-14.0.0 -O1,https://godbolt.org/z/96W3YGj4q,remove
 l-11,successful,4.1.2-12.0.1 -O0,3.0.0-14.0.0 -O0,https://godbolt.org/z/zoGEx6bf5,
