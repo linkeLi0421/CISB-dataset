@@ -140,7 +140,7 @@ b_4-int_overflow.c-1:
     check_type: 2
     test_str: ok
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 b_4-int_overflow.c-2:
     file_name: "b_4-int_overflow.c"
@@ -150,7 +150,7 @@ b_4-int_overflow.c-2:
     check_type: 2
     test_str: ok
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 b_4-int_overflow.c-3:
     file_name: "b_4-int_overflow.c"
@@ -160,7 +160,7 @@ b_4-int_overflow.c-3:
     check_type: 2
     test_str: ok
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 b_4-int_overflow.c-4:
     file_name: "b_4-int_overflow.c"
@@ -170,7 +170,7 @@ b_4-int_overflow.c-4:
     check_type: 2
     test_str: ok
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 b_5-ptr_sub_to_0.c-1:
     file_name: "b_5-ptr_sub_to_0.c"
@@ -462,7 +462,7 @@ b_13.c-1:
     check_type: 3
     test_str: "movl   $0x0"
     section_name: "between 0x4( 0xc("
-    specical_cause: UB
+    special_cause: UB
 
 b_13.c-2:
     file_name: "b_13.c"
@@ -472,7 +472,7 @@ b_13.c-2:
     check_type: 3
     test_str: "movl   $0x0"
     section_name: "between 0x4( 0xc("
-    specical_cause: UB
+    special_cause: UB
 
 
 b_14-printf_null.c-1:
@@ -483,7 +483,7 @@ b_14-printf_null.c-1:
     check_type: 4
     test_str: "puts"
     section_name: "<main>:"
-    specical_cause: UB
+    special_cause: UB
 
 b_14-printf_null.c-2:
     file_name: "b_14-printf_null.c"
@@ -493,7 +493,7 @@ b_14-printf_null.c-2:
     check_type: 4
     test_str: "puts"
     section_name: "<main>:"
-    specical_cause: UB
+    special_cause: UB
 
 b_15.c-0:
     file_name: "b_15.c"
@@ -503,7 +503,7 @@ b_15.c-0:
     check_type: 4
     test_str: "call   11b0 <memset>"
     section_name: "<memset>:"
-    specical_cause: UB
+    special_cause: UB
 
 b_15.c-1:
     file_name: "b_15.c"
@@ -513,7 +513,7 @@ b_15.c-1:
     check_type: 4
     test_str: "call   1160 <memset>"
     section_name: "<memset>:"
-    specical_cause: UB
+    special_cause: UB
 
 b_16.c-0:
     file_name: "b_16.c"
@@ -523,7 +523,7 @@ b_16.c-0:
     check_type: 1
     test_str: "80 70 60 50 40 30 88 77 66 55 44 33"
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 b_20.c-1:
     file_name: "b_20.c"
@@ -533,7 +533,7 @@ b_20.c-1:
     check_type: 7
     test_str: "panic"
     section_name: "%dil"
-    specical_cause: UB
+    special_cause: UB
     
 b_20.c-2:
     file_name: "b_20.c"
@@ -543,7 +543,7 @@ b_20.c-2:
     check_type: 7
     test_str: "panic"
     section_name: "%dil"
-    specical_cause: UB
+    special_cause: UB
 
 b_20.c-3:
     file_name: "b_20.c"
@@ -553,7 +553,7 @@ b_20.c-3:
     check_type: 7
     test_str: "panic"
     section_name: "%dil"
-    specical_cause: UB
+    special_cause: UB
 
 b_21-dse_memset.c-1:
     file_name: "b_21-dse_memset.c"
@@ -563,7 +563,7 @@ b_21-dse_memset.c-1:
     check_type: 3
     test_str: "memset"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
     
 b_21-dse_memset.c-2:
     file_name: "b_21-dse_memset.c"
@@ -573,7 +573,7 @@ b_21-dse_memset.c-2:
     check_type: 3
     test_str: "memset"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 b_21-dse_memset.c-3:
     file_name: "b_21-dse_memset.c"
@@ -583,7 +583,7 @@ b_21-dse_memset.c-3:
     check_type: 3
     test_str: "memset"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
     
 b_21-dse_memset.c-4:
     file_name: "b_21-dse_memset.c"
@@ -593,7 +593,7 @@ b_21-dse_memset.c-4:
     check_type: 3
     test_str: "memset"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
     
 b_22.c-1:
     file_name: "b_22.c"
@@ -603,7 +603,7 @@ b_22.c-1:
     check_type: 3
     test_str: "movl   $0x0"
     section_name: "movl   $0x0"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 b_22.c-2:
     file_name: "b_22.c"
@@ -613,7 +613,7 @@ b_22.c-2:
     check_type: 3
     test_str: "movl   $0x0"
     section_name: "movl   $0x0"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_2.c-0:
     file_name: "l_2.c"
@@ -623,7 +623,7 @@ l_2.c-0:
     check_type: 2
     test_str: "0"
     section_name:
-    specical_cause: UB
+    special_cause: UB
 
 l_6.c-1:
     file_name: "l_6.c"
@@ -670,7 +670,7 @@ l_11.c-1:
     check_type: 2
     test_str: "16"
     section_name:
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_11.c-2:
     file_name: "l_11.c"
@@ -680,7 +680,7 @@ l_11.c-2:
     check_type: 2
     test_str: "16"
     section_name:
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_13.c-1:
     file_name: "l_13.c"
@@ -753,7 +753,7 @@ l_18.c-1:
     check_type: 4
     test_str: "memset"
     section_name: "<foo>:"
-    specical_cause: "Environment assumption"
+    special_cause: "Environment assumption"
 
 l_18.c-2:
     file_name: "l_18.c"
@@ -763,7 +763,7 @@ l_18.c-2:
     check_type: 4
     test_str: "memset"
     section_name: "<foo>:"
-    specical_cause: "Environment assumption"
+    special_cause: "Environment assumption"
 
 l_19.c-1:
     file_name: "l_19.c"
@@ -825,7 +825,7 @@ l_37.c-1:
     check_type: 3
     test_str: "sub"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_37.c-2:
     file_name: "l_37.c"
@@ -835,7 +835,7 @@ l_37.c-2:
     check_type: 3
     test_str: "sub"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_37.c-3:
     file_name: "l_37.c"
@@ -845,7 +845,7 @@ l_37.c-3:
     check_type: 3
     test_str: "sub"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_37.c-4:
     file_name: "l_37.c"
@@ -855,7 +855,7 @@ l_37.c-4:
     check_type: 3
     test_str: "addl   $0x1"
     section_name: "<main>:"
-    specical_cause: "Others"
+    special_cause: "Others"
 
 l_41.c-1:
     file_name: "l_41.c"
@@ -866,7 +866,7 @@ l_41.c-1:
     test_str: "call\thave_cpuid_p"
     section_name: "between call\tfoo2 puts"
     default_option: "-m32"
-    specical_cause: "Environment assumption"
+    special_cause: "Environment assumption"
 
 l_41.c-2:
     file_name: "l_41.c"
@@ -877,7 +877,7 @@ l_41.c-2:
     test_str: "call\thave_cpuid_p"
     section_name: "between call\tfoo2 puts"
     default_option: "-m32"
-    specical_cause: "Environment assumption"
+    special_cause: "Environment assumption"
 
 l_41.c-3:
     file_name: "l_41.c"
@@ -888,7 +888,7 @@ l_41.c-3:
     test_str: "call\thave_cpuid_p"
     section_name: "between call\tfoo2 puts"
     default_option: "-m32"
-    specical_cause: "Environment assumption"
+    special_cause: "Environment assumption"
 
 l_43.c-1:
     file_name: "l_43.c"
