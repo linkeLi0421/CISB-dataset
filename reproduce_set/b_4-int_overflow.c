@@ -5,7 +5,7 @@
 */
 int test(int a) {
     if (a + 10 > a) {   // removed
-        printf("ok");
+        puts("ok");
     }
 }
 
