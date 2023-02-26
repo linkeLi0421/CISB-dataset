@@ -26,7 +26,7 @@ l-13,successful,4.1.2 -O0 9.1-12.0.1  -O,3.3 - 14.0.0   -O,https://godbolt.org/z
 l-15,successful,4.4-12.0.1 -O1,3.0.0-14.0.0 -O1,https://godbolt.org/z/1hq17qT1b,remove
 l-16,successful,4.1.2 -O2,,https://godbolt.org/z/PEzE6Eexn,
 l-18,successful,4.1.2 -O0,3.0.0-14.0.0 -O0,https://godbolt.org/z/4rx1nvjah,memset
-l-19,successful,4.3-4.9 -O1,3.0-3.5 -O1,https://godbolt.org/z/4x9cM7h8T,reorder
+l-19,successful,4.3-4.9 -O2,,https://godbolt.org/z/4x9cM7h8T,reorder
 l-23,successful,arm64 5.4-12.2 -O0,arm 10.0.0-15.0.0 -O0,https://godbolt.org/z/PPzKnPKEK,no
 l-25,successful,7.3-8.3 -O0 -mindirect-branch=thunk,,https://godbolt.org/z/EbEv4eosd,
 l-30,successful,4.1-12.0.1 -O1,3.0.0-14.0.0 -O1,https://godbolt.org/z/hn9fn9Pzv,remove

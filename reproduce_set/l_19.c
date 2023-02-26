@@ -1,5 +1,5 @@
 /*
-	x86-64 gcc4.8-4.9 -O1
+	x86-64 gcc4.8-4.9 -O2
 	Compile and run the program, if the result is not "ok", there is a bug.
 */
 

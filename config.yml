@@ -641,24 +641,6 @@ l_19.c-1:
     test_str: "ok"
     section_name:
 
-l_19.c-2:
-    file_name: "l_19.c"
-    cc: gcc-4.8
-    opti_level: O3
-    input:
-    check_type: 1
-    test_str: "ok"
-    section_name:
-
-l_19.c-3:
-    file_name: "l_19.c"
-    cc: clang-3.9
-    opti_level: O3
-    input:
-    check_type: 1
-    test_str: "ok"
-    section_name:
-
 l_24.c-1:
     file_name: "l_24.c"
     cc: gcc-4.8
@@ -679,7 +661,7 @@ l_24.c-2:
 
 l_30.c-1:
     file_name: "l_30.c"
-    cc: gcc-4.4
+    cc: gcc
     opti_level: O1
     input:
     check_type: 2
