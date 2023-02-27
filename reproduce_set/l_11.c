@@ -14,6 +14,6 @@ struct foo {
 };
 
 int main() {
-    printf("%d", sizeof(struct foo));
+    printf("%lu", sizeof(struct foo));
     return 0;
 }
