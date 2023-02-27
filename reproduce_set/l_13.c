@@ -7,7 +7,7 @@
 
 struct ccc{
     int a;
-    int b
+    int b;
 } c;
 
 __attribute__((noinline))
