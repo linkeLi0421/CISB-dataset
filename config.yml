@@ -624,33 +624,6 @@ l_2.c-0:
     test_str: "0"
     section_name:
     special_cause: UB
-
-l_6.c-1:
-    file_name: "l_6.c"
-    cc: gcc-7
-    opti_level: O2
-    input:
-    check_type: 3
-    test_str: "memcmp"
-    section_name: "<main>:"
-    
-l_6.c-2:
-    file_name: "l_6.c"
-    cc: clang
-    opti_level: O1
-    input:
-    check_type: 3
-    test_str: "memcmp"
-    section_name: "<main>:"
-
-l_6.c-3:
-    file_name: "l_6.c"
-    cc: gcc-7
-    opti_level: O3
-    input:
-    check_type: 3
-    test_str: "memcmp"
-    section_name: "<main>:"
     
 l_8-oversized_shift.c-1:
     file_name: "l_8-oversized_shift.c"
