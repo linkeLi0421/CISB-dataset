@@ -4,10 +4,11 @@
 
 /*
 For Linux the correct command is: gcc -pthread b_12.c
-if there is something like         
+in O3 it is in the assembly code      
 .L7:
 jmp .L7
-in assembly code，there is a bug.
+so there is a bug.
+in O2/O1, "if(x==y)" is deleted, so the program would never stop
 */
 
 

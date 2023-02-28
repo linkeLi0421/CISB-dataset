@@ -6,7 +6,7 @@
  43 
  44             TpcFingerNum[TpcIdex][2] = *(UINT32*)(void*)pstruDlTpcPara;
  45             TpcFingerNum[TpcIdex][3] = pstruDlTpcPara->ucThreeSlotFngNum;
- line 40 should be assiged before line 42 clear the memory point with pstruDlTpcPara, x86-64 gcc6-gcc11.2 -O2 will reorder line 40 and line 42. 
+ line 52 should be assiged before line 54 clear the memory point with pstruDlTpcPara, x86-64 gcc6-gcc11.2 -O2 will reorder line 40 and line 42. 
  if there is no "movl $0x0" between "movl %esi, 4(%r9)"  and "movl %esi, 12(%r9)"  in assemble code, that means the compiler reorder the instructions incorrectly.
 */
 

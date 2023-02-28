@@ -1,5 +1,5 @@
 /*successful
-    x86-64 gcc 4.1-12.0.1 -O1
+    x86-64 gcc 4.1-7.4 -O1 gcc 8-12 -O0
     x86-64 clang 3.0.0-14.0.0 -O1
     Compile and run the executable file，input 2147483647. If the output is "ok", then check "if (a + 10 > a)" is removed and there is a bug.
 */
