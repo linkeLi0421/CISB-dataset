@@ -1,8 +1,8 @@
 key,result,repro version:gcc,repro version:llvm,compiler explorer snapshot,fit remove/reorder
 b-1,successful,4.1.2-10.1 -O1,,https://godbolt.org/z/99EEfveeW,remove
-b-2,successful,4.8-12.0.1 -O2,3.0.0-14.0.0 -O1,https://godbolt.org/z/doz8e8Ees,remove
-b-3,successful,8-12.0.1 -O2,,https://godbolt.org/z/PG1PhWv1c,
-b-4,successful,4.1-12.0.1 -O1,3.0.0-14.0.0 -O1,https://godbolt.org/z/oW5TrYMxM,remove
+b-2,successful,gcc 4.8.0-7 -O2; gcc 8-11 -O1;gcc 12 -O0,3.0.0-14.0.0 -O1,https://godbolt.org/z/83Tro3Gjd,remove
+b-3,successful,8-12.0.1 -O2,,https://godbolt.org/z/M7x7fsenq,
+b-4,successful,4.1-7.4 -O1; 8-12 -O0,3.0.0-14.0.0 -O1,https://godbolt.org/z/xasxT3z84,remove
 b-4,successful,arm gcc 5.4 -O2,,https://godbolt.org/z/bP3aq6eYP,
 b-5,successful,9-12.0.1 -O1,3.3-14.0.0 -O1,https://godbolt.org/z/YT3zxEW9j,remove
 b-6,successful,4.1-12.0.1 -O1,3.0.0-14.0.0 -O1,https://godbolt.org/z/E9ofx9esM,remove
