@@ -11,7 +11,7 @@
 
 int main() {
     char* a = (char*)malloc(100);
-    scanf("%s",a);
+    // scanf("%s",a);
     printf("%s",a);
     memset(a,0,100);
     return 0;

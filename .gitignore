@@ -1,2 +1,4 @@
 temp.*
 a.out
+core.*
+*.o
