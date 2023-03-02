@@ -4,7 +4,9 @@
 */
 
 #include <stdio.h>
-#define PROT_READ 1
+#include <sys/mman.h>
+#include <error.h>
+// #define PROT_READ 1
 #define errno 1
 
 int g_1 = 1;

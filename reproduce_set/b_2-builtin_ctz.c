@@ -4,18 +4,19 @@
     Compile and run the program. Input 0, output "ok" means check "if(__builtin_ctz(p)>= 32)" not remove, and there is no bug.
 */
 #include<stdio.h>
+#include <stdlib.h>
 
 void test(int p){
     
     if(__builtin_ctz(p)>= 32){ // removed
 		printf("ok");
 	}
-
 }
 
 int main(int argc, char** argv){
     int a = atoi(argv[1]);
     //int a = 0;
     test(a);
+    return 0;
 
 }

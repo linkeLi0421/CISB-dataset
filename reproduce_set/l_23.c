@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-__attribute__((aligned(4)))struct a {                   // with attribute res donot change
+struct a {                   // with attribute res donot change
     int num2;
     int num3;
-};
+}__attribute__((aligned(4)));
 
 struct b{
     int a;
@@ -14,7 +14,7 @@ struct b{
 };
 
 int main(){
-    struct a a1 = {1, 2, 3};
+    struct a a1 = {1, 2};
     struct a *p = (struct a*)malloc(sizeof(struct a));
     memcpy(&p->num2, &a1.num2, 8);                  // with arm64 gcc/clang -O0, memcpy chenged to ldr xreg
 

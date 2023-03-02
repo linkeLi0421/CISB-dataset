@@ -30,7 +30,7 @@ struct c k = {0, m};
 
 // }
 
-__attribute__((inline))int flag_is_changeable_p(int flag){
+int flag_is_changeable_p(int flag){
     // return a ;
     unsigned int f1, f2;
 	asm  ("pushfl\n\t"                  // this asm code load flag reg
@@ -63,7 +63,7 @@ __attribute__((noinline))void foo2(){
 }
 
 int main(){
-    int lm = 1, ln = 2;
+    // int lm = 1, ln = 2;
     if (x > y) puts("0");
     if (have_cpuid_p())
         foo2();

@@ -10,12 +10,13 @@ void test(unsigned char a){
     if(a + 1)                   // removed
         printf("ok\n");
     unsigned char b = a + 1;
+    printf("%d\n", b);
 	printf("%d\n", a);
 }
 
 int main(int argc, char* argv[]){
-    //int i = 255;
-    char i = atoi(argv[1]);//input 255
+    int i = 255;
+    // char i = atoi(argv[1]);//input 255
     printf("%d\n", i);
     test(i);
 }
