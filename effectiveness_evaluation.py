@@ -10,6 +10,7 @@ from reproduction_tester import warning_testing
 
 config_file_path = 'config.yml'
 reproduce_set_path = 'reproduce_set'
+arm_file_list = ['l_23.c', 'b_26.c']
 
     
 def get_dataset_value(option_file_name, output = 'verbose'):
@@ -53,7 +54,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
             config = configs[config_name]
             file_name = config['file_name']
             
-            if 'b_26' in config_name:
+            if config_name == arm_file_list[1]:
                 # arm case
                 num_bug += 1
                 if output == 'verbose':
@@ -67,7 +68,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                     num_UB_clang += 1
                 continue
                 
-            if 'l_23' in config_name:
+            if config_name == arm_file_list[0]:
                 # arm case
                 if ubsan_flag or warning_flag:
                     # not UB
