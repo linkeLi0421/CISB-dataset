@@ -2,6 +2,7 @@
     x86-64 gcc7.3-8.3 -O0 -mindirect-branch=thunk
     gcc should Disable switch jump tables when retpolines are enabled 
 */
+#include <stdio.h>
 int global;
 
 int foo3 (int x)
@@ -21,4 +22,10 @@ int foo3 (int x)
     default:
       return 0;
   }
+}
+
+int main() {
+    int re = foo3(3);
+    printf("%d\n",re);
+    return 0;
 }
