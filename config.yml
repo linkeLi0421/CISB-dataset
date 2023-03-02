@@ -982,9 +982,9 @@ b_20.c-gcc-O3:
     file_name: "b_20.c"
     cc: gcc-4.4
     input:
-    check_type: 7
+    check_type: 4
     test_str: "panic"
-    section_name: "%dil"
+    section_name: "<main>:"
     special_cause: UB
 
 b_20.c-gcc-O2:
@@ -1009,9 +1009,9 @@ b_20.c-gcc-O0:
     file_name: "b_20.c"
     cc: gcc-4.4
     input:
-    check_type: 7
+    check_type: 4
     test_str: "panic"
-    section_name: "%dil"
+    section_name: "<main>:"
     special_cause: UB
 
 b_21-dse_memset.c-gcc-O3:
