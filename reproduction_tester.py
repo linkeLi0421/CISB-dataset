@@ -18,7 +18,7 @@ def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
     ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
     assert( ret_code == 0 and 'error')
     # print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
-    result = subprocess.Popen('/llk/CISB-dataset/a.out ' + input, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.Popen('a.out ' + input, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         # if this returns, the process completed
         result.wait(timeout=1)
