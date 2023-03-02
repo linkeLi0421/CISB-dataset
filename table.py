@@ -8,7 +8,15 @@ if __name__ == '__main__':
     table_data = []
     for s in strategy:
         res = get_dataset_value(file_path + '/' + s + '.txt', output=None)
-        table_data.append((s, 'gcc', res[1], res[3]))
-        table_data.append((s, 'clang', res[5], res[7]))
+        if 'ub' in s or s == 'wall':
+            if 'clang' not in s:
+                table_data.append((s, 'gcc', res[1], '/'))
+            if 'gcc' not in s:
+                table_data.append((s, 'clang', res[5], '/'))
+            continue
+        if 'clang' not in s:
+            table_data.append((s, 'gcc', res[1], res[3]))
+        if 'gcc' not in s:
+            table_data.append((s, 'clang', res[5], res[7]))
     print(table_data)
     print(tabulate(table_data, headers=table_header, tablefmt='grid'))
