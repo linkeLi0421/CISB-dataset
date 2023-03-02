@@ -153,12 +153,12 @@ We provide the following reproduction materials:
 
 ## Output
 
-```shell
-root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
+```
+root@compiler:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1
 gcc-4.8 -O2 b_1-redefine_strcmp.c
 One CISB here!
 
-root@d0eba27d1e6a:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
+root@compiler:/# python3 reproduction-tester.py ./reproduce_set/b_1-redefine_strcmp.c -n 1 -opt extra_option.txt
 gcc-4.8 -O2 -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps b_1-redefine_strcmp.c
 No CISB here!
 ```
