@@ -1159,7 +1159,7 @@ b_22.c-clang-O0:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_26.c-gcc:
+b_26.c:
     file_name: "b_26.c"
     special_cause: "Others"
 
@@ -1604,7 +1604,7 @@ l_19.c-gcc-O0:
     section_name:
     special_cause: DB
 
-l_23.c-gcc:
+l_23.c:
     file_name: "l_23.c"
     special_cause: Others
 
