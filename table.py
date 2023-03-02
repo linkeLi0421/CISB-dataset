@@ -10,13 +10,13 @@ if __name__ == '__main__':
         res = get_dataset_value(file_path + '/' + s + '.txt', output=None)
         if 'ub' in s or s == 'wall':
             if 'clang' not in s:
-                table_data.append((s, 'gcc', res[1], '/'))
+                table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), '/'))
             if 'gcc' not in s:
-                table_data.append((s, 'clang', res[5], '/'))
+                table_data.append((s, 'clang', res[5]/(res[5]+res[4]), '/'))
             continue
         if 'clang' not in s:
-            table_data.append((s, 'gcc', res[1], res[3]))
+            table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), res[3]/(res[3]+res[2])))
         if 'gcc' not in s:
-            table_data.append((s, 'clang', res[5], res[7]))
-    print(table_data)
+            table_data.append((s, 'clang', res[5]/(res[5]+res[4]), res[7]/(res[7]+res[6])))
+    # print(table_data)
     print(tabulate(table_data, headers=table_header, tablefmt='grid'))
