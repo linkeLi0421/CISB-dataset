@@ -7,9 +7,11 @@ import argparse
 import subprocess
 import signal
 
+arm_file_list = ['l_23.c', 'b_26.c']
+
 def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
     # test ubsan here
-    if file_name == 'l_13.c' and 'gcc' in cc:
+    if file_name == arm_file_list[0] and 'gcc' in cc:
         # online compiler works
         if output == 'verbose':
             print('error: ', file_name, cc)
@@ -18,7 +20,7 @@ def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
     ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
     assert( ret_code == 0 and 'error')
     # print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
-    result = subprocess.Popen('a.out ' + input, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.Popen('./a.out ' + input, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         # if this returns, the process completed
         result.wait(timeout=1)
