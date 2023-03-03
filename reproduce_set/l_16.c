@@ -3,7 +3,7 @@
 #define prefetch(ptr)				\
 	({					\
 		__asm__ __volatile__(		\
-		"pld\t%0"			\
+		"PREFETCHNTA \t%0"			\
 		:				\
 		: "o" (*(char *)(ptr))		\
 		: "cc");			\
@@ -22,7 +22,9 @@ void foo(char *x)
 
 int main () {
     foo(0);
+    return 0;
 }
+
 
 
 /*
