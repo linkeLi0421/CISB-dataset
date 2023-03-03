@@ -6,11 +6,10 @@ import os
 from reproduction_tester import bug_not_trigger
 from reproduction_tester import ubsan_testing
 from reproduction_tester import warning_testing
-
+from reproduction_tester import arm_file_list
 
 config_file_path = 'config.yml'
 reproduce_set_path = 'reproduce_set'
-arm_file_list = ['l_23.c', 'b_26.c']
 
     
 def get_dataset_value(option_file_name, output = 'verbose'):
@@ -55,7 +54,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
             file_name = config['file_name']
             
             if config_name == arm_file_list[1]:
-                # arm case
+                # arm case b_26.c
                 num_bug += 1
                 if output == 'verbose':
                     print('bug file:  ', file_name)
@@ -69,11 +68,11 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                 continue
                 
             if config_name == arm_file_list[0]:
-                # arm case
+                # arm case l_23.c
                 if ubsan_flag or warning_flag:
                     # not UB
                     continue
-                if 'all_option' in args:
+                if 'all-option' in option_file_name:
                     if output == 'verbose':
                         print('no bug file:  ', file_name)
                     num_nobug += 1
@@ -213,6 +212,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                 assert( ret_code == 0 and 'error')
                 
             if bug_not_trigger(check_type, input, test_str, section_start, section_end) or warning_testing(cc, args, file_name):
+                # if but trigger or there is a warning about this bug, this bug is prevent
                 num_nobug += 1
                 if cc_type == 'clang':
                     num_nobug_clang += 1

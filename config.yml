@@ -1381,7 +1381,7 @@ l_13.c-clang-O0:
 
 l_15.c-gcc-O3:
     file_name: "l_15.c"
-    cc: gcc-5
+    cc: gcc-12
     input:
     check_type: 3
     test_str: "memset"
