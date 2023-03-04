@@ -1,4 +1,4 @@
-key,result,repro version:gcc,repro version:llvm,compiler explorer snapshot,fit remove/reorder
+Unique bug id,Result,Compiler version:gcc,Compiler version:llvm,Compiler Explorer snapshot,fit remove/reorder
 b-1,successful,4.1.2-10.1 -O1,,https://godbolt.org/z/99EEfveeW,remove
 b-2,successful,4.8.0-7 -O2; 8-11 -O1; 12 -O0,3.0.0-14.0.0 -O1,https://godbolt.org/z/sT5fvnboz,remove
 b-3,successful,8-12.0.1 -O2,,https://godbolt.org/z/M7x7fsenq,

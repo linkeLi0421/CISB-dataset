@@ -1,4 +1,4 @@
-unique bug id,unique bug name,occurence,source,commit/bugzilla ID,year,first appearance,possible effects,special cause
+Unique bug id,Unique bug name,Occurence,Source,Commit/Bugzilla ID,Year,First appearance,Possible impacts,Special cause
 l-13,UB pointer-offset-overflow,1(linux),linux,beaec533fc2701a28a4d667f67c9f59c6e4e0d13,2017,2017,hang,No-UB assumption
 l-8,UB elimi-shift,1(linux),linux,d50f2ab6f050311dbf7b8f5501b25f0bf64a439b,2012,2012,hang,No-UB assumption
 b-1,UB std func arg assumption,1(gcc),gcc,41946,2009,2009,crash,No-UB assumption
@@ -73,9 +73,6 @@ b-15,UB user define built-in,1(gcc) 1(llvm),gcc,63393,2011,2011,infinite loop,No
 l-46,UB race and reorder,1(linux),linux,16f5e707d6f6f7644ff07e583b8f18c3dcc5499f,2020,2020,crash,No-UB assumption
 l-30,UB concurrency access to global between 2 func call (which contains access to same global),2(linux),linux,45a94d7cd45ed991914011919e7d40eb6d2546d1,2009,2009,crash,No-UB assumption
 l-30,UB concurrency access to global between 2 func call (which contains access to same global),2(linux),linux,1186e4e904839955e5d2be94f50e0a363cb5651b,2021,2009,crash,No-UB assumption
-"count of  bug class: ""23(b:17 l:10)kinds of unique bugs
-74(b:63 l:11) unique bugs""",,,,,,,,
-,,,,,,,,
 l-48,DB reorder(bpf),1(linux),linux,0f20615d64ee2ad5e2a133a812382d0c4071589b,2021,2021,not clear,Default Behavior
 l-20,DB invention of unaligned mem access,1(linux),linux,86c38a31aa7f2dd6e74a262710bf8ebf7455acc5,2010,2010,crash,Default Behavior
 l-44,DB byte-wide->word-wide,1(linux),linux,8c031ba63f8f2a9efc471cb45b2ff18271556544,2017,2017,crash,Default Behavior
@@ -84,9 +81,6 @@ b-7,DB int promotion,2(gcc),gcc,87060,2018,2018,any possible,Default Behavior
 b-7,DB int promotion,2(gcc),gcc,87131,2018,2018,any possible,Default Behavior
 l-19,condItional load->non-condItional load,1(linux),linux,69102311a57d1fd65cdc4002c55c5d551c799044,2014,2014,crash,Default Behavior
 l-38,reorder CPU check,1(linux),linux,067e710b9a982a92cc8294d7fa0f1e924c65bba1,2013,2013,crash,Default Behavior
-"count of  bug class: 7(b:1 l:6) kinds of unique bug
-8(b:2 l:6) unique bugs",,,,,,,,
-,,,,,,,,
 b-19,env:inst type,1(gcc),gcc,80999,2017,2017,crash,Environment assumption
 l-43,env:built in replace,1(linux),linux,ede6b6bc43c68ef030f88235e91e85939b8bdb49,2021,2021,crash,Environment assumption
 l-23,env: transfer memcpy to unaligned ldx,1(linux),linux,04ef0f1a0169a14b8e653af1178524ab4390133f,2016,2016,crash,Environment assumption
@@ -99,9 +93,6 @@ l-21,break atomicity(load tearing),1(linux),linux,9bc4f28af75a91aea0ae383f50b0a4
 l-4,data race,2(linux),linux,e91467ecd1ef381377fd327c0ded922835ec52ab,2006,2006,crash,Environment assumption
 l-4,data race,2(linux),linux,b6a9b7f6b1f21735a7456d534dc0e68e61359d2c,2013,2006,crash,Environment assumption
 l-4a,double fetch,1(linux),linux,8135cf8b092723dbfcc611fe6fdcb3a36c9951c5,2015,2015,crash,Environment assumption
-"count of  bug class: 11(b:1 l:10) kinds of unique bug
- 12(b:1 l:11) unique bugs",,,,,,,,
-,,,,,,,,
 b-21,DSE-memset,12(linux) 1(gcc),gcc,89201,2019,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,fb31690fbac6f4055c1765522752e4746759f5de,2005,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,f3751ad0116fb6881f2c3c957d66a9327f69cefb,2020,2005,info leak,
@@ -129,5 +120,3 @@ l-6,time side channel,3(linux),linux,613317bd212c585c20796c10afe5daaa95d4b0a1,20
 l-37,noop loop for time order(concurrency),2(linux),linux,8690ba446defe2e2b81803756c099d2943dfd5fd,2007,2007,crash,
 l-6,noop loop for time order(concurrency),2(linux),linux,71f0bdcab69ab36b1e939d36063aaf6c4a164ed3,2008,2007,crash,
 l-25,switch jump table,1(linux),linux,a9d57ef15cbe327fe54416dd194ee0ea66ae53a4,2019,2018,info leak,
-"count of  bug class: 6(b:2 l:6) kinds of unique bug
-27(b:2 l:25) unique bugs",,,,,,,,
