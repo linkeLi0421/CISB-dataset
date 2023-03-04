@@ -14,40 +14,38 @@ CISB-dataset/dataset has three tables.
 
 table1 CISB-dataset-classification.csv
 
-| Column | Header                          | Description                                                  |
+| Column | Header(\* means the key)          | Description                                                  |
 | ------ | ------------------------------- | ------------------------------------------------------------ |
-| 1      | Root cause                      | The root cause of CISB, layer1 in three-layer classification. |
-| 2      | Insecure optimization behaviors | Insecure optimizations behaviors of CISB, layer2 in three-layer classification. |
-| 3      | Security consequences           | Security consequences of CISB, layer3 in three-layer classification. |
-| 4      | Result                          | Specific effect of the bug.                                  |
-| 5      | unique bug id                   | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
-| 6      | frequency                       | The number of times that we find this kind of bug.           |
+| 1      | Root cause                      | The root cause of the bug (the 1st layer of our taxonomy) |
+| 2      | Insecure optimization behaviors | Insecure optimizations behaviors of the bug (the 2nd layer of our taxonomy) |
+| 3      | Security consequences           | Security consequences of the bug (the 3rd layer of our taxonomy) |
+| 4      | Security Impacts                | Specific security impacts of the bug                     |
+| 5      | Unique bug id\*                   | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
+| 6      | Frequency                       | The number of times we found this kind of bug          |
 
-table2 CISB-dataset-detailed info.csv
+table2 CISB-dataset-detailed-info.csv
 
-| Column | Header              | Description                                                  |
+| Column | Header (\* means the key)| Description                                                  |
 | ------ | ------------------- | ------------------------------------------------------------ |
-| 1      | unique bug id       | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
-| 2      | unique bug name     | We give each kind of bug a name.                             |
-| 3      | occurence           | The number of times that we find a unique bug.               |
-| 4      | source              | From where we find the bug.                                  |
-| 5      | commit/bugzilla ID  | Linux kernel git commit log or llvm/gcc bugzilla ID.         |
-| 6      | year                | Time when the bug is submitted.                              |
-| 7      | first appearance    | Time when this kind of bugs is submitted.                    |
-| 8      | possible effects    | Possible effects of the bug.                                 |
-| 9      | special cause       | The causes of implicit-specification. No-UB, default-behavior or environment assumption. |
-| 10     | count of  bug class | The number of times that we find this kind of bug totally.   |
+| 1      | Unique bug id       | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
+| 2      | Unique bug name     | A short description to name the bug                          |
+| 3      | Occurence           | The number of times we found this kind of bug                |
+| 4      | Source              | From where we find the bug.                                  |
+| 5      | Commit/Bugzilla ID\*| Linux kernel git commit log or llvm/gcc bugzilla ID.         |
+| 6      | Year                | Time when this bug report is submitted.                              |
+| 7      | First appearance    | Time when this kind of bugs is firstly submitted.                    |
+| 8      | Security impacts    | Specific security impacts of the bug                                 |
+| 9      | Specific cause      | The sub classification of Implicit-Specification. See the definition of No-UB, default-behavior or environment assumption in our paper |
 
 table3 CISB-dataset-reproduce.csv
 
-| Column | Header                     | Description                                                  |
+| Column | Header(\* means the key)   | Description                                                  |
 | ------ | -------------------------- | ------------------------------------------------------------ |
-| 1      | key                        | We give each kind of bug a unique id, b-(number) from bugzilla, l-(number) from linux kernel patch. |
-| 2      | result                     | Whether we reproduce it.                                     |
-| 3      | repro version:gcc          | The compiler(gcc) version we successfully reproduce the bug. |
-| 4      | repro version:llvm         | The compiler(llvm) version we successfully reproduce the bug. |
-| 5      | compiler explorer snapshot | An online compiler snapshot that preserve the code to reproduce bugs. |
-| 6      | fit remove/reorder         | The effect of the bug. (remove or reorder)                   |
+| 1      |  Unique bug id\*           | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
+| 2      | Result                     | The result of our reproducation                                    |
+| 3      | Compiler version:gcc          | The compiler(gcc) version we reproduce the bug |
+| 4      | Compiler version:llvm         | The compiler(llvm) version we reproduce the bug |
+| 5      | Compiler Explorer snapshot | An online compiler snapshot that preserve the code to reproduce the bug |
 
 
 
