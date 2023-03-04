@@ -6,5 +6,5 @@ apt-add-repository "deb http://dk.archive.ubuntu.com/ubuntu/ xenial main univers
 add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ trusty main universe'
 add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ jammy main universe'
 apt-get update
-apt-get install  clang-14 lldb-3.9 gcc-4.4 gcc-4.9 gcc-7 gcc-12 -y
-pip install -r requirements.txt
+apt-get install  clang-14 gcc-4.4 gcc-4.9 gcc-7 gcc-12 -y
+pip3 install -r requirements.txt
