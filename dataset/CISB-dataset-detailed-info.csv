@@ -8,23 +8,23 @@ l-24,UB nonull ptr assumption,3(linux) 2(gcc),linux,a3ca86aea507904148870946d599
 b-8,UB nonull ptr assumption,3(linux) 2(gcc),gcc,33629,2007,2006,crash,No-UB assumption
 b-8,UB nonull ptr assumption,3(linux) 2(gcc),gcc,70038,2016,2006,crash,No-UB assumption
 b-3,UB res of strlen(no OOB assumption),1(gcc),gcc,85310,2018,2018,crash,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),llvm,16642,2013,2007,any possible,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),llvm,16642,2013,2007,any possibility,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),llvm,22822,2015,2007,crash,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,30475,2007,2007,crash,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),llvm,35057,2017,2007,hang,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,39311,2009,2007,crash,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,46619,2011,2007,any possible,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,46619,2011,2007,any possibility,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),llvm,46710,2020,2007,crash,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,47732,2011,2007,hang,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,48793,2011,2007,any possible,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,48793,2011,2007,any possibility,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,49183,2011,2007,crash,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,49820,2011,2007,crash,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,60527,2014,2007,crash,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,69612,2016,2007,any possible,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,87123,2018,2007,any possible,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,69612,2016,2007,any possibility,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,87123,2018,2007,any possibility,No-UB assumption
 b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,98168,2020,2007,crash,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,69533,2016,2007,any possible,No-UB assumption
-b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,61131,2014,2007,any possible,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,69533,2016,2007,any possibility,No-UB assumption
+b-9,UB signed int overflow,13(gcc) 4(llvm),gcc,61131,2014,2007,any possibility,No-UB assumption
 b-10,UB signed int overflow,12(gcc) 3(llvm),gcc,43242,2010,2007,hang,No-UB assumption
 b-10,UB signed int overflow,12(gcc) 3(llvm),gcc,83703,2018,2007,hang,No-UB assumption
 b-10,UB signed int overflow,12(gcc) 3(llvm),gcc,50922,2010,2007,hang,No-UB assumption
@@ -77,15 +77,15 @@ l-48,DB reorder(bpf),1(linux),linux,0f20615d64ee2ad5e2a133a812382d0c4071589b,202
 l-20,DB invention of unaligned mem access,1(linux),linux,86c38a31aa7f2dd6e74a262710bf8ebf7455acc5,2010,2010,crash,Default Behavior
 l-44,DB byte-wide->word-wide,1(linux),linux,8c031ba63f8f2a9efc471cb45b2ff18271556544,2017,2017,crash,Default Behavior
 l-15,DB transfer mem load to reg load,1(linux),linux,455bd4c430b0c0a361f38e8658a0d6cb469942b5,2013,2013,crash,Default Behavior
-b-7,DB int promotion,2(gcc),gcc,87060,2018,2018,any possible,Default Behavior
-b-7,DB int promotion,2(gcc),gcc,87131,2018,2018,any possible,Default Behavior
+b-7,DB int promotion,2(gcc),gcc,87060,2018,2018,any possibility,Default Behavior
+b-7,DB int promotion,2(gcc),gcc,87131,2018,2018,any possibility,Default Behavior
 l-19,condItional load->non-condItional load,1(linux),linux,69102311a57d1fd65cdc4002c55c5d551c799044,2014,2014,crash,Default Behavior
 l-38,reorder CPU check,1(linux),linux,067e710b9a982a92cc8294d7fa0f1e924c65bba1,2013,2013,crash,Default Behavior
 b-19,env:inst type,1(gcc),gcc,80999,2017,2017,crash,Environment assumption
 l-43,env:built in replace,1(linux),linux,ede6b6bc43c68ef030f88235e91e85939b8bdb49,2021,2021,crash,Environment assumption
 l-23,env: transfer memcpy to unaligned ldx,1(linux),linux,04ef0f1a0169a14b8e653af1178524ab4390133f,2016,2016,crash,Environment assumption
 l-18,env varient->memcpy->unaligned ldx,1(linux),linux,1bd46782d08b01b73df0085b51ea1021b19b44fd,2015,2015,crash,Environment assumption
-l-41,env: implicit change between 2 same check,1(linux),linux,94f6bac1058fd59a8bd472d18c4b77f220d930b0,2008,2008,any possible,Environment assumption
+l-41,env: implicit change between 2 same check,1(linux),linux,94f6bac1058fd59a8bd472d18c4b77f220d930b0,2008,2008,any possibility,Environment assumption
 l-35,env: implicit read between 2 stores,1(linux),linux,51bcf092917bfaa88d762879d0bbfe7619e8c16c,2007,2007,crash,Environment assumption
 l-49,store tearing->race,1(linux),linux,9c14791748708d87c4d02ba74eb7e281e141d6e4,2021,2007,may crash,Environment assumption
 l-3,eliminate local variable,1(linux),linux,20b50d79974ea3192e8c3ab7faf4e536e5f14d8f,2018,2018,crash,Environment assumption
