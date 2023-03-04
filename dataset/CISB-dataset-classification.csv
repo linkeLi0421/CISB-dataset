@@ -14,7 +14,6 @@ Implicit specification,Eliminating security related code,Elimination of security
 Implicit specification,Eliminating security related code,Elimination of security checks,flag check removal->crash hazard,l-41,1(linux)
 Implicit specification,Eliminating security related code,Elimination of critical memory operations,initialization removed,b-6 l-2 b-16,1(gcc) 1(linux) 2(gcc)
 Implicit specification,Eliminating security related code,Elimination of critical memory operations,initialization removed,b-20,1(gcc)
-Implicit specification,Eliminating security related code,Elimination of critical memory operations,cpuid wrong->crash,l-30,2(linux)
 Implicit specification,Eliminating security related code,Elimination of critical memory operations,func call removed->kernel crash,l-30,2(linux)
 Implicit specification,Eliminating security related code,Elimination of critical memory operations,wrong checksum->NFS failure,l-35,1(linux)
 Implicit specification,Eliminating security related code,others(loop exit removed),loop exit removal-> hang,b-4,1(gcc) 1(llvm)

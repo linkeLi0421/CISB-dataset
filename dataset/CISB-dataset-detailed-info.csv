@@ -102,7 +102,6 @@ l-9,DSE-memset,12(linux) 1(gcc),linux,7185ad2672a7d50bc384de0e38d90b75d99f3d82,2
 l-9,DSE-memset,12(linux) 1(gcc),linux,3347acc6fcd4ee71ad18a9ff9d9dac176b517329,2020,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,d4d7ccc834fe2401084e01fb043ad70ac410b19d,2016,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,421d82f5b3e75f94e31875e37d45cdf6a557c120,2014,2005,info leak,
-l-9,DSE-memset,12(linux) 1(gcc),linux,d4c5efdb97773f59a2b711754ca0953f24516739,2014,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,0b053c9518292705736329a8fe20ef4686ffc8e9,2015,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,7829fb09a2b4268b30dd9bc782fa5ebee278b137,2015,2005,info leak,
 l-9,DSE-memset,12(linux) 1(gcc),linux,6ae51ffe5e768d9e25a7f4298e2e7a058472bcc3,2021,2005,info leak,
