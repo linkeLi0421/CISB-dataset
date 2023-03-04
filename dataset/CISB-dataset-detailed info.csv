@@ -1,4 +1,4 @@
-Unique bug id,Unique bug name,Occurence,Source,Commit/Bugzilla ID,Year,First appearance,Possible impacts,Special cause
+Unique bug id,Unique bug name,Occurence,Source,Commit/Bugzilla ID,Year,First appearance,Security impacts,Specific cause
 l-13,UB pointer-offset-overflow,1(linux),linux,beaec533fc2701a28a4d667f67c9f59c6e4e0d13,2017,2017,hang,No-UB assumption
 l-8,UB elimi-shift,1(linux),linux,d50f2ab6f050311dbf7b8f5501b25f0bf64a439b,2012,2012,hang,No-UB assumption
 b-1,UB std func arg assumption,1(gcc),gcc,41946,2009,2009,crash,No-UB assumption
@@ -68,12 +68,12 @@ b-26,UB violate strict aliasing->unaligned access,1(llvm) 4(gcc),gcc,85616,2018,
 l-47,UB unaligned access,1(linux),linux,778aaefb8e864fc61f850539ea479554dd4caea1,,2021,crash,No-UB assumption
 b-14,UB puts(null),2(gcc),gcc,15574,2004,2004,crash,No-UB assumption
 b-14,UB puts(null),2(gcc),gcc,15685,2004,2004,crash,No-UB assumption
-b-15,UB user define built-in,1(gcc) 1(llvm),llvm,9795,2011,2011,infinite loop,No-UB assumption
-b-15,UB user define built-in,1(gcc) 1(llvm),gcc,63393,2011,2011,infinite loop,No-UB assumption
+b-15,UB user define built-in,1(gcc) 1(llvm),llvm,9795,2011,2011,hang(infinite loop),No-UB assumption
+b-15,UB user define built-in,1(gcc) 1(llvm),gcc,63393,2011,2011,hang(infinite loop),No-UB assumption
 l-46,UB race and reorder,1(linux),linux,16f5e707d6f6f7644ff07e583b8f18c3dcc5499f,2020,2020,crash,No-UB assumption
 l-30,UB concurrency access to global between 2 func call (which contains access to same global),2(linux),linux,45a94d7cd45ed991914011919e7d40eb6d2546d1,2009,2009,crash,No-UB assumption
 l-30,UB concurrency access to global between 2 func call (which contains access to same global),2(linux),linux,1186e4e904839955e5d2be94f50e0a363cb5651b,2021,2009,crash,No-UB assumption
-l-48,DB reorder(bpf),1(linux),linux,0f20615d64ee2ad5e2a133a812382d0c4071589b,2021,2021,not clear,Default Behavior
+l-48,DB reorder(bpf),1(linux),linux,0f20615d64ee2ad5e2a133a812382d0c4071589b,2021,2021,crash,Default Behavior
 l-20,DB invention of unaligned mem access,1(linux),linux,86c38a31aa7f2dd6e74a262710bf8ebf7455acc5,2010,2010,crash,Default Behavior
 l-44,DB byte-wide->word-wide,1(linux),linux,8c031ba63f8f2a9efc471cb45b2ff18271556544,2017,2017,crash,Default Behavior
 l-15,DB transfer mem load to reg load,1(linux),linux,455bd4c430b0c0a361f38e8658a0d6cb469942b5,2013,2013,crash,Default Behavior

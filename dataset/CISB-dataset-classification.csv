@@ -1,4 +1,4 @@
-Root cause,Insecure optimization behaviors,Security consequences,Impacts,Unique bug id,Frequency
+Root cause,Insecure optimization behaviors,Security consequences,Security impacts,Unique bug id,Frequency
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,l-13,1(linux)
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,l-8,1(linux)
 Implicit specification,Eliminating security related code,Elimination of security checks,check removal->infinite loop,b-1,1(gcc)
