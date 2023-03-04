@@ -98,7 +98,7 @@ We provide the following reproduction materials:
 2. To test one single test case in **_./reproduce_set_**, use _reproduction_tester.py_
    1. useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
    2. example: `python3 reproduction_tester.py ./reproduce_set/b_1.c -level O3 -cc gcc -opt extra_options/all-options_gcc.txt 2> /dev/null` can test whether b_1.c trigger bug using **gcc** with options in _**extra_options/all-options_gcc.txt**_
-3. To test all test cases in **_./reproduce_set _**at one time, use _effectiveness_evaluation.py_
+3. To test all test cases in  **_./reproduce_set _** at one time, use _effectiveness_evaluation.py_
    1. useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
    2. example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**extra_options/all-options_gcc.txt**_
 4. To get all results from _effectiveness_evaluation.py _with 8 kinds of option strategy in a table, use _table.py_
