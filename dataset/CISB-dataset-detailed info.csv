@@ -96,9 +96,9 @@ l-35,env: implicit read between 2 stores,1(linux),linux,51bcf092917bfaa88d762879
 l-49,store tearing->race,1(linux),linux,9c14791748708d87c4d02ba74eb7e281e141d6e4,2021,2007,may crash,Environment assumption
 l-3,eliminate local variable,1(linux),linux,20b50d79974ea3192e8c3ab7faf4e536e5f14d8f,2018,2018,crash,Environment assumption
 l-21,break atomicity(load tearing),1(linux),linux,9bc4f28af75a91aea0ae383f50b0a430c4509303,2018,2018,crash,Environment assumption
-l-4(1),data race,2(linux),linux,e91467ecd1ef381377fd327c0ded922835ec52ab,2006,2006,crash,Environment assumption
-l-4(1),data race,2(linux),linux,b6a9b7f6b1f21735a7456d534dc0e68e61359d2c,2013,2006,crash,Environment assumption
-l-4(2),double fetch,1(linux),linux,8135cf8b092723dbfcc611fe6fdcb3a36c9951c5,2015,2015,crash,Environment assumption
+l-4,data race,2(linux),linux,e91467ecd1ef381377fd327c0ded922835ec52ab,2006,2006,crash,Environment assumption
+l-4,data race,2(linux),linux,b6a9b7f6b1f21735a7456d534dc0e68e61359d2c,2013,2006,crash,Environment assumption
+l-4a,double fetch,1(linux),linux,8135cf8b092723dbfcc611fe6fdcb3a36c9951c5,2015,2015,crash,Environment assumption
 "count of  bug class: 11(b:1 l:10) kinds of unique bug
  12(b:1 l:11) unique bugs",,,,,,,,
 ,,,,,,,,
