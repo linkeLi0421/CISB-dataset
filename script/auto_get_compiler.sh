@@ -12,3 +12,6 @@ apt-get install clang-12 clang-14 gcc-4.4 gcc-4.9 gcc-7 gcc-12 -y
 # get gcc-4.1.1 binary from a repo
 git clone https://github.com/linkeLi0421/gcc-4.1.1.git
 ln -s /cisb_docker/CISB-dataset/gcc-4.1.1/bin/gcc-4.1 /usr/bin
+ln -s /usr/lib/x86_64-linux-gnu/crt1.o .
+ln -s /usr/lib/x86_64-linux-gnu/crti.o .
+ln -s /usr/lib/x86_64-linux-gnu/crtn.o .
