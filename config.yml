@@ -1,5 +1,5 @@
-b_1-redefine_strcmp.c-gcc-O3:
-    file_name: "b_1-redefine_strcmp.c"
+b-1.c-gcc-O3:
+    file_name: "b-1.c"
     cc: gcc-12
     input: 
     check_type: 3
@@ -7,8 +7,8 @@ b_1-redefine_strcmp.c-gcc-O3:
     section_name: "<strcmp>:"
     special_cause: UB
 
-b_1-redefine_strcmp.c-gcc-O2:
-    file_name: "b_1-redefine_strcmp.c"
+b-1.c-gcc-O2:
+    file_name: "b-1.c"
     cc: gcc-12
     input: 
     check_type: 3
@@ -16,8 +16,8 @@ b_1-redefine_strcmp.c-gcc-O2:
     section_name: "<strcmp>:"
     special_cause: UB
 
-b_1-redefine_strcmp.c-gcc-O1:
-    file_name: "b_1-redefine_strcmp.c"
+b-1.c-gcc-O1:
+    file_name: "b-1.c"
     cc: gcc-12
     input: 
     check_type: 3
@@ -25,8 +25,8 @@ b_1-redefine_strcmp.c-gcc-O1:
     section_name: "<strcmp>:"
     special_cause: UB
 
-b_1-redefine_strcmp.c-gcc-O0:
-    file_name: "b_1-redefine_strcmp.c"
+b-1.c-gcc-O0:
+    file_name: "b-1.c"
     cc: gcc-12
     input: 
     check_type: 3
@@ -34,8 +34,8 @@ b_1-redefine_strcmp.c-gcc-O0:
     section_name: "<strcmp>:"
     special_cause: UB
 
-b_2-builtin_ctz.c-gcc-O3:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-gcc-O3:
+    file_name: "b-2.c"
     cc: gcc-12
     input: 0
     check_type: 1
@@ -43,8 +43,8 @@ b_2-builtin_ctz.c-gcc-O3:
     section_name: 
     special_cause: UB
 
-b_2-builtin_ctz.c-gcc-O2:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-gcc-O2:
+    file_name: "b-2.c"
     cc: gcc-12
     input: 0
     check_type: 1
@@ -52,8 +52,8 @@ b_2-builtin_ctz.c-gcc-O2:
     section_name: 
     special_cause: UB
 
-b_2-builtin_ctz.c-gcc-O1:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-gcc-O1:
+    file_name: "b-2.c"
     cc: gcc-12
     input: 0
     check_type: 1
@@ -61,8 +61,8 @@ b_2-builtin_ctz.c-gcc-O1:
     section_name: 
     special_cause: UB
 
-b_2-builtin_ctz.c-gcc-O0:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-gcc-O0:
+    file_name: "b-2.c"
     cc: gcc-12
     input: 0
     check_type: 1
@@ -70,17 +70,8 @@ b_2-builtin_ctz.c-gcc-O0:
     section_name: 
     special_cause: UB
 
-b_2-builtin_ctz.c-clang-O3:
-    file_name: "b_2-builtin_ctz.c"
-    cc: clang-14
-    input: 0
-    check_type: 3
-    test_str: "cmp"
-    section_name: "<test>:"
-    special_cause: UB
-
-b_2-builtin_ctz.c-clang-O2:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-clang-O3:
+    file_name: "b-2.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -88,8 +79,8 @@ b_2-builtin_ctz.c-clang-O2:
     section_name: "<test>:"
     special_cause: UB
 
-b_2-builtin_ctz.c-clang-O1:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-clang-O2:
+    file_name: "b-2.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -97,8 +88,8 @@ b_2-builtin_ctz.c-clang-O1:
     section_name: "<test>:"
     special_cause: UB
 
-b_2-builtin_ctz.c-clang-O0:
-    file_name: "b_2-builtin_ctz.c"
+b-2.c-clang-O1:
+    file_name: "b-2.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -106,8 +97,17 @@ b_2-builtin_ctz.c-clang-O0:
     section_name: "<test>:"
     special_cause: UB
 
-b_3-strlen-oob.c-gcc-O3:
-    file_name: "b_3-strlen-oob.c"
+b-2.c-clang-O0:
+    file_name: "b-2.c"
+    cc: clang-14
+    input: 0
+    check_type: 3
+    test_str: "cmp"
+    section_name: "<test>:"
+    special_cause: UB
+
+b-3.c-gcc-O3:
+    file_name: "b-3.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -115,8 +115,8 @@ b_3-strlen-oob.c-gcc-O3:
     section_name: 
     special_cause: UB
 
-b_3-strlen-oob.c-gcc-O2:
-    file_name: "b_3-strlen-oob.c"
+b-3.c-gcc-O2:
+    file_name: "b-3.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -124,8 +124,8 @@ b_3-strlen-oob.c-gcc-O2:
     section_name: 
     special_cause: UB
 
-b_3-strlen-oob.c-gcc-O1:
-    file_name: "b_3-strlen-oob.c"
+b-3.c-gcc-O1:
+    file_name: "b-3.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -133,8 +133,8 @@ b_3-strlen-oob.c-gcc-O1:
     section_name: 
     special_cause: UB
 
-b_3-strlen-oob.c-gcc-O0:
-    file_name: "b_3-strlen-oob.c"
+b-3.c-gcc-O0:
+    file_name: "b-3.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -142,8 +142,8 @@ b_3-strlen-oob.c-gcc-O0:
     section_name: 
     special_cause: UB
 
-b_4-int_overflow.c-gcc-O3:
-    file_name: "b_4-int_overflow.c"
+b-4.c-gcc-O3:
+    file_name: "b-4.c"
     cc: gcc-12
     input: 2147483647
     check_type: 2
@@ -151,8 +151,8 @@ b_4-int_overflow.c-gcc-O3:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-gcc-O2:
-    file_name: "b_4-int_overflow.c"
+b-4.c-gcc-O2:
+    file_name: "b-4.c"
     cc: gcc-12
     input: 2147483647
     check_type: 2
@@ -160,8 +160,8 @@ b_4-int_overflow.c-gcc-O2:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-gcc-O1:
-    file_name: "b_4-int_overflow.c"
+b-4.c-gcc-O1:
+    file_name: "b-4.c"
     cc: gcc-12
     input: 2147483647
     check_type: 2
@@ -169,8 +169,8 @@ b_4-int_overflow.c-gcc-O1:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-gcc-O0:
-    file_name: "b_4-int_overflow.c"
+b-4.c-gcc-O0:
+    file_name: "b-4.c"
     cc: gcc-12
     input: 2147483647
     check_type: 2
@@ -178,8 +178,8 @@ b_4-int_overflow.c-gcc-O0:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-clang-O3:
-    file_name: "b_4-int_overflow.c"
+b-4.c-clang-O3:
+    file_name: "b-4.c"
     cc: clang-14
     input: 2147483647
     check_type: 2
@@ -187,8 +187,8 @@ b_4-int_overflow.c-clang-O3:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-clang-O2:
-    file_name: "b_4-int_overflow.c"
+b-4.c-clang-O2:
+    file_name: "b-4.c"
     cc: clang-14
     input: 2147483647
     check_type: 2
@@ -196,8 +196,8 @@ b_4-int_overflow.c-clang-O2:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-clang-O1:
-    file_name: "b_4-int_overflow.c"
+b-4.c-clang-O1:
+    file_name: "b-4.c"
     cc: clang-14
     input: 2147483647
     check_type: 2
@@ -205,8 +205,8 @@ b_4-int_overflow.c-clang-O1:
     section_name:
     special_cause: UB
 
-b_4-int_overflow.c-clang-O0:
-    file_name: "b_4-int_overflow.c"
+b-4.c-clang-O0:
+    file_name: "b-4.c"
     cc: clang-14
     input: 2147483647
     check_type: 2
@@ -214,8 +214,8 @@ b_4-int_overflow.c-clang-O0:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-gcc-O3:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-gcc-O3:
+    file_name: "b-5.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -223,8 +223,8 @@ b_5-ptr_sub_to_0.c-gcc-O3:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-gcc-O2:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-gcc-O2:
+    file_name: "b-5.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -232,8 +232,8 @@ b_5-ptr_sub_to_0.c-gcc-O2:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-gcc-O1:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-gcc-O1:
+    file_name: "b-5.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -241,8 +241,8 @@ b_5-ptr_sub_to_0.c-gcc-O1:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-gcc-O0:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-gcc-O0:
+    file_name: "b-5.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -250,8 +250,8 @@ b_5-ptr_sub_to_0.c-gcc-O0:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-clang-O3:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-clang-O3:
+    file_name: "b-5.c"
     cc: clang-14
     input:
     check_type: 1
@@ -259,8 +259,8 @@ b_5-ptr_sub_to_0.c-clang-O3:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-clang-O2:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-clang-O2:
+    file_name: "b-5.c"
     cc: clang-14
     input:
     check_type: 1
@@ -268,8 +268,8 @@ b_5-ptr_sub_to_0.c-clang-O2:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-clang-O1:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-clang-O1:
+    file_name: "b-5.c"
     cc: clang-14
     input:
     check_type: 1
@@ -277,8 +277,8 @@ b_5-ptr_sub_to_0.c-clang-O1:
     section_name:
     special_cause: UB
 
-b_5-ptr_sub_to_0.c-clang-O0:
-    file_name: "b_5-ptr_sub_to_0.c"
+b-5.c-clang-O0:
+    file_name: "b-5.c"
     cc: clang-14
     input:
     check_type: 1
@@ -286,8 +286,8 @@ b_5-ptr_sub_to_0.c-clang-O0:
     section_name:
     special_cause: UB
 
-b_6-modify_constPtr.c-gcc-O3:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-gcc-O3:
+    file_name: "b-6.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -295,8 +295,8 @@ b_6-modify_constPtr.c-gcc-O3:
     section_name:
     special_cause: UB
 
-b_6-modify_constPtr.c-gcc-O2:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-gcc-O2:
+    file_name: "b-6.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -304,8 +304,8 @@ b_6-modify_constPtr.c-gcc-O2:
     section_name:
     special_cause: UB
 
-b_6-modify_constPtr.c-gcc-O1:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-gcc-O1:
+    file_name: "b-6.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -313,8 +313,8 @@ b_6-modify_constPtr.c-gcc-O1:
     section_name:
     special_cause: UB
 
-b_6-modify_constPtr.c-gcc-O0:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-gcc-O0:
+    file_name: "b-6.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -322,8 +322,8 @@ b_6-modify_constPtr.c-gcc-O0:
     section_name:
     special_cause: UB
     
-b_6-modify_constPtr.c-clang-O3:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-clang-O3:
+    file_name: "b-6.c"
     cc: clang-12
     input:
     check_type: 2
@@ -331,8 +331,8 @@ b_6-modify_constPtr.c-clang-O3:
     section_name: 
     special_cause: UB
 
-b_6-modify_constPtr.c-clang-O2:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-clang-O2:
+    file_name: "b-6.c"
     cc: clang-12
     input:
     check_type: 2
@@ -340,8 +340,8 @@ b_6-modify_constPtr.c-clang-O2:
     section_name:
     special_cause: UB
 
-b_6-modify_constPtr.c-clang-O1:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-clang-O1:
+    file_name: "b-6.c"
     cc: clang-12
     input:
     check_type: 2
@@ -349,8 +349,8 @@ b_6-modify_constPtr.c-clang-O1:
     section_name: 
     special_cause: UB
 
-b_6-modify_constPtr.c-clang-O0:
-    file_name: "b_6-modify_constPtr.c"
+b-6.c-clang-O0:
+    file_name: "b-6.c"
     cc: clang-12
     input:
     check_type: 2
@@ -358,8 +358,8 @@ b_6-modify_constPtr.c-clang-O0:
     section_name:
     special_cause: UB
 
-b_7-int_promotion.c-gcc-O3:
-    file_name: "b_7-int_promotion.c"
+b-7.c-gcc-O3:
+    file_name: "b-7.c"
     cc: gcc-12
     input: 255
     check_type: 3
@@ -367,8 +367,8 @@ b_7-int_promotion.c-gcc-O3:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-gcc-O2:
-    file_name: "b_7-int_promotion.c"
+b-7.c-gcc-O2:
+    file_name: "b-7.c"
     cc: gcc-12
     input: 255
     check_type: 3
@@ -376,8 +376,8 @@ b_7-int_promotion.c-gcc-O2:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-gcc-O1:
-    file_name: "b_7-int_promotion.c"
+b-7.c-gcc-O1:
+    file_name: "b-7.c"
     cc: gcc-12
     input: 255
     check_type: 3
@@ -385,8 +385,8 @@ b_7-int_promotion.c-gcc-O1:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-gcc-O0:
-    file_name: "b_7-int_promotion.c"
+b-7.c-gcc-O0:
+    file_name: "b-7.c"
     cc: gcc-12
     input: 255
     check_type: 3
@@ -394,8 +394,8 @@ b_7-int_promotion.c-gcc-O0:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-clang-O3:
-    file_name: "b_7-int_promotion.c"
+b-7.c-clang-O3:
+    file_name: "b-7.c"
     cc: clang-14
     input: 255
     check_type: 3
@@ -403,8 +403,8 @@ b_7-int_promotion.c-clang-O3:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-clang-O2:
-    file_name: "b_7-int_promotion.c"
+b-7.c-clang-O2:
+    file_name: "b-7.c"
     cc: clang-14
     input: 255
     check_type: 3
@@ -412,8 +412,8 @@ b_7-int_promotion.c-clang-O2:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-clang-O1:
-    file_name: "b_7-int_promotion.c"
+b-7.c-clang-O1:
+    file_name: "b-7.c"
     cc: clang-14
     input: 255
     check_type: 3
@@ -421,8 +421,8 @@ b_7-int_promotion.c-clang-O1:
     section_name: "<test>:"
     special_cause: DB
 
-b_7-int_promotion.c-clang-O0:
-    file_name: "b_7-int_promotion.c"
+b-7.c-clang-O0:
+    file_name: "b-7.c"
     cc: clang-14
     input: 255
     check_type: 3
@@ -430,8 +430,8 @@ b_7-int_promotion.c-clang-O0:
     section_name: "<test>:"
     special_cause: DB
 
-b_8.c-gcc-O3:
-    file_name: "b_8.c"
+b-8.c-gcc-O3:
+    file_name: "b-8.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -439,8 +439,8 @@ b_8.c-gcc-O3:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-gcc-O2:
-    file_name: "b_8.c"
+b-8.c-gcc-O2:
+    file_name: "b-8.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -448,8 +448,8 @@ b_8.c-gcc-O2:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-gcc-O1:
-    file_name: "b_8.c"
+b-8.c-gcc-O1:
+    file_name: "b-8.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -457,8 +457,8 @@ b_8.c-gcc-O1:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-gcc-O0:
-    file_name: "b_8.c"
+b-8.c-gcc-O0:
+    file_name: "b-8.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -466,8 +466,8 @@ b_8.c-gcc-O0:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-clang-O3:
-    file_name: "b_8.c"
+b-8.c-clang-O3:
+    file_name: "b-8.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -475,8 +475,8 @@ b_8.c-clang-O3:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-clang-O2:
-    file_name: "b_8.c"
+b-8.c-clang-O2:
+    file_name: "b-8.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -484,8 +484,8 @@ b_8.c-clang-O2:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-clang-O1:
-    file_name: "b_8.c"
+b-8.c-clang-O1:
+    file_name: "b-8.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -493,8 +493,8 @@ b_8.c-clang-O1:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_8.c-clang-O0:
-    file_name: "b_8.c"
+b-8.c-clang-O0:
+    file_name: "b-8.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -502,8 +502,8 @@ b_8.c-clang-O0:
     section_name: "<bad_code>:"
     special_cause: UB
 
-b_9.c-gcc-O3:
-    file_name: "b_9.c"
+b-9.c-gcc-O3:
+    file_name: "b-9.c"
     cc: gcc-12
     input: 0
     check_type: 2
@@ -511,8 +511,8 @@ b_9.c-gcc-O3:
     section_name:
     special_cause: UB
 
-b_9.c-gcc-O2:
-    file_name: "b_9.c"
+b-9.c-gcc-O2:
+    file_name: "b-9.c"
     cc: gcc-12
     input: 0
     check_type: 2
@@ -520,8 +520,8 @@ b_9.c-gcc-O2:
     section_name:
     special_cause: UB
 
-b_9.c-gcc-O1:
-    file_name: "b_9.c"
+b-9.c-gcc-O1:
+    file_name: "b-9.c"
     cc: gcc-12
     input: 0
     check_type: 2
@@ -529,8 +529,8 @@ b_9.c-gcc-O1:
     section_name:
     special_cause: UB
 
-b_9.c-gcc-O0:
-    file_name: "b_9.c"
+b-9.c-gcc-O0:
+    file_name: "b-9.c"
     cc: gcc-12
     input: 0
     check_type: 2
@@ -538,8 +538,8 @@ b_9.c-gcc-O0:
     section_name:
     special_cause: UB
 
-b_9.c-clang-O3:
-    file_name: "b_9.c"
+b-9.c-clang-O3:
+    file_name: "b-9.c"
     cc: clang-14
     input: 0
     check_type: 2
@@ -547,8 +547,8 @@ b_9.c-clang-O3:
     section_name:
     special_cause: UB
 
-b_9.c-clang-O2:
-    file_name: "b_9.c"
+b-9.c-clang-O2:
+    file_name: "b-9.c"
     cc: clang-14
     input: 0
     check_type: 2
@@ -556,8 +556,8 @@ b_9.c-clang-O2:
     section_name:
     special_cause: UB
 
-b_9.c-clang-O1:
-    file_name: "b_9.c"
+b-9.c-clang-O1:
+    file_name: "b-9.c"
     cc: clang-14
     input: 0
     check_type: 2
@@ -565,8 +565,8 @@ b_9.c-clang-O1:
     section_name:
     special_cause: UB
 
-b_9.c-clang-O0:
-    file_name: "b_9.c"
+b-9.c-clang-O0:
+    file_name: "b-9.c"
     cc: clang-14
     input: 0
     check_type: 2
@@ -574,8 +574,8 @@ b_9.c-clang-O0:
     section_name:
     special_cause: UB
 
-b_10.c-gcc-O3:
-    file_name: "b_10.c"
+b-10.c-gcc-O3:
+    file_name: "b-10.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -583,8 +583,8 @@ b_10.c-gcc-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-gcc-O2:
-    file_name: "b_10.c"
+b-10.c-gcc-O2:
+    file_name: "b-10.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -592,8 +592,8 @@ b_10.c-gcc-O2:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-gcc-O1:
-    file_name: "b_10.c"
+b-10.c-gcc-O1:
+    file_name: "b-10.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -601,8 +601,8 @@ b_10.c-gcc-O1:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-gcc-O0:
-    file_name: "b_10.c"
+b-10.c-gcc-O0:
+    file_name: "b-10.c"
     cc: gcc-12
     input: 0
     check_type: 3
@@ -610,8 +610,8 @@ b_10.c-gcc-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-clang-O3:
-    file_name: "b_10.c"
+b-10.c-clang-O3:
+    file_name: "b-10.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -619,8 +619,8 @@ b_10.c-clang-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-clang-O2:
-    file_name: "b_10.c"
+b-10.c-clang-O2:
+    file_name: "b-10.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -628,8 +628,8 @@ b_10.c-clang-O2:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-clang-O1:
-    file_name: "b_10.c"
+b-10.c-clang-O1:
+    file_name: "b-10.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -637,8 +637,8 @@ b_10.c-clang-O1:
     section_name: "<main>:"
     special_cause: UB
 
-b_10.c-clang-O0:
-    file_name: "b_10.c"
+b-10.c-clang-O0:
+    file_name: "b-10.c"
     cc: clang-14
     input: 0
     check_type: 3
@@ -646,8 +646,8 @@ b_10.c-clang-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b_11_for_loop.c-gcc-O3:
-    file_name: "b_11_for_loop.c"
+b-11.c-gcc-O3:
+    file_name: "b-11.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -655,8 +655,8 @@ b_11_for_loop.c-gcc-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_11_for_loop.c-gcc-O2:
-    file_name: "b_11_for_loop.c"
+b-11.c-gcc-O2:
+    file_name: "b-11.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -664,8 +664,8 @@ b_11_for_loop.c-gcc-O2:
     section_name: "<main>:"
     special_cause: UB
 
-b_11_for_loop.c-gcc-O1:
-    file_name: "b_11_for_loop.c"
+b-11.c-gcc-O1:
+    file_name: "b-11.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -673,8 +673,8 @@ b_11_for_loop.c-gcc-O1:
     section_name: "<main>:"
     special_cause: UB
 
-b_11_for_loop.c-gcc-O0:
-    file_name: "b_11_for_loop.c"
+b-11.c-gcc-O0:
+    file_name: "b-11.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -682,8 +682,8 @@ b_11_for_loop.c-gcc-O0:
     section_name: "<main>:"
     special_cause: 
     
-b_12.c-gcc-O3:
-    file_name: "b_12.c"
+b-12.c-gcc-O3:
+    file_name: "b-12.c"
     cc: gcc-12
     input:
     check_type: 6
@@ -692,8 +692,8 @@ b_12.c-gcc-O3:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-gcc-O2:
-    file_name: "b_12.c"
+b-12.c-gcc-O2:
+    file_name: "b-12.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -702,8 +702,8 @@ b_12.c-gcc-O2:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-gcc-O1:
-    file_name: "b_12.c"
+b-12.c-gcc-O1:
+    file_name: "b-12.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -712,8 +712,8 @@ b_12.c-gcc-O1:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-gcc-O0:
-    file_name: "b_12.c"
+b-12.c-gcc-O0:
+    file_name: "b-12.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -722,8 +722,8 @@ b_12.c-gcc-O0:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-clang-O3:
-    file_name: "b_12.c"
+b-12.c-clang-O3:
+    file_name: "b-12.c"
     cc: clang-14
     input:
     check_type: 6
@@ -732,8 +732,8 @@ b_12.c-clang-O3:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-clang-O2:
-    file_name: "b_12.c"
+b-12.c-clang-O2:
+    file_name: "b-12.c"
     cc: clang-14
     input:
     check_type: 6
@@ -742,8 +742,8 @@ b_12.c-clang-O2:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-clang-O1:
-    file_name: "b_12.c"
+b-12.c-clang-O1:
+    file_name: "b-12.c"
     cc: clang-14
     input:
     check_type: 6
@@ -752,8 +752,8 @@ b_12.c-clang-O1:
     default_option: "-pthread"
     special_cause: UB
 
-b_12.c-clang-O0:
-    file_name: "b_12.c"
+b-12.c-clang-O0:
+    file_name: "b-12.c"
     cc: clang-14
     input:
     check_type: 6
@@ -762,8 +762,8 @@ b_12.c-clang-O0:
     default_option: "-pthread"
     special_cause: UB
 
-b_13.c-gcc-O3:
-    file_name: "b_13.c"
+b-13.c-gcc-O3:
+    file_name: "b-13.c"
     cc: gcc-7
     input:
     check_type: 5
@@ -771,8 +771,8 @@ b_13.c-gcc-O3:
     section_name: ".L5:"
     special_cause: UB
 
-b_13.c-gcc-O2:
-    file_name: "b_13.c"
+b-13.c-gcc-O2:
+    file_name: "b-13.c"
     cc: gcc-7
     input:
     check_type: 5
@@ -780,8 +780,8 @@ b_13.c-gcc-O2:
     section_name: ".L5:"
     special_cause: UB
 
-b_13.c-gcc-O1:
-    file_name: "b_13.c"
+b-13.c-gcc-O1:
+    file_name: "b-13.c"
     cc: gcc-7
     input:
     check_type: 5
@@ -789,8 +789,8 @@ b_13.c-gcc-O1:
     section_name: ".L5:"
     special_cause: UB
 
-b_13.c-gcc-O0:
-    file_name: "b_13.c"
+b-13.c-gcc-O0:
+    file_name: "b-13.c"
     cc: gcc-7
     input:
     check_type: 3
@@ -798,8 +798,8 @@ b_13.c-gcc-O0:
     section_name: "between TpcFingerNum+0x4 TpcFingerNum+0x8"
     special_cause: UB
 
-b_14-printf_null.c-gcc-O3:
-    file_name: "b_14-printf_null.c"
+b-14.c-gcc-O3:
+    file_name: "b-14.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -807,8 +807,8 @@ b_14-printf_null.c-gcc-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-gcc-O2:
-    file_name: "b_14-printf_null.c"
+b-14.c-gcc-O2:
+    file_name: "b-14.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -816,8 +816,8 @@ b_14-printf_null.c-gcc-O2:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-gcc-O1:
-    file_name: "b_14-printf_null.c"
+b-14.c-gcc-O1:
+    file_name: "b-14.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -825,8 +825,8 @@ b_14-printf_null.c-gcc-O1:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-gcc-O0:
-    file_name: "b_14-printf_null.c"
+b-14.c-gcc-O0:
+    file_name: "b-14.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -834,8 +834,8 @@ b_14-printf_null.c-gcc-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-clang-O3:
-    file_name: "b_14-printf_null.c"
+b-14.c-clang-O3:
+    file_name: "b-14.c"
     cc: clang-14
     input:
     check_type: 4
@@ -843,8 +843,8 @@ b_14-printf_null.c-clang-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-clang-O2:
-    file_name: "b_14-printf_null.c"
+b-14.c-clang-O2:
+    file_name: "b-14.c"
     cc: clang-14
     input:
     check_type: 4
@@ -852,8 +852,8 @@ b_14-printf_null.c-clang-O2:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-clang-O1:
-    file_name: "b_14-printf_null.c"
+b-14.c-clang-O1:
+    file_name: "b-14.c"
     cc: clang-14
     input:
     check_type: 4
@@ -861,8 +861,8 @@ b_14-printf_null.c-clang-O1:
     section_name: "<main>:"
     special_cause: UB
 
-b_14-printf_null.c-clang-O0:
-    file_name: "b_14-printf_null.c"
+b-14.c-clang-O0:
+    file_name: "b-14.c"
     cc: clang-14
     input:
     check_type: 4
@@ -870,8 +870,8 @@ b_14-printf_null.c-clang-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b_15.c-gcc-O3:
-    file_name: "b_15.c"
+b-15.c-gcc-O3:
+    file_name: "b-15.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -879,8 +879,8 @@ b_15.c-gcc-O3:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-gcc-O2:
-    file_name: "b_15.c"
+b-15.c-gcc-O2:
+    file_name: "b-15.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -888,8 +888,8 @@ b_15.c-gcc-O2:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-gcc-O1:
-    file_name: "b_15.c"
+b-15.c-gcc-O1:
+    file_name: "b-15.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -897,8 +897,8 @@ b_15.c-gcc-O1:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-gcc-O0:
-    file_name: "b_15.c"
+b-15.c-gcc-O0:
+    file_name: "b-15.c"
     cc: gcc-12
     input:
     check_type: 4
@@ -906,8 +906,8 @@ b_15.c-gcc-O0:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-clang-O3:
-    file_name: "b_15.c"
+b-15.c-clang-O3:
+    file_name: "b-15.c"
     cc: clang-14
     input:
     check_type: 4
@@ -915,8 +915,8 @@ b_15.c-clang-O3:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-clang-O2:
-    file_name: "b_15.c"
+b-15.c-clang-O2:
+    file_name: "b-15.c"
     cc: clang-14
     input:
     check_type: 4
@@ -924,8 +924,8 @@ b_15.c-clang-O2:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-clang-O1:
-    file_name: "b_15.c"
+b-15.c-clang-O1:
+    file_name: "b-15.c"
     cc: clang-14
     input:
     check_type: 4
@@ -933,8 +933,8 @@ b_15.c-clang-O1:
     section_name: "<memset>:"
     special_cause: UB
 
-b_15.c-clang-O0:
-    file_name: "b_15.c"
+b-15.c-clang-O0:
+    file_name: "b-15.c"
     cc: clang-14
     input:
     check_type: 4
@@ -942,8 +942,8 @@ b_15.c-clang-O0:
     section_name: "<memset>:"
     special_cause: UB
 
-b_16.c-gcc-O3:
-    file_name: "b_16.c"
+b-16.c-gcc-O3:
+    file_name: "b-16.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -951,8 +951,8 @@ b_16.c-gcc-O3:
     section_name:
     special_cause: UB
 
-b_16.c-gcc-O2:
-    file_name: "b_16.c"
+b-16.c-gcc-O2:
+    file_name: "b-16.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -960,8 +960,8 @@ b_16.c-gcc-O2:
     section_name:
     special_cause: UB
 
-b_16.c-gcc-O1:
-    file_name: "b_16.c"
+b-16.c-gcc-O1:
+    file_name: "b-16.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -969,8 +969,8 @@ b_16.c-gcc-O1:
     section_name:
     special_cause: UB
 
-b_16.c-gcc-O0:
-    file_name: "b_16.c"
+b-16.c-gcc-O0:
+    file_name: "b-16.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -978,8 +978,8 @@ b_16.c-gcc-O0:
     section_name:
     special_cause: UB
 
-b_20.c-gcc-O3:
-    file_name: "b_20.c"
+b-20.c-gcc-O3:
+    file_name: "b-20.c"
     cc: gcc-4.4
     input:
     check_type: 4
@@ -987,17 +987,8 @@ b_20.c-gcc-O3:
     section_name: "<main>:"
     special_cause: UB
 
-b_20.c-gcc-O2:
-    file_name: "b_20.c"
-    cc: gcc-4.4
-    input:
-    check_type: 7
-    test_str: "panic"
-    section_name: "%dil"
-    special_cause: UB
-
-b_20.c-gcc-O1:
-    file_name: "b_20.c"
+b-20.c-gcc-O2:
+    file_name: "b-20.c"
     cc: gcc-4.4
     input:
     check_type: 7
@@ -1005,8 +996,17 @@ b_20.c-gcc-O1:
     section_name: "%dil"
     special_cause: UB
 
-b_20.c-gcc-O0:
-    file_name: "b_20.c"
+b-20.c-gcc-O1:
+    file_name: "b-20.c"
+    cc: gcc-4.4
+    input:
+    check_type: 7
+    test_str: "panic"
+    section_name: "%dil"
+    special_cause: UB
+
+b-20.c-gcc-O0:
+    file_name: "b-20.c"
     cc: gcc-4.4
     input:
     check_type: 4
@@ -1014,8 +1014,8 @@ b_20.c-gcc-O0:
     section_name: "<main>:"
     special_cause: UB
 
-b_21-dse_memset.c-gcc-O3:
-    file_name: "b_21-dse_memset.c"
+b-21.c-gcc-O3:
+    file_name: "b-21.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1023,8 +1023,8 @@ b_21-dse_memset.c-gcc-O3:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-gcc-O2:
-    file_name: "b_21-dse_memset.c"
+b-21.c-gcc-O2:
+    file_name: "b-21.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1032,8 +1032,8 @@ b_21-dse_memset.c-gcc-O2:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-gcc-O1:
-    file_name: "b_21-dse_memset.c"
+b-21.c-gcc-O1:
+    file_name: "b-21.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1041,8 +1041,8 @@ b_21-dse_memset.c-gcc-O1:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-gcc-O0:
-    file_name: "b_21-dse_memset.c"
+b-21.c-gcc-O0:
+    file_name: "b-21.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1050,8 +1050,8 @@ b_21-dse_memset.c-gcc-O0:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-clang-O3:
-    file_name: "b_21-dse_memset.c"
+b-21.c-clang-O3:
+    file_name: "b-21.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1060,8 +1060,8 @@ b_21-dse_memset.c-clang-O3:
     special_cause: "Others"
 
 
-b_21-dse_memset.c-clang-O2:
-    file_name: "b_21-dse_memset.c"
+b-21.c-clang-O2:
+    file_name: "b-21.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1069,8 +1069,8 @@ b_21-dse_memset.c-clang-O2:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-clang-O1:
-    file_name: "b_21-dse_memset.c"
+b-21.c-clang-O1:
+    file_name: "b-21.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1078,8 +1078,8 @@ b_21-dse_memset.c-clang-O1:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_21-dse_memset.c-clang-O0:
-    file_name: "b_21-dse_memset.c"
+b-21.c-clang-O0:
+    file_name: "b-21.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1087,8 +1087,8 @@ b_21-dse_memset.c-clang-O0:
     section_name: "<main>:"
     special_cause: "Others"
 
-b_22.c-gcc-O3:
-    file_name: "b_22.c"
+b-22.c-gcc-O3:
+    file_name: "b-22.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1096,8 +1096,8 @@ b_22.c-gcc-O3:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-gcc-O2:
-    file_name: "b_22.c"
+b-22.c-gcc-O2:
+    file_name: "b-22.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1105,8 +1105,8 @@ b_22.c-gcc-O2:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-gcc-O1:
-    file_name: "b_22.c"
+b-22.c-gcc-O1:
+    file_name: "b-22.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1114,8 +1114,8 @@ b_22.c-gcc-O1:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-gcc-O0:
-    file_name: "b_22.c"
+b-22.c-gcc-O0:
+    file_name: "b-22.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1123,8 +1123,8 @@ b_22.c-gcc-O0:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-clang-O3:
-    file_name: "b_22.c"
+b-22.c-clang-O3:
+    file_name: "b-22.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1132,8 +1132,8 @@ b_22.c-clang-O3:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-clang-O2:
-    file_name: "b_22.c"
+b-22.c-clang-O2:
+    file_name: "b-22.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1141,8 +1141,8 @@ b_22.c-clang-O2:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-clang-O1:
-    file_name: "b_22.c"
+b-22.c-clang-O1:
+    file_name: "b-22.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1150,8 +1150,8 @@ b_22.c-clang-O1:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_22.c-clang-O0:
-    file_name: "b_22.c"
+b-22.c-clang-O0:
+    file_name: "b-22.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1159,12 +1159,12 @@ b_22.c-clang-O0:
     section_name: "movl   $0x0"
     special_cause: "Others"
 
-b_26.c:
-    file_name: "b_26.c"
+b-26.c:
+    file_name: "b-26.c"
     special_cause: "Others"
 
-l_2.c-clang-O3:
-    file_name: "l_2.c"
+l-2.c-clang-O3:
+    file_name: "l-2.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1172,8 +1172,8 @@ l_2.c-clang-O3:
     section_name:
     special_cause: UB
 
-l_2.c-clang-O2:
-    file_name: "l_2.c"
+l-2.c-clang-O2:
+    file_name: "l-2.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1181,8 +1181,8 @@ l_2.c-clang-O2:
     section_name:
     special_cause: UB
 
-l_2.c-clang-O1:
-    file_name: "l_2.c"
+l-2.c-clang-O1:
+    file_name: "l-2.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1190,8 +1190,8 @@ l_2.c-clang-O1:
     section_name:
     special_cause: UB
 
-l_2.c-clang-O0:
-    file_name: "l_2.c"
+l-2.c-clang-O0:
+    file_name: "l-2.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1199,8 +1199,8 @@ l_2.c-clang-O0:
     section_name:
     special_cause: UB
 
-l_8-oversized_shift.c-clang-O3:
-    file_name: "l_8-oversized_shift.c"
+l-8.c-clang-O3:
+    file_name: "l-8.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1208,8 +1208,8 @@ l_8-oversized_shift.c-clang-O3:
     section_name: "<main>:"
     special_cause: UB
 
-l_8-oversized_shift.c-clang-O2:
-    file_name: "l_8-oversized_shift.c"
+l-8.c-clang-O2:
+    file_name: "l-8.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1217,8 +1217,8 @@ l_8-oversized_shift.c-clang-O2:
     section_name: "<main>:"
     special_cause: UB
 
-l_8-oversized_shift.c-clang-O1:
-    file_name: "l_8-oversized_shift.c"
+l-8.c-clang-O1:
+    file_name: "l-8.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1226,8 +1226,8 @@ l_8-oversized_shift.c-clang-O1:
     section_name: "<main>:"
     special_cause: UB
 
-l_8-oversized_shift.c-clang-O0:
-    file_name: "l_8-oversized_shift.c"
+l-8.c-clang-O0:
+    file_name: "l-8.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1235,8 +1235,8 @@ l_8-oversized_shift.c-clang-O0:
     section_name: "<main>:"
     special_cause: UB
 
-l_11.c-gcc-O3:
-    file_name: "l_11.c"
+l-11.c-gcc-O3:
+    file_name: "l-11.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -1244,8 +1244,8 @@ l_11.c-gcc-O3:
     section_name:
     special_cause: "Others"
 
-l_11.c-gcc-O2:
-    file_name: "l_11.c"
+l-11.c-gcc-O2:
+    file_name: "l-11.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -1253,8 +1253,8 @@ l_11.c-gcc-O2:
     section_name:
     special_cause: "Others"
 
-l_11.c-gcc-O1:
-    file_name: "l_11.c"
+l-11.c-gcc-O1:
+    file_name: "l-11.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -1262,8 +1262,8 @@ l_11.c-gcc-O1:
     section_name:
     special_cause: "Others"
 
-l_11.c-gcc-O0:
-    file_name: "l_11.c"
+l-11.c-gcc-O0:
+    file_name: "l-11.c"
     cc: gcc-12
     input:
     check_type: 2
@@ -1271,8 +1271,8 @@ l_11.c-gcc-O0:
     section_name:
     special_cause: "Others"
 
-l_11.c-clang-O3:
-    file_name: "l_11.c"
+l-11.c-clang-O3:
+    file_name: "l-11.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1280,8 +1280,8 @@ l_11.c-clang-O3:
     section_name:
     special_cause: "Others"
 
-l_11.c-clang-O2:
-    file_name: "l_11.c"
+l-11.c-clang-O2:
+    file_name: "l-11.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1289,8 +1289,8 @@ l_11.c-clang-O2:
     section_name:
     special_cause: "Others"
 
-l_11.c-clang-O1:
-    file_name: "l_11.c"
+l-11.c-clang-O1:
+    file_name: "l-11.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1298,8 +1298,8 @@ l_11.c-clang-O1:
     section_name:
     special_cause: "Others"
 
-l_11.c-clang-O0:
-    file_name: "l_11.c"
+l-11.c-clang-O0:
+    file_name: "l-11.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1307,8 +1307,8 @@ l_11.c-clang-O0:
     section_name:
     special_cause: "Others"
 
-l_13.c-gcc-O3:
-    file_name: "l_13.c"
+l-13.c-gcc-O3:
+    file_name: "l-13.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -1316,8 +1316,8 @@ l_13.c-gcc-O3:
     section_name:
     special_cause: UB
 
-l_13.c-gcc-O2:
-    file_name: "l_13.c"
+l-13.c-gcc-O2:
+    file_name: "l-13.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -1325,8 +1325,8 @@ l_13.c-gcc-O2:
     section_name:
     special_cause: UB
 
-l_13.c-gcc-O1:
-    file_name: "l_13.c"
+l-13.c-gcc-O1:
+    file_name: "l-13.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -1334,8 +1334,8 @@ l_13.c-gcc-O1:
     section_name:
     special_cause: UB
 
-l_13.c-gcc-O0:
-    file_name: "l_13.c"
+l-13.c-gcc-O0:
+    file_name: "l-13.c"
     cc: gcc-12
     input:
     check_type: 1
@@ -1343,8 +1343,8 @@ l_13.c-gcc-O0:
     section_name:
     special_cause: UB
 
-l_13.c-clang-O3:
-    file_name: "l_13.c"
+l-13.c-clang-O3:
+    file_name: "l-13.c"
     cc: clang-14
     input:
     check_type: 1
@@ -1352,8 +1352,8 @@ l_13.c-clang-O3:
     section_name:
     special_cause: UB
 
-l_13.c-clang-O2:
-    file_name: "l_13.c"
+l-13.c-clang-O2:
+    file_name: "l-13.c"
     cc: clang-14
     input:
     check_type: 1
@@ -1361,8 +1361,8 @@ l_13.c-clang-O2:
     section_name:
     special_cause: UB
 
-l_13.c-clang-O1:
-    file_name: "l_13.c"
+l-13.c-clang-O1:
+    file_name: "l-13.c"
     cc: clang-14
     input:
     check_type: 1
@@ -1370,8 +1370,8 @@ l_13.c-clang-O1:
     section_name:
     special_cause: UB
 
-l_13.c-clang-O0:
-    file_name: "l_13.c"
+l-13.c-clang-O0:
+    file_name: "l-13.c"
     cc: clang-14
     input:
     check_type: 1
@@ -1379,8 +1379,8 @@ l_13.c-clang-O0:
     section_name:
     special_cause: UB
 
-l_15.c-gcc-O3:
-    file_name: "l_15.c"
+l-15.c-gcc-O3:
+    file_name: "l-15.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1388,8 +1388,8 @@ l_15.c-gcc-O3:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-gcc-O2:
-    file_name: "l_15.c"
+l-15.c-gcc-O2:
+    file_name: "l-15.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1397,8 +1397,8 @@ l_15.c-gcc-O2:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-gcc-O1:
-    file_name: "l_15.c"
+l-15.c-gcc-O1:
+    file_name: "l-15.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1406,8 +1406,8 @@ l_15.c-gcc-O1:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-gcc-O0:
-    file_name: "l_15.c"
+l-15.c-gcc-O0:
+    file_name: "l-15.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1415,8 +1415,8 @@ l_15.c-gcc-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-clang-O3:
-    file_name: "l_15.c"
+l-15.c-clang-O3:
+    file_name: "l-15.c"
     cc: clang-12
     input:
     check_type: 3
@@ -1424,8 +1424,8 @@ l_15.c-clang-O3:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-clang-O2:
-    file_name: "l_15.c"
+l-15.c-clang-O2:
+    file_name: "l-15.c"
     cc: clang-12
     input:
     check_type: 3
@@ -1433,8 +1433,8 @@ l_15.c-clang-O2:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-clang-O1:
-    file_name: "l_15.c"
+l-15.c-clang-O1:
+    file_name: "l-15.c"
     cc: clang-12
     input:
     check_type: 3
@@ -1442,8 +1442,8 @@ l_15.c-clang-O1:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-clang-O0:
-    file_name: "l_15.c"
+l-15.c-clang-O0:
+    file_name: "l-15.c"
     cc: clang-12
     input:
     check_type: 3
@@ -1451,8 +1451,8 @@ l_15.c-clang-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l_15.c-clang-O0:
-    file_name: "l_15.c"
+l-15.c-clang-O0:
+    file_name: "l-15.c"
     cc: clang-12
     input:
     check_type: 3
@@ -1460,8 +1460,8 @@ l_15.c-clang-O0:
     section_name: "<main>:"
     special_cause: DB
 
-l_16.c-gcc-O3:
-    file_name: "l_16.c"
+l-16.c-gcc-O3:
+    file_name: "l-16.c"
     cc: gcc-4.1
     input:
     check_type: 5
@@ -1469,8 +1469,8 @@ l_16.c-gcc-O3:
     section_name: "#NO_APP"
     special_cause: UB
 
-l_16.c-gcc-O2:
-    file_name: "l_16.c"
+l-16.c-gcc-O2:
+    file_name: "l-16.c"
     cc: gcc-4.1
     input:
     check_type: 5
@@ -1478,8 +1478,8 @@ l_16.c-gcc-O2:
     section_name: "#NO_APP"
     special_cause: UB
 
-l_16.c-gcc-O1:
-    file_name: "l_16.c"
+l-16.c-gcc-O1:
+    file_name: "l-16.c"
     cc: gcc-4.1
     input:
     check_type: 5
@@ -1487,8 +1487,8 @@ l_16.c-gcc-O1:
     section_name: "#NO_APP"
     special_cause: UB
 
-l_16.c-gcc-O0:
-    file_name: "l_16.c"
+l-16.c-gcc-O0:
+    file_name: "l-16.c"
     cc: gcc-4.1
     input:
     check_type: 5
@@ -1496,8 +1496,8 @@ l_16.c-gcc-O0:
     section_name: "#NO_APP"
     special_cause: UB
 
-l_18.c-gcc-O3:
-    file_name: "l_18.c"
+l-18.c-gcc-O3:
+    file_name: "l-18.c"
     cc: gcc-4.1
     input:
     check_type: 4
@@ -1505,8 +1505,8 @@ l_18.c-gcc-O3:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-gcc-O2:
-    file_name: "l_18.c"
+l-18.c-gcc-O2:
+    file_name: "l-18.c"
     cc: gcc-4.1
     input:
     check_type: 4
@@ -1514,8 +1514,8 @@ l_18.c-gcc-O2:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-gcc-O1:
-    file_name: "l_18.c"
+l-18.c-gcc-O1:
+    file_name: "l-18.c"
     cc: gcc-4.1
     input:
     check_type: 4
@@ -1523,8 +1523,8 @@ l_18.c-gcc-O1:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-gcc-O0:
-    file_name: "l_18.c"
+l-18.c-gcc-O0:
+    file_name: "l-18.c"
     cc: gcc-4.1
     input:
     check_type: 4
@@ -1532,8 +1532,8 @@ l_18.c-gcc-O0:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-clang-O3:
-    file_name: "l_18.c"
+l-18.c-clang-O3:
+    file_name: "l-18.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1541,8 +1541,8 @@ l_18.c-clang-O3:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-clang-O2:
-    file_name: "l_18.c"
+l-18.c-clang-O2:
+    file_name: "l-18.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1550,8 +1550,8 @@ l_18.c-clang-O2:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-clang-O1:
-    file_name: "l_18.c"
+l-18.c-clang-O1:
+    file_name: "l-18.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1559,8 +1559,8 @@ l_18.c-clang-O1:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_18.c-clang-O0:
-    file_name: "l_18.c"
+l-18.c-clang-O0:
+    file_name: "l-18.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1568,8 +1568,8 @@ l_18.c-clang-O0:
     section_name: "<foo>:"
     special_cause: "Environment assumption"
 
-l_19.c-gcc-O3:
-    file_name: "l_19.c"
+l-19.c-gcc-O3:
+    file_name: "l-19.c"
     cc: gcc-4.9
     input:
     check_type: 1
@@ -1577,8 +1577,8 @@ l_19.c-gcc-O3:
     section_name:
     special_cause: DB
 
-l_19.c-gcc-O2:
-    file_name: "l_19.c"
+l-19.c-gcc-O2:
+    file_name: "l-19.c"
     cc: gcc-4.9
     input:
     check_type: 1
@@ -1586,8 +1586,8 @@ l_19.c-gcc-O2:
     section_name:
     special_cause: DB
 
-l_19.c-gcc-O1:
-    file_name: "l_19.c"
+l-19.c-gcc-O1:
+    file_name: "l-19.c"
     cc: gcc-4.9
     input:
     check_type: 1
@@ -1595,8 +1595,8 @@ l_19.c-gcc-O1:
     section_name:
     special_cause: DB
 
-l_19.c-gcc-O0:
-    file_name: "l_19.c"
+l-19.c-gcc-O0:
+    file_name: "l-19.c"
     cc: gcc-4.9
     input:
     check_type: 1
@@ -1604,12 +1604,12 @@ l_19.c-gcc-O0:
     section_name:
     special_cause: DB
 
-l_23.c:
-    file_name: "l_23.c"
+l-23.c:
+    file_name: "l-23.c"
     special_cause: Others
 
-l_25.c-gcc-O3:
-    file_name: "l_25.c"
+l-25.c-gcc-O3:
+    file_name: "l-25.c"
     cc: gcc-7
     input:
     check_type: 6
@@ -1618,8 +1618,8 @@ l_25.c-gcc-O3:
     default_option: "-mindirect-branch=thunk"
     special_cause: Others
 
-l_25.c-gcc-O2:
-    file_name: "l_25.c"
+l-25.c-gcc-O2:
+    file_name: "l-25.c"
     cc: gcc-7
     input:
     check_type: 6
@@ -1628,8 +1628,8 @@ l_25.c-gcc-O2:
     default_option: "-mindirect-branch=thunk"
     special_cause: Others
 
-l_25.c-gcc-O1:
-    file_name: "l_25.c"
+l-25.c-gcc-O1:
+    file_name: "l-25.c"
     cc: gcc-7
     input:
     check_type: 6
@@ -1638,8 +1638,8 @@ l_25.c-gcc-O1:
     default_option: "-mindirect-branch=thunk"
     special_cause: Others
 
-l_25.c-gcc-O0:
-    file_name: "l_25.c"
+l-25.c-gcc-O0:
+    file_name: "l-25.c"
     cc: gcc-7
     input:
     check_type: 6
@@ -1648,8 +1648,8 @@ l_25.c-gcc-O0:
     default_option: "-mindirect-branch=thunk"
     special_cause: Others
 
-l_30.c-gcc-O3:
-    file_name: "l_30.c"
+l-30.c-gcc-O3:
+    file_name: "l-30.c"
     cc: gcc
     opti_level: O1
     input:
@@ -1659,8 +1659,8 @@ l_30.c-gcc-O3:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-gcc-O2:
-    file_name: "l_30.c"
+l-30.c-gcc-O2:
+    file_name: "l-30.c"
     cc: gcc
     opti_level: O1
     input:
@@ -1670,8 +1670,8 @@ l_30.c-gcc-O2:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-gcc-O1:
-    file_name: "l_30.c"
+l-30.c-gcc-O1:
+    file_name: "l-30.c"
     cc: gcc
     opti_level: O1
     input:
@@ -1681,8 +1681,8 @@ l_30.c-gcc-O1:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-gcc-O0:
-    file_name: "l_30.c"
+l-30.c-gcc-O0:
+    file_name: "l-30.c"
     cc: gcc
     opti_level: O1
     input:
@@ -1692,8 +1692,8 @@ l_30.c-gcc-O0:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-clang-O3:
-    file_name: "l_30.c"
+l-30.c-clang-O3:
+    file_name: "l-30.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1702,8 +1702,8 @@ l_30.c-clang-O3:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-clang-O2:
-    file_name: "l_30.c"
+l-30.c-clang-O2:
+    file_name: "l-30.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1712,8 +1712,8 @@ l_30.c-clang-O2:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-clang-O1:
-    file_name: "l_30.c"
+l-30.c-clang-O1:
+    file_name: "l-30.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1722,8 +1722,8 @@ l_30.c-clang-O1:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_30.c-clang-O0:
-    file_name: "l_30.c"
+l-30.c-clang-O0:
+    file_name: "l-30.c"
     cc: clang-14
     input:
     check_type: 2
@@ -1732,8 +1732,8 @@ l_30.c-clang-O0:
     default_option: "-m32 -pthread"
     special_cause: UB
 
-l_37.c-gcc-O3:
-    file_name: "l_37.c"
+l-37.c-gcc-O3:
+    file_name: "l-37.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1741,8 +1741,8 @@ l_37.c-gcc-O3:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-gcc-O2:
-    file_name: "l_37.c"
+l-37.c-gcc-O2:
+    file_name: "l-37.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1750,8 +1750,8 @@ l_37.c-gcc-O2:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-gcc-O1:
-    file_name: "l_37.c"
+l-37.c-gcc-O1:
+    file_name: "l-37.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1759,8 +1759,8 @@ l_37.c-gcc-O1:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-gcc-O0:
-    file_name: "l_37.c"
+l-37.c-gcc-O0:
+    file_name: "l-37.c"
     cc: gcc-12
     input:
     check_type: 3
@@ -1768,8 +1768,8 @@ l_37.c-gcc-O0:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-clang-O3:
-    file_name: "l_37.c"
+l-37.c-clang-O3:
+    file_name: "l-37.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1777,8 +1777,8 @@ l_37.c-clang-O3:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-clang-O2:
-    file_name: "l_37.c"
+l-37.c-clang-O2:
+    file_name: "l-37.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1786,8 +1786,8 @@ l_37.c-clang-O2:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-clang-O1:
-    file_name: "l_37.c"
+l-37.c-clang-O1:
+    file_name: "l-37.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1795,8 +1795,8 @@ l_37.c-clang-O1:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_37.c-clang-O0:
-    file_name: "l_37.c"
+l-37.c-clang-O0:
+    file_name: "l-37.c"
     cc: clang-14
     input:
     check_type: 3
@@ -1804,8 +1804,8 @@ l_37.c-clang-O0:
     section_name: "<main>:"
     special_cause: "Others"
 
-l_41.c-gcc-O3:
-    file_name: "l_41.c"
+l-41.c-gcc-O3:
+    file_name: "l-41.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1814,8 +1814,8 @@ l_41.c-gcc-O3:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-gcc-O2:
-    file_name: "l_41.c"
+l-41.c-gcc-O2:
+    file_name: "l-41.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1824,8 +1824,8 @@ l_41.c-gcc-O2:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-gcc-O1:
-    file_name: "l_41.c"
+l-41.c-gcc-O1:
+    file_name: "l-41.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1834,8 +1834,8 @@ l_41.c-gcc-O1:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-gcc-O0:
-    file_name: "l_41.c"
+l-41.c-gcc-O0:
+    file_name: "l-41.c"
     cc: gcc-12
     input:
     check_type: 5
@@ -1844,8 +1844,8 @@ l_41.c-gcc-O0:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-clang-O3:
-    file_name: "l_41.c"
+l-41.c-clang-O3:
+    file_name: "l-41.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1854,8 +1854,8 @@ l_41.c-clang-O3:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-clang-O2:
-    file_name: "l_41.c"
+l-41.c-clang-O2:
+    file_name: "l-41.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1864,8 +1864,8 @@ l_41.c-clang-O2:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-clang-O1:
-    file_name: "l_41.c"
+l-41.c-clang-O1:
+    file_name: "l-41.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1874,8 +1874,8 @@ l_41.c-clang-O1:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_41.c-clang-O0:
-    file_name: "l_41.c"
+l-41.c-clang-O0:
+    file_name: "l-41.c"
     cc: clang-14
     input:
     check_type: 5
@@ -1884,8 +1884,8 @@ l_41.c-clang-O0:
     default_option: "-m32"
     special_cause: "Environment assumption"
 
-l_43.c-clang-O3:
-    file_name: "l_43.c"
+l-43.c-clang-O3:
+    file_name: "l-43.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1893,8 +1893,8 @@ l_43.c-clang-O3:
     section_name: "<main>:"
     special_cause: "Environment assumption"
 
-l_43.c-clang-O2:
-    file_name: "l_43.c"
+l-43.c-clang-O2:
+    file_name: "l-43.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1902,8 +1902,8 @@ l_43.c-clang-O2:
     section_name: "<main>:"
     special_cause: "Environment assumption"
 
-l_43.c-clang-O1:
-    file_name: "l_43.c"
+l-43.c-clang-O1:
+    file_name: "l-43.c"
     cc: clang-14
     input:
     check_type: 4
@@ -1911,8 +1911,8 @@ l_43.c-clang-O1:
     section_name: "<main>:"
     special_cause: "Environment assumption"
 
-l_43.c-clang-O0:
-    file_name: "l_43.c"
+l-43.c-clang-O0:
+    file_name: "l-43.c"
     cc: clang-14
     input:
     check_type: 4
