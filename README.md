@@ -114,9 +114,10 @@ We provide the following reproduction materials:
    - example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
 5. CISB-dataset/statistic.py
    - functions:
-     - table_2(): get results of bugs reported to Bugzilla and in the Linux kernel
-     - table_3(): get temporal distribution (report date) of bug classes
-     -  table_6(): get all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
+     - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
+     - table_3(): print temporal distribution (report date) of bug classes
+     -  table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
+     - table_7(): print automatic prevention works
    - example: `python3 statistic.py 2> /dev/null ` to print all results in tables
 
 ## Output
