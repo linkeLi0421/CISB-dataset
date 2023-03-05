@@ -7,7 +7,7 @@ import argparse
 import subprocess
 import signal
 
-arm_file_list = ['l_23.c', 'b_26.c']
+arm_file_list = ['l-23.c', 'b-26.c']
 
 def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
     # test ubsan here
