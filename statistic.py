@@ -1,4 +1,5 @@
 import csv
+from effectiveness_evaluation import get_dataset_value
 
 bug_class = "dataset/CISB-dataset-classification.csv"
 bug_detail = "dataset/CISB-dataset-detailed-info.csv"
@@ -58,6 +59,7 @@ for b in bugs:
     s.update(b.id_alias_list)
 
 def table_2():
+    print('Table 2: Statistics of bugs reported to Bugzilla and in the Linux kernel')
     taxonomy = ['IS1', 'IS2', 'IS3', 'OS1', 'OS2', 'OS3']
     num_all = 0
     for b in bugs:
@@ -122,6 +124,7 @@ def table_2():
 
 
 def table_3():
+    print('Table 3: Temporal distribution (report date) of bug classes')
     class_occurance = dict()
     for b in bugs:
         class_occurance.setdefault(b.bug_class, []).extend(b.occurance)
@@ -158,8 +161,6 @@ def table_3():
     # Print the table using tabulate and specify row and column headers
     print(tabulate(table, headers=['', '04-06', '07-09', '10-12', '13-15', '16-18', '19-21', 'Total'], tablefmt='fancy_grid'))
 
-table_2()
-table_3()
 
 class mitigation_work():
     def __init__(self, name, scope):
@@ -173,6 +174,7 @@ class mitigation_work():
 
 def table_7():
     # the bug number of each bug class
+    print('Table7: Automatic Prevention works')
     bug_class_occ = dict()
     for b in bugs:
         bug_class_occ.setdefault(b.bug_class, 0) 
@@ -241,6 +243,30 @@ def table_7():
     for n, p in mitigation_rate.items():
         print(n, round(p,2))
         
-
-
-table_7()
+def table_6():
+    print('Table 6: An evaluation of the mitigations provided by the compiler')
+    
+    file_path = 'extra_options'
+    strategy = ['O3', 'O2', 'O1', 'O0', 'all-ub_clang', 'all-ub_gcc', 'all-options_gcc', 'all-options_clang', 'ubsan', 'wall']
+    table_header = ['Strategy', '', 'Eff.(UB-CISB)',  'Eff. (all CISB)']
+    table_data = []
+    for s in strategy:
+        res = get_dataset_value(file_path + '/' + s + '.txt', output=None)
+        if 'ub' in s or s == 'wall':
+            if 'clang' not in s:
+                table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), '/'))
+            if 'gcc' not in s:
+                table_data.append((s, 'clang', res[5]/(res[5]+res[4]), '/'))
+            continue
+        if 'clang' not in s:
+            table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), res[3]/(res[3]+res[2])))
+        if 'gcc' not in s:
+            table_data.append((s, 'clang', res[5]/(res[5]+res[4]), res[7]/(res[7]+res[6])))
+    from tabulate import tabulate
+    print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
+    
+if __name__ == '__main__':
+    table_2()
+    table_3()
+    table_6()
+    table_7()
