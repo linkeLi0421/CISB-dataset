@@ -249,3 +249,7 @@ We write oracles and information of some test cases in *config.yml*. It has the 
   - 7: Generate assembly code, if the assembly code contains test_str in the next line of section_name, the bug triggers.
 - test_str: String used in detecting bugs.
 - section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
+
+## Use docker
+
+to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec).
