@@ -107,7 +107,7 @@ def table_2():
         row += [num_linux_ubug, num_linux_bug]
         data.append(row)   
 
-        headers = ["BugClass", "UniBug", "Num", "P", "UniBz", "NumBz", "UniLinux", "NumLinux"]
+    headers = ["BugClass", "UniBug", "Num", "P", "UniBz", "NumBz", "UniLinux", "NumLinux"]
 
     contents = []
     for i in range(len(taxonomy)):
@@ -262,7 +262,7 @@ def table_6():
             table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), res[3]/(res[3]+res[2])))
         if 'gcc' not in s:
             table_data.append((s, 'clang', res[5]/(res[5]+res[4]), res[7]/(res[7]+res[6])))
-        print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
+    print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
     
 if __name__ == '__main__':
     table_2()
