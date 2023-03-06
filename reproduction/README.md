@@ -22,4 +22,4 @@ Run the following instructions to get into the docker:
 $ root@compiler:/CISB-dataset/reproduction # docker exec -it dataset /bin/bash
 ```
 
-Finally, to reproduce, To reproduce, please follow the instructions [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec)
+Finally, to reproduce, To reproduce, please follow the instructions [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/reproduction)
