@@ -1,5 +1,5 @@
 import csv
-from effectiveness_evaluation import get_dataset_value
+from tabulate import tabulate
 
 bug_class = "dataset/CISB-dataset-classification.csv"
 bug_detail = "dataset/CISB-dataset-detailed-info.csv"
@@ -107,8 +107,7 @@ def table_2():
         row += [num_linux_ubug, num_linux_bug]
         data.append(row)   
 
-    from tabulate import tabulate
-    headers = ["BugClass", "UniBug", "Num", "P", "UniBz", "NumBz", "UniLinux", "NumLinux"]
+        headers = ["BugClass", "UniBug", "Num", "P", "UniBz", "NumBz", "UniLinux", "NumLinux"]
 
     contents = []
     for i in range(len(taxonomy)):
@@ -149,8 +148,7 @@ def table_3():
         class_occurance_statistic[c] = p
 
 
-    from tabulate import tabulate
-    # Add a summary row and column to the dictionary object
+        # Add a summary row and column to the dictionary object
     for key, value in class_occurance_statistic.items():
         class_occurance_statistic[key].append(sum(value))
     class_occurance_statistic['Total'] = [sum(x) for x in zip(*class_occurance_statistic.values())]
@@ -179,53 +177,55 @@ def table_7():
     for b in bugs:
         bug_class_occ.setdefault(b.bug_class, 0) 
         bug_class_occ[b.bug_class] += len(b.occurance)
+    
+    mitigation_target_map = {
+        'UBSan': ['IS1', 'IS2', 'IS3'],
+        'ThreadSan': ['IS1', 'IS2', 'IS3'],
+        'TySan': ['IS1', 'IS2', 'IS3'],
+        'Ct-verif, Jasmin, FaCT, CT-wasm, Simon, Barthe': ['OS2'],
+        'Besson': ['OS1'],
+        'Patrignani': ['OS3'],
+        'STACK': ['IS1'],
+        'Unisan': ['OS1'],
+        'Yang': ['OS1'],
+        'K-Hunt': ['OS2'],
+        'Sprundel': ['OS1'],
+        'Wu': ['IS1', 'IS2', 'IS3'],
+        'SpecFuzz, SpecTaint': ['OS3'],
+        'KUBO': ['IS1', 'IS2', 'IS3']
+    }
 
-    ubsan = mitigation_work('UBSan', ['IS1', 'IS2', 'IS3'])
-    ubsan.add_cisb(['l-13', 'l-8', 'l-24', 'b-8', 'b-9', 'b-11', 'b-4', 'b-14'])
-    tsan = mitigation_work('ThreadSan',['IS1', 'IS2', 'IS3'])
-    tsan.add_cisb(['b-12', 'l-5', 'l-40', 'l-46', 'l-30', 'l-49', 'l-3', 'l-21', 'l-4', 'l-4a'])
-    tysan = mitigation_work('TySan',['IS1', 'IS2', 'IS3'])
-    tysan.add_cisb(['b-13', 'b-26'])
+    mitigation_cisb_map = {
+        'UBSan': ['l-13', 'l-8', 'l-24', 'b-8', 'b-9', 'b-11', 'b-4', 'b-14'],
+        'ThreadSan': ['b-12', 'l-5', 'l-40', 'l-46', 'l-30', 'l-49', 'l-3', 'l-21', 'l-4', 'l-4a'],
+        'TySan': ['b-13', 'b-26'],
+        'Ct-verif, Jasmin, FaCT, CT-wasm, Simon, Barthe': ['l-6'],
+        'Besson': ['l-9', 'b-21'],
+        'Patrignani': ['l-25'],
+        'STACK': ['l-13', 'l-8', 'l-24', 'b-8', 'b-9', 'b-10'],
+        'Unisan': ['l-11', 'l-29', 'b-22'],
+        'Yang': ['l-9', 'b-21'],
+        'K-Hunt': ['l-6'],
+        'Sprundel': ['l-9', 'b-21'],
+        'Wu': ['l-13', 'l-8', 'b-2', 'l-24', 'b-8', 'b-9', 'b-10', 'b-12', 'b-5', 'b-6', 'l-30', 'b-4'],
+        'SpecFuzz, SpecTaint': ['l-25'],
+        'KUBO': ['l-13', 'l-8', 'l-24', 'b-9', 'b-10', 'b-11', 'b-4']
+    }
 
-    time_secure_comp = mitigation_work('Ct-verif, Jasmin, FaCT, CT-wasm, Simon, Barthe', ['OS2'])
-    time_secure_comp.add_cisb(['l-6'])
+    mitigation_cisb_commets = {
+        'Wu': "we suppose they can prevent all UB-based elimination bugs caused by clang",
+        'KUBO': "the UB types they support are shown in their Table II"
+    }
 
-    data_sensitive = mitigation_work('Besson', ['OS1'])
-    data_sensitive.add_cisb(['l-9', 'b-21'])
+    mitigation_works = {}
 
-    cache_sc = mitigation_work('Patrignani', ['OS3'])
-    cache_sc.add_cisb(['l-25'])
+    for mitigation, targets in mitigation_target_map.items():
+        cisb = mitigation_cisb_map[mitigation]
+        mitigation_works[mitigation] = mitigation_work(mitigation, targets)
+        mitigation_works[mitigation].add_cisb(cisb)
 
-    stack = mitigation_work('STACK', ['IS1'])
-    stack.add_cisb(['l-13', 'l-8', 'l-24', 'b-8', 'b-9', 'b-10'])
-
-    unisan = mitigation_work('Unisan', ['OS1'])
-    unisan.add_cisb(['l-11', 'l-29', 'b-22'])
-
-    yang = mitigation_work('Yang', ['OS1'])
-    yang.add_cisb(['l-9', 'b-21'])
-
-    khunt = mitigation_work('K-Hunt', ['OS2'])
-    khunt.add_cisb(['l-6'])
-
-    spr = mitigation_work('Sprundel', ['OS1'])
-    spr.add_cisb(['l-9', 'b-21'])
-
-    wu = mitigation_work('Wu', ['IS1', 'IS2', 'IS3'])
-    # suppose they can prevent all UB-based elimination of clang
-    wu.add_cisb(['l-13', 'l-8', 'b-2', 'l-24', 'b-8', 'b-9', 'b-10', 'b-12', 'b-5', 'b-6', 'l-30', 'b-4'])
-
-    spec = mitigation_work('SpecFuzz, SpecTaint', ['OS3'])
-    spec.add_cisb(['l-25'])
-
-    kubo = mitigation_work('KUBO', ['IS1', 'IS2', 'IS3'])
-    # they support OOB, IO, Divby0, nullptrderef, out of range object size, pointer overflow, shift oob  
-    kubo.add_cisb(['l-13', 'l-8', 'l-24', 'b-9', 'b-10', 'b-11', 'b-4'])
-
-    mitigations = [ubsan, tsan, tysan, time_secure_comp, data_sensitive, cache_sc,
-                stack, unisan, yang, khunt, spr, wu, spec, kubo]
-    mitigation_rate = dict()
-    for m in mitigations:
+    mitigation_rate = []
+    for m in mitigation_works.values():
         ucisb_set = set()
         for b in bugs:
             for cisb in m.target_cisb:
@@ -239,11 +239,11 @@ def table_7():
         scope_bug_num = 0
         for t in m.scope:
             scope_bug_num += bug_class_occ[t]
-        mitigation_rate[m.name] = target_cisb_num/scope_bug_num
-    for n, p in mitigation_rate.items():
-        print(n, round(p,2))
+        mitigation_rate.append([m.name, m.scope, target_cisb_num/scope_bug_num])
+    print(tabulate(mitigation_rate, headers=["Automatic Prevention", "Target CISB", "Percentage"], floatfmt=".2f", tablefmt='fancy_grid'))
         
 def table_6():
+    from effectiveness_evaluation import get_dataset_value
     print('Table 6: An evaluation of the mitigations provided by the compiler')
     
     file_path = 'extra_options'
@@ -262,8 +262,7 @@ def table_6():
             table_data.append((s, 'gcc', res[1]/(res[1]+res[0]), res[3]/(res[3]+res[2])))
         if 'gcc' not in s:
             table_data.append((s, 'clang', res[5]/(res[5]+res[4]), res[7]/(res[7]+res[6])))
-    from tabulate import tabulate
-    print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
+        print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
     
 if __name__ == '__main__':
     table_2()
