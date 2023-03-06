@@ -99,26 +99,39 @@ We provide the following reproduction materials:
 ## Scripts
 
 1. CISB-dataset/check-key.py
+
    - check whether data set tables in ***CISB-dataset/dataset*** has unique key
    - useage: `python3 check-key.py`
+
 2. CISB-dataset/check-compiler.py
+
    - check whether required compilers ready
    - useage: `python3 check-compiler.py`
+
 3. CISB-dataset/reproduction_tester.py
+
    - test single test case in **_CISB-dataset/reproduce_set_**
    - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
    - example: `python3 reproduction_tester.py ./reproduce_set/b-1.c -level O3 -cc gcc -opt extra_options/all-options_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
+
 4. CISB-dataset/effectiveness_evaluation.py
+
    - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
    - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
    - example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
+
 5. CISB-dataset/statistic.py
+
    - functions:
      - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
      - table_3(): print temporal distribution (report date) of bug classes
-     -  table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
+     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
      - table_7(): print automatic prevention works
    - example: `python3 statistic.py 2> /dev/null ` to print all results in tables
+
+6. Performance Overhead
+
+   See [SPEC CPU2006](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec)
 
 ## Output
 
