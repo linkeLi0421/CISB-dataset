@@ -252,4 +252,4 @@ We write oracles and information of some test cases in *config.yml*. It has the 
 
 ## Use docker
 
-to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec).
+to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/reproduction).
