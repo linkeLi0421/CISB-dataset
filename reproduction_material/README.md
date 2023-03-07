@@ -1,86 +1,42 @@
 # Reproduction Material
 
 We provide the following reproduction materials:
-- test code for all the reproducted CISB;
+- testcases for all the reproducted CISB;
 - an automatic tool to test whether one CISB is triggered with pre-defined oracles.
 
-## Dependencies
+## Tested Compilers 
 
-1. Different versions of gcc and clang to be tested
+All the test compilers should have been installed if you start by 
+using our [Dockerfile](../env/Dockerfile).
 
-   Here are some compilers we have tested:
+The compilers we use in the experiment script are the latest ones that can be 
+used to reproduce the CISBs. This group includes 
+gcc-4.1, gcc-4.4, gcc-4.9, gcc-7, gcc-12, clang-12, and clang-14.
 
-   gcc-4.1
-
-   gcc-4.4
-
-   gcc-4.9
-
-   gcc-7
-
-   gcc-12
-
-   clang-12
-
-   clang-14
-
-   We also provide our own script to install these compilers in env/auto_get_compiler.sh. Use it with
-
+To help with installation, we provide our own [script](../env/auto_get_compiler.sh) 
+that installs these compilers
    ```
-   cd path/to/aritifact/env
-   chomod +x auto_get_compiler.sh
-   sudo auto_get_compiler.sh
-   ```
+cd path/to/aritifact/env
+chomod +x auto_get_compiler.sh
+sudo auto_get_compiler.sh
+```
 
-   Run CISB-dataset/check-compiler.py to check whether all required compilers are installed properly.
+To check whether all required compilers are installed properly, simply
+execute the [scritp](../check-compiler.py).
+```
+python3 check-compiler.py
+```
+## Testcases
+The source code of these testcases can be found in the folder 
+`path/to/artifact/reproduction_material/testcases`.
 
-   ```
-   python3 check-compiler.py
-   ```
+## The script to check the reproduction
 
-2. Setup a python 3.x environment and install requirements:
+We provide a [script](./reproduction_tester.py) to check the reproduction of each 
+single testcase automatically.
+- useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
+- example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategies/All-cisb_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/compiler_strategies/All-cisb_gcc.txt**_
 
-   ```
-   apt-get install python3-pip
-   pip3 install -r requirements.txt
-   ```
-
-## Script
-
-<!-- 1. CISB-dataset/check-key.py
-
-   - check whether data set tables in ***CISB-dataset/dataset*** has unique key
-   - useage: `python3 check-key.py`
-
-2. CISB-dataset/check-compiler.py
-
-   - check whether required compilers ready
-   - useage: `python3 check-compiler.py` -->
-
- CISB-dataset/reproduction_tester.py
-
-   - test single test case in **_CISB-dataset/reproduction_material/test_cases/_**
-   - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
-   - example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategies/All-cisb_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/compiler_strategies/All-cisb_gcc.txt**_
-
-<!-- 4. CISB-dataset/effectiveness_evaluation.py
-
-   - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
-   - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-   - example: `python3 effectiveness_evaluation.py -opt compiler_strategies/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/compiler_strategies/all-cisb_gcc.txt**_
-
-5. CISB-dataset/statistic.py
-
-   - functions:
-     - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
-     - table_3(): print temporal distribution (report date) of bug classes
-     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/compiler_strategies***
-     - table_7(): print automatic prevention works
-   - example: `python3 statistic.py 2> /dev/null ` to print all results in tables
-
-6. Performance Overhead
-
-   See [SPEC CPU2006](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec) -->
 
 ## Config
 
@@ -101,7 +57,3 @@ We write oracles and information of some test cases in *config.yml*. It has the 
   - 7: Generate assembly code, if the assembly code contains test_str in the next line of section_name, the bug triggers.
 - test_str: String used in detecting bugs.
 - section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
-
-<!-- ## Use docker
-
-to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/reproduction). -->
