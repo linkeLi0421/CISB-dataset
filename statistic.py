@@ -304,6 +304,7 @@ if __name__ == '__main__':
     elif args.exp == "all":
         table_2()
         table_3()
+        show_human_failed_prevention()
         table_6_eff()
         table_6_overhead()
         table_7()
