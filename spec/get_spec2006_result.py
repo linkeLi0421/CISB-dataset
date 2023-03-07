@@ -96,7 +96,7 @@ def table6_overhead():
     if not spec_cpu_path and not has_default_spec:
         print('please set environment virable SEPC_CPU_2006_PATH, using \"export SEPC_CPU_2006_PATH=\'path/to/spec/cpu2006\'\"')
     else:
-        if has_default_spec:
+        if not spec_cpu_path and has_default_spec:
             spec_cpu_path = default_spec_cpu_path
         result_path = spec_cpu_path + '/result/'
         for parent, dirnames, filenames in os.walk(result_path,  followlinks=True):
