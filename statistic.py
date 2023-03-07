@@ -240,7 +240,13 @@ def table_7():
         for t in m.scope:
             scope_bug_num += bug_class_occ[t]
         mitigation_rate.append([m.name, m.scope, target_cisb_num/scope_bug_num])
-    print(tabulate(mitigation_rate, headers=["Automatic Prevention", "Target CISB", "Percentage"], floatfmt=".2f", tablefmt='fancy_grid'))
+    print(tabulate(mitigation_rate, headers=["Automatic Prevention", "Target CISB type", "Percentage"], floatfmt=".2f", tablefmt='fancy_grid'))
+
+    mitigation_cisb_info = []
+    for m, scope in mitigation_target_map.items():
+        mitigation_cisb_info.append([m, scope, mitigation_cisb_map[m]])
+    print(tabulate(mitigation_cisb_info, headers=["Automatic Prevention", "Target CISB type", "Target CISB"], tablefmt='fancy_grid'))
+    
         
 def table_6_eff():
     from effectiveness_evaluation import get_dataset_value
