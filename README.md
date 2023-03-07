@@ -22,7 +22,7 @@ More details [here](reproduction_material/README.md)
 We provide a [Dockerfile](env/Dockerfile) that automates the setup process for our artifact.
 With this Dockerfile, users can easily download the dataset and evaluation materials, as well as install all the necessary software requirements in one step.
 
-For running one of the mitigation evaluation experiments that requires SPEC CPU 2006, it is recommended to mount the host directory containing SPEC CPU 2006 to a specific directory (/cisb_docker/spec/cpu2006) in the Docker container. Here are the instructions to build and run a Docker container with this:
+For running one of the mitigation evaluation experiments that requires SPEC CPU 2006, it is recommended to mount the host directory containing SPEC CPU 2006 to a specific directory (/cisb_docker/CISB-dataset/spec/cpu2006) in the Docker container. Here are the instructions to build and run a Docker container with this:
 
 1. Make sure you have Docker installed on your system.
 2. Download the SPEC CPU 2006 benchmark and extract it to a directory on your host machine.
@@ -33,7 +33,7 @@ docker build -t cisb_docker .
 ```
 4. Once the build is complete, run the following command to start a container:
 ```
-docker run -itd -v /path/to/spec/cpu2006:/cisb_docker/spec/cpu2006 --name dataset --privileged cisb_docker
+docker run -itd -v /path/to/spec/cpu2006:/cisb_docker/CISB-dataset/spec/cpu2006 --name dataset --privileged cisb_docker
 ```
 
 <!-- As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
