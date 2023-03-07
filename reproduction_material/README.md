@@ -35,25 +35,31 @@ The source code of these testcases can be found in the folder
 We provide a [script](./reproduction_tester.py) to check the reproduction of each 
 single testcase automatically.
 - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
-- example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategies/All-cisb_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/compiler_strategies/All-cisb_gcc.txt**_
+- An example to get the reproduction result of `b-1.c` with gcc and compilation options of strategy
+"All-cisb" in `compiler_strategies/All-cisb_gcc.txt`.
+```
+# python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategies/All-cisb_gcc.txt 2> /dev/null
+```
+You can create your own config file with the compilation options you want to test and replace `all-cisb_gcc.txt` with the name of your config file when running this test script.
 
+## Test oracle
 
-## Config
+To automatically check the presence of CISBs of given testcase with certain compiler 
+options during the reproduction process, we summarize a list of test oracles.
+These test oracles are stored in [**config.yml**](./config.yml).
 
-We write oracles and information of some test cases in *config.yml*. It has the following items:
-
+These are the format of these oracles:
 - file_name: The file name of the test program.
-- cc: C compiler name.
-- opti_level: Optimization level of the test program.
-- input: Some test programs need compile and run and it is the input string.
-- check_type:
-
-  - 1: if output is not test_str, the bug triggers.
-  - 2: if output is test_str, the bug triggers.
-  - 3: if the disassembly code doesn't contain test_str in section section_name, the bug triggers.
-  - 4: if the disassembly code contains test_str in section section_name, the bug triggers.
-  - 5: Generate assembly code, if the assembly code doesn't contain test_str in section section_name, the bug triggers.
-  - 6: Generate assembly code, if the assembly code contains test_str in section section_name, the bug triggers.
-  - 7: Generate assembly code, if the assembly code contains test_str in the next line of section_name, the bug triggers.
-- test_str: String used in detecting bugs.
-- section_name: String used in detecting bugs. If section_name begins with "between", it means section_name contains section_start and section_end after "between". Then the detecter will check test_str between section_start and section_end.
+- cc: The tested C compiler.
+- opti_level: Optimization level (O0/O1/O2/O3).
+- input: The input string used for testing.
+- check_type: The type of check performed on the output of the program. There are seven types of checks that can be performed:
+  - 1: if the output is not test_str, the bug is triggered.
+  - 2: if the output is test_str, the bug is triggered.
+  - 3: if the disassembly code does not contain test_str in section section_name, the bug is triggered.
+  - 4: if the disassembly code contains test_str in section section_name, the bug is triggered.
+  - 5: Generate assembly code and check if it does not contain test_str in section section_name, the bug is triggered.
+  - 6: Generate assembly code and check if the assembly code contains test_str in section section_name, the bug is triggered.
+  - 7: Generate assembly code and check if the assembly code contains test_str in the next line after section_name, the bug is triggered.
+- test_str: The string used to detect the presence of the bug.
+- section_name: The name of the section in the disassembly code where the test string is searched for. If section_name starts with "between", it means that the section contains section_start and section_end after "between". The detector checks for the test_str between section_start and section_end.
