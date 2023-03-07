@@ -108,7 +108,7 @@ python3 statistic.py -e target-cisb
 
    - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
    - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-   - example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_ -->
+   - example: `python3 effectiveness_evaluation.py -opt extra_options/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-cisb_gcc.txt**_ -->
 
 <!-- 5. CISB-dataset/statistic.py
 

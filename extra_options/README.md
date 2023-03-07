@@ -19,8 +19,8 @@ Run the [script](../effectiveness_evaluation.py) tp obtain the detailed
 effectiveness of each compiler.
 - Useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
 - An example to get the effectiveness result of strategy `all-cisb` for gcc with 
-the corresponding compiler config ([all-options_gcc.txt](all-options_gcc.txt)).
+the corresponding compiler config ([all-cisb_gcc.txt](all-cisb_gcc.txt)).
 ```
-python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null
+python3 effectiveness_evaluation.py -opt extra_options/all-cisb_gcc.txt 2> /dev/null
 ```
 
