@@ -59,9 +59,9 @@ We provide the following reproduction materials:
 
  CISB-dataset/reproduction_tester.py
 
-   - test single test case in **_CISB-dataset/reproduce_set_**
+   - test single test case in **_CISB-dataset/reproduction_material/test_cases/_**
    - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
-   - example: `python3 reproduction_tester.py ./reproduce_set/b-1.c -level O3 -cc gcc -opt extra_options/all-options_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
+   - example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../extra_options/all-options_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
 
 <!-- 4. CISB-dataset/effectiveness_evaluation.py
 
