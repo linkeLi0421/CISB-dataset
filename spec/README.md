@@ -1,34 +1,46 @@
-## Compiler mitigations overhead testing
-
+# Setup for SPEC CPU 2006 
 1. Install [SPEC CPU2006 Benchmark](https://www.spec.org/cpu2006/).
-
 - Please note that we can't share SPEC CPU2006 here becuase it is commercial.
 
-2. After you obtained SPEC CPU2006 Benchmark (**assuming you place `cpu2006` under the folder of `spec`**):
+2. After obtaining SPEC CPU2006 Benchmark, it is needed to 
+**place the `cpu2006` folder under the `spec` directory**，which is automatically 
+setted if you follow the [installation guide](../README.md#aritifact-setup).
+
+3. To set up SPEC CPU 2006, please follow the instructions below:
+```
+# cd path/to/artifact
+# cp -r spec/config cpu2006
+# cd cpu2006
+# source ./shrc
+```
+
+# Performance evaluation of compiler mitigations
+
+To measure the performance overhead of each compiler strategy separately, we 
+provide the following script to run SPEC CPU 2006 Benchmark. Here is an example 
+of how to test the performance of gcc with O3 optimization:
+
+> Note that it may take about 3-4 hours to do this test. 
+
+```
+# cd path/to/artifact/spec
+# bash config/spec.sh gcc_O3.cfg
+```
+You can replace gcc_O3.cfg with the config file name of the compiler strategy 
+you want to test.
+
+TODO
+- How to read the report
+- If `config/test_all.py` is needed?
+<!-- 4. Run the following script to run all SPEC CPU2006 Benchmark. 
 
    ```
-   $ root@compiler:/CISB-dataset/spec# cp -r config ./cpu2006
-   $ root@compiler:/CISB-dataset/spec# cd cpu2006
-   $ root@compiler:/CISB-dataset/spec/cpu2006# source ./shrc
-   ```
+   # python3 config/test_all.py
+   ``` -->
 
-3. Run the following script to run SPEC CPU2006 Benchmark. We give an example to test the perforname of gcc with O3 optimization.
-
-   > Note that it may take hours to do a test. 
-
-   ```
-   $ root@compiler:/CISB-dataset/spec/cpu2006# bash config/spec.sh gcc_O3.cfg
-   ```
-
-4. Run the following script to run all SPEC CPU2006 Benchmark. 
-
-   ```
-   $ root@compiler:/CISB-dataset/spec/cpu2006# python3 config/test_all.py
-   ```
-
-   
-
-5. SPEC CPU2006 config files are stored in ***spec/cpu2006/config***. We also provide a table of config files to illustrate these files. 
+## SPEC CPU 2006 config files
+Below is the config file and compiler options used for each compiler strategy we test. 
+The config file can be found in `path/to/artifact/spec`:
 
    | File name          | Compiler options                                             |
    | ------------------ | ------------------------------------------------------------ |

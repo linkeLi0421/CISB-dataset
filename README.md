@@ -36,10 +36,10 @@ docker build -t cisb_docker .
 docker run -itd -v /path/to/spec/cpu2006:/cisb_docker/spec/cpu2006 --name dataset --privileged cisb_docker
 ```
 
-As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
+<!-- As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
 ```
-export SEPC_CPU_2006_PATH='path/to/spec/cpu2006'
-``` 
+export SEPC_CPU_2006_PATH='path/to/artifact/spec/cpu2006'
+```  -->
 
 # Aritifact experiments
 All of our experiments can be done through a [script](statistic.py).
@@ -60,16 +60,16 @@ python3 statistic.py -e human-mitigation
 ```
 2. Run a script to obtain statistics on the effectiveness of compiler mitigations.
 The output results should be in line with the data shown in Table 6 of the paper.
-We also provide a [guide](compiler_strategies/README.md) to measure the effectiveness 
-of each strategy separately.
+We also provide a [guide](compiler_strategies/README.md#effectiveness-evaluation) 
+to measure the effectiveness of each strategy separately.
 ```
 python3 statistic.py -e mitigation-effectiveness
 ```
 3. Run a script to measure the overhead of different compiler prevention 
 strategies using the SPEC CPU 2006 benchmark.
 The output results should be in line with the data shown in Table 6 of the paper.
-We also provide a [guide](spec/README.md) to measure the overhead of each strategy
-separately.
+We also provide a [guide](spec/README.md#performance-evaluation-of-compiler-mitigations) 
+to measure the overhead of each strategy separately.
 ```
 python3 statistic.py -e mitigation-overhead
 ```
