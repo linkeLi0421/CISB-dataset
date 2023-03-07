@@ -242,7 +242,7 @@ def table_7():
         mitigation_rate.append([m.name, m.scope, target_cisb_num/scope_bug_num])
     print(tabulate(mitigation_rate, headers=["Automatic Prevention", "Target CISB", "Percentage"], floatfmt=".2f", tablefmt='fancy_grid'))
         
-def table_6():
+def table_6_eff():
     from effectiveness_evaluation import get_dataset_value
     print('Table 6: An evaluation of the mitigations provided by the compiler')
     
@@ -263,9 +263,33 @@ def table_6():
         if 'gcc' not in s:
             table_data.append((s, 'clang', res[5]/(res[5]+res[4]), res[7]/(res[7]+res[6])))
     print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
-    
+
+def table_6_overhead():
+    # TODO
+    pass
+
 if __name__ == '__main__':
-    table_2()
-    table_3()
-    table_6()
-    table_7()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-exp', default='all', type=str, help='To specify which experiment(s) to run')
+    args = parser.parse_args()
+    if args.exp == "cisb-statistics":
+        table_2()
+        table_3()
+    elif args.exp == "mitigation-evaluation":
+        table_6_eff()
+        table_6_overhead()
+    elif args.exp == "mitigation-effectiveness":
+        table_6_eff()
+    elif args.exp == "mitigation-overhead":
+        table_6_overhead()
+    elif args.exp == "target-cisb":
+        table_7()
+    elif args.exp == "all":
+        table_2()
+        table_3()
+        table_6_eff()
+        table_6_overhead()
+        table_7()
+    else:
+        print("Not a correct argument. Choose one from: all, cisb-statistics, mitigation-evaluation, mitigation-effectiveness, mitigation-overhead, target-cisb") 
