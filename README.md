@@ -1,3 +1,4 @@
+# Overview
 A dataset of Compiler-Introduced-Security-bugs (CISB) with reproduction materials.
 These CISBs are manually collected from the GCC/Clang bugzilla and Linux kernel 
 through an empirical study.
@@ -7,7 +8,7 @@ See our paper (to appear) for more information on the CISB taxonomy and collecti
 # CISB-dataset
 
 Our data is stored in *CISB-dataset/dataset*.
-See more details [here](dataset/README.md).
+More details [here](dataset/README.md).
 
 # Reproduction Material
 
@@ -15,48 +16,68 @@ We provide the following reproduction materials:
 - test code for all the reproducted CISB;
 - an automatic tool to test whether one CISB is triggered with pre-defined oracles.
 
-See more details [here]()
-## Dependencies
+More details [here](reproduction_material/README.md)
 
-1. Different versions of gcc and clang to be tested
+# Aritifact setup
+We provide a [Dockerfile](env/Dockerfile) that automates the setup process for our artifact.
+With this Dockerfile, users can easily download the dataset and evaluation materials, as well as install all the necessary software requirements in one step.
 
-   Here are some compilers we have tested:
+For running one of the mitigation evaluation experiments that requires SPEC CPU 2006, it is recommended to mount the host directory containing SPEC CPU 2006 to a specific directory (/cisb_docker/spec/cpu2006) in the Docker container. Here are the instructions to build and run a Docker container with this:
 
-   gcc-4.1
+1. Make sure you have Docker installed on your system.
+2. Download the SPEC CPU 2006 benchmark and extract it to a directory on your host machine.
+3. Navigate to the directory where you have the Dockerfile and run the following command to build the Docker image: 
+```
+cd path/to/Dockerfile
+docker build -t cisb_docker .
+```
+4. Once the build is complete, run the following command to start a container:
+```
+docker run -itd -v /path/to/spec/cpu2006:/cisb_docker/spec/cpu2006 --name dataset --privileged cisb_docker
+```
 
-   gcc-4.4
+As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
+```
+export SEPC_CPU_2006_PATH='path/to/spec/cpu2006'
+``` 
 
-   gcc-4.9
+# Aritifact experiments
+All of our experiments can be done through a [script](statistic.py).
 
-   gcc-7
+## CISB statistics
 
-   gcc-12
+Execute the Python script to obtain the statistics of CISBs in our dataset. 
+The result should be in line with the data in Figure 2 and Figure 3 of the paper.
 
-   clang-12
+```
+python3 statistic.py -e cisb-statistics
+```
+## Evaulation of mitigations
+1. Review a list of bugs where the prevention performed by programmers failed. 
+    This list can be obtained by executing a script. The expected result is those CISBs exist.
+2. Run a script to obtain statistics on the effectiveness of compiler mitigations.
+   The output results should be in line with the data shown in Table 6 of the paper.
+3. Run a script to measure the overhead of different compiler prevention 
+   strategies using the SPEC CPU 2006 benchmark.
+   The output results should be in line with the data shown in Table 6 of the paper.
+   
+```
+python3 statistic.py -e mitigation-evaluation
+```
 
-   clang-14
+## Target bugs of automatic prevention works
+1. Execute the script to obtain the statistics of CISBs that can theoretically 
+   be prevented by automatic prevention works. 
+   The result should be in line with the data in Figure 7 of the paper.
+```
+python3 statistic.py -e target-cisb
+```
+2. Check the lists of CISBs we summarized and shown in the script. 
+   These bugs should be within the scope of the corresponding prevention work.
 
-   We also provide our own script to install these compilers in CISB_detecter/scirpt/auto_get_compiler.sh. Use it with
 
-   ```
-   chomod +x auto_get_compiler.sh
-   sudo script/auto_get_compiler.sh
-   ```
 
-   Run CISB-dataset/check-compiler.py to check whether all required compilers are installed properly.
-
-   ```
-   python3 check-compiler.py
-   ```
-
-2. Setup a python 3.x environment and install requirements:
-
-   ```
-   apt-get install python3-pip
-   pip3 install -r requirements.txt
-   ```
-
-## Scripts
+<!-- ## Scripts
 
 1. CISB-dataset/check-key.py
 
@@ -66,131 +87,28 @@ See more details [here]()
 2. CISB-dataset/check-compiler.py
 
    - check whether required compilers ready
-   - useage: `python3 check-compiler.py`
+   - useage: `python3 check-compiler.py` -->
 
-3. CISB-dataset/reproduction_tester.py
-
-   - test single test case in **_CISB-dataset/reproduce_set_**
-   - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
-   - example: `python3 reproduction_tester.py ./reproduce_set/b-1.c -level O3 -cc gcc -opt extra_options/all-options_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
-
-4. CISB-dataset/effectiveness_evaluation.py
+<!-- 4. CISB-dataset/effectiveness_evaluation.py
 
    - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
    - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-   - example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_
+   - example: `python3 effectiveness_evaluation.py -opt extra_options/all-options_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-options_gcc.txt**_ -->
 
-5. CISB-dataset/statistic.py
+<!-- 5. CISB-dataset/statistic.py
 
    - functions:
      - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
      - table_3(): print temporal distribution (report date) of bug classes
      - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
      - table_7(): print automatic prevention works
-   - example: `python3 statistic.py 2> /dev/null ` to print all results in tables
+   - example: `python3 statistic.py 2> /dev/null ` to print all results in tables -->
 
-6. Performance Overhead
+<!-- 6. Performance Overhead
 
-   See [SPEC CPU2006](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec)
+   See [SPEC CPU2006](https://github.com/linkeLi0421/CISB-dataset/tree/main/spec) -->
 
-## Output
-
-We can get the tables in our paper using script.
-
-```
-root@compiler:/CISB-dataset# python3 statistic.py 2>/dev/null 
-Table 2: Statistics of bugs reported to Bugzilla and in the Linux kernel
-╒════════════╤══════════╤═══════╤══════╤═════════╤═════════╤════════════╤════════════╕
-│ BugClass   │   UniBug │   Num │    P │   UniBz │   NumBz │   UniLinux │   NumLinux │
-╞════════════╪══════════╪═══════╪══════╪═════════╪═════════╪════════════╪════════════╡
-│ IS1        │       18 │    59 │ 0.49 │      13 │      50 │          8 │          9 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ IS2        │        7 │    10 │ 0.08 │       1 │       4 │          6 │          6 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ IS3        │       17 │    25 │ 0.21 │       5 │      12 │         12 │         13 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ OS1        │        3 │    20 │ 0.17 │       2 │       2 │          3 │         18 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ OS2        │        2 │     5 │ 0.04 │       0 │       0 │          2 │          5 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ OS3        │        1 │     1 │ 0.01 │       0 │       0 │          1 │          1 │
-├────────────┼──────────┼───────┼──────┼─────────┼─────────┼────────────┼────────────┤
-│ Total      │       48 │   120 │ 1.00 │      21 │      68 │         32 │         52 │
-╘════════════╧══════════╧═══════╧══════╧═════════╧═════════╧════════════╧════════════╛
-Table 3: Temporal distribution (report date) of bug classes
-╒═══════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╤═════════╕
-│       │   04-06 │   07-09 │   10-12 │   13-15 │   16-18 │   19-21 │   Total │
-╞═══════╪═════════╪═════════╪═════════╪═════════╪═════════╪═════════╪═════════╡
-│ IS1   │       1 │      12 │      14 │      10 │      11 │      11 │      59 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ IS2   │       0 │       2 │       0 │       2 │       0 │       6 │      10 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ IS3   │       3 │       0 │       4 │       4 │      10 │       4 │      25 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ OS1   │       1 │       1 │       0 │       8 │       4 │       6 │      20 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ OS2   │       0 │       2 │       0 │       2 │       1 │       0 │       5 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ OS3   │       0 │       0 │       0 │       0 │       0 │       1 │       1 │
-├───────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-│ Total │       5 │      17 │      18 │      26 │      26 │      28 │     120 │
-╘═══════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╧═════════╛
-Table 6: An evaluation of the mitigations provided by the compiler
-╒═══════════════════╤═══════╤═════════════════╤═════════════════════╕
-│ Strategy          │       │   Eff.(UB-CISB) │ Eff. (all CISB)     │
-╞═══════════════════╪═══════╪═════════════════╪═════════════════════╡
-│ O3                │ gcc   │        0.1      │ 0.0967741935483871  │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O3                │ clang │        0.266667 │ 0.16                │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O2                │ gcc   │        0.1      │ 0.06451612903225806 │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O2                │ clang │        0.266667 │ 0.16                │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O1                │ gcc   │        0.3      │ 0.25806451612903225 │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O1                │ clang │        0.266667 │ 0.16                │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O0                │ gcc   │        0.789474 │ 0.6774193548387096  │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ O0                │ clang │        0.933333 │ 0.8                 │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ all-ub_clang      │ clang │        0.533333 │ /                   │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ all-ub_gcc        │ gcc   │        0.55     │ /                   │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ all-options_gcc   │ gcc   │        0.75     │ 0.6129032258064516  │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ all-options_clang │ clang │        0.533333 │ 0.48                │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ ubsan             │ gcc   │        0.3      │ /                   │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ ubsan             │ clang │        0.333333 │ /                   │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ wall              │ gcc   │        0.2      │ /                   │
-├───────────────────┼───────┼─────────────────┼─────────────────────┤
-│ wall              │ clang │        0.266667 │ /                   │
-╘═══════════════════╧═══════╧═════════════════╧═════════════════════╛
-Table7: Automatic Prevention works
-UBSan 0.31
-ThreadSan 0.13
-TySan 0.1
-Ct-verif, Jasmin, FaCT, CT-wasm, Simon, Barthe 0.8
-Besson 0.6
-Patrignani 1.0
-STACK 0.63
-Unisan 0.4
-Yang 0.6
-K-Hunt 0.8
-Sprundel 0.6
-Wu 0.53
-SpecFuzz, SpecTaint 1.0
-KUBO 0.45
-```
-
-
-
-## Config
+<!-- ## Config
 
 We write oracles and information of some test cases in *config.yml*. It has the following items:
 
@@ -212,4 +130,4 @@ We write oracles and information of some test cases in *config.yml*. It has the 
 
 ## Use docker
 
-to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/reproduction).
+to reproduce result in docker, see [here](https://github.com/linkeLi0421/CISB-dataset/tree/main/reproduction). -->
