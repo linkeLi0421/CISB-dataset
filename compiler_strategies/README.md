@@ -8,10 +8,10 @@ They are organized in the following mitigation strategies.
    | O1                 | O1.txt | -O1                                                 |
    | O2                 | O2.txt | -O2                                                 |
    | O3                 | O3.txt | -O3                                                 |
-   | All-cisb (gcc)     | all-cisb_gcc.txt | -O3  -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps -fno-unswitch-loops|
-   | All-cisb (clang)    | all-cisb_clang.txt  | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks -fno-strict-aliasing                                                         |
-   | All-ub (gcc) | all-ub_gcc.txt         | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks  -fno-strict-aliasing -fno-aggressive-loop-optimizations -fwrapv                                                          |
-   | All-ub (clang) | all-ub_clang.txt       | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks  -fno-strict-aliasing                                                          |
+   | All-cisb (gcc)     | All-cisb_gcc.txt | -O3  -fno-tree-dominator-opts -fno-tree-vrp -fno-tree-fre -fno-strict-overflow -fno-dce -fno-tree-ccp -fno-tree-copy-prop -fno-tree-forwprop -fno-tree-ter -fno-tree-pre -fno-aggressive-loop-optimizations -fno-strict-aliasing -fno-builtin -fno-tree-dse -fno-optimize-strlen -fno-tree-dce -fno-cse-follow-jumps -fno-unswitch-loops|
+   | All-cisb (clang)    | All-cisb_clang.txt  | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks -fno-strict-aliasing                                                         |
+   | All-ub (gcc) | All-ub_gcc.txt         | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks  -fno-strict-aliasing -fno-aggressive-loop-optimizations -fwrapv                                                          |
+   | All-ub (clang) | All-ub_clang.txt       | -O3 -fno-strict-overflow  -fno-delete-null-pointer-checks  -fno-strict-aliasing                                                          |
 
 # Effectiveness evaluation
 
