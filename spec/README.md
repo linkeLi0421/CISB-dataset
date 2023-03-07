@@ -14,11 +14,21 @@
 
 3. Run the following script to run SPEC CPU2006 Benchmark. We give an example to test the perforname of gcc with O3 optimization.
 
+   > Note that it may take hours to do a test. 
+
    ```
    $ root@compiler:/CISB-dataset/spec/cpu2006# bash config/spec.sh gcc_O3.cfg
    ```
 
-4. SPEC CPU2006 config files are stored in ***spec/cpu2006/config***. We also provide a table of config files to illustrate these files. 
+4. Run the following script to run all SPEC CPU2006 Benchmark. 
+
+   ```
+   $ root@compiler:/CISB-dataset/spec/cpu2006# python3 config/test_all.py
+   ```
+
+   
+
+5. SPEC CPU2006 config files are stored in ***spec/cpu2006/config***. We also provide a table of config files to illustrate these files. 
 
    | File name          | Compiler options                                             |
    | ------------------ | ------------------------------------------------------------ |
