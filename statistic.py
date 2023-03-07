@@ -274,6 +274,13 @@ def table_6_overhead():
     # TODO
     pass
 
+def show_human_failed_prevention():
+    human_fail_list = {'l-9': ["d4c5efdb97773f59a2b711754ca0953f24516739", "0b053c9518292705736329a8fe20ef4686ffc8e9", "7829fb09a2b4268b30dd9bc782fa5ebee278b137"]}
+    for unique_bug, reports in human_fail_list.items():
+        print(f'Evidence that programmers failed to prevent a CISB:')
+        print(f'for {unique_bug}, these bug reports are the evidence {reports}.')
+
+
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
@@ -283,8 +290,11 @@ if __name__ == '__main__':
         table_2()
         table_3()
     elif args.exp == "mitigation-evaluation":
+        show_human_failed_prevention()
         table_6_eff()
         table_6_overhead()
+    elif args.exp == "human-mitigation":
+        show_human_failed_prevention()
     elif args.exp == "mitigation-effectiveness":
         table_6_eff()
     elif args.exp == "mitigation-overhead":
@@ -298,4 +308,4 @@ if __name__ == '__main__':
         table_6_overhead()
         table_7()
     else:
-        print("Not a correct argument. Choose one from: all, cisb-statistics, mitigation-evaluation, mitigation-effectiveness, mitigation-overhead, target-cisb") 
+        print("Not a correct argument. Choose one from: all, cisb-statistics, human-mitigation, mitigation-evaluation, mitigation-effectiveness, mitigation-overhead, target-cisb") 
