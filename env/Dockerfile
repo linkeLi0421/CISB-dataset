@@ -23,6 +23,6 @@ RUN mkdir /cisb_docker
 WORKDIR /cisb_docker
 RUN git clone https://github.com/linkeLi0421/CISB-dataset.git
 WORKDIR CISB-dataset
-RUN bash /cisb_docker/CISB-dataset/env/auto_get_compiler.sh
+RUN bash ./env/auto_get_compiler.sh
 RUN apt-get install -y python3-pip
 RUN pip3 install -r requirements.txt
