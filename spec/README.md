@@ -8,8 +8,8 @@ setted if you follow the [installation guide](../README.md#aritifact-setup).
 
 3. To set up SPEC CPU 2006, please follow the instructions below:
 ```
-# cd path/to/artifact
-# cp -r spec/config cpu2006
+# cd path/to/artifact/spec
+# cp -r config cpu2006
 # cd cpu2006
 # source ./shrc
 ```
