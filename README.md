@@ -33,13 +33,13 @@ docker build -t cisb_docker .
 ```
 4. Once the build is complete, run the following command to start a container:
 ```
-docker run -itd -v /path/to/spec/cpu2006:/cisb_docker/CISB-dataset/spec/cpu2006 --name dataset --privileged cisb_docker
+docker run -itd -v /path/to/cpu2006:/cisb_docker/CISB-dataset/spec/cpu2006 --privileged cisb_docker
 ```
 
-<!-- As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
+As an alternative, you can also place SPEC CPU 2006 anywhere you like within the Docker container. In that case, you will need to set the environment variable before running the experiment in the container.
 ```
-export SEPC_CPU_2006_PATH='path/to/artifact/spec/cpu2006'
-```  -->
+export SEPC_CPU_2006_PATH='path/to/cpu2006'
+``` 
 
 # Aritifact experiments
 All of our experiments can be done through a [script](statistic.py).
