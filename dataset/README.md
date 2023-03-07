@@ -11,7 +11,7 @@ Table 1: CISB-dataset-classification.csv
 | 2      | Insecure optimization behaviors | Insecure optimizations behaviors of the bug (the 2nd layer of our taxonomy) |
 | 3      | Security consequences           | Security consequences of the bug (the 3rd layer of our taxonomy) |
 | 4      | Security Impacts                | Specific security impacts of the bug                         |
-| 5      | Unique bug id\*                 | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
+| 5      | Unique bug id\*                 | The identifier (or a list of alias identifier) for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux. |
 | 6      | Frequency                       | The number of times we found this kind of bug                |
 
 Table 2: CISB-dataset-detailed-info.csv
