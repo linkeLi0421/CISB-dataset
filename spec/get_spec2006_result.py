@@ -5,7 +5,8 @@ from tabulate import tabulate
 import re
 
 ENV_dict = os.environ
-spec_path = ENV_dict.get('SEPC_CPU_2006_PATH')
+spec_cpu_path = ENV_dict.get('SEPC_CPU_2006_PATH')
+default_spec_cpu_path = '/cisb_docker/CISB-dataset/spec/cpu2006'
 
 def get_testing_map(file_path):
     # read from the testing result file, generate a map to store the result, return it
@@ -89,10 +90,14 @@ def table6_overhead():
     config_files = ['clang_All-cisb.cfg', 'clang_All-ub.cfg', 'clang_O0.cfg', 'clang_O1.cfg', 'clang_O2.cfg',
                         'clang_O3.cfg', 'clang_Ubsan.cfg', 'gcc_All-cisb.cfg', 'gcc_All-ub.cfg', 'gcc_O0.cfg',
                                         'gcc_O1.cfg', 'gcc_O2.cfg', 'gcc_O3.cfg', 'gcc_Ubsan.cfg']
-    if not spec_path:
+    
+    has_default_spec = os.path.path.isfile(f'{default_spec_cpu_path}/shrc')
+    if not spec_cpu_path and not has_default_spec:
         print('please set environment virable SEPC_CPU_2006_PATH, using \"export SEPC_CPU_2006_PATH=\'path/to/spec/cpu2006\'\"')
     else:
-        result_path = spec_path + '/spec/result/'
+        if has_default_spec:
+            spec_cpu_path = default_spec_cpu_path
+        result_path = spec_cpu_path + '/result/'
         for parent, dirnames, filenames in os.walk(result_path,  followlinks=True):
             for filename in filenames:
                 # get testing results map from data in cpu2006/spec/result/
