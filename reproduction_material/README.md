@@ -61,20 +61,20 @@ We provide the following reproduction materials:
 
    - test single test case in **_CISB-dataset/reproduction_material/test_cases/_**
    - useage:`python3 reproduction_tester.py [-h] [-level LEVEL] [-cc CC] [-opt OPT] file`
-   - example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../extra_options/All-cisb_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/extra_options/All-cisb_gcc.txt**_
+   - example: `python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategiess/All-cisb_gcc.txt 2> /dev/null` can test whether b-1.c trigger bug using **gcc** with options in _**CISB-dataset/compiler_strategiess/All-cisb_gcc.txt**_
 
 <!-- 4. CISB-dataset/effectiveness_evaluation.py
 
    - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
    - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-   - example: `python3 effectiveness_evaluation.py -opt extra_options/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/extra_options/all-cisb_gcc.txt**_
+   - example: `python3 effectiveness_evaluation.py -opt compiler_strategiess/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/compiler_strategiess/all-cisb_gcc.txt**_
 
 5. CISB-dataset/statistic.py
 
    - functions:
      - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
      - table_3(): print temporal distribution (report date) of bug classes
-     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/extra_options***
+     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/compiler_strategiess***
      - table_7(): print automatic prevention works
    - example: `python3 statistic.py 2> /dev/null ` to print all results in tables
 

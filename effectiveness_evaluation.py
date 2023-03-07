@@ -258,7 +258,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-opt', type=argparse.FileType('r'), help='Choose one option file in \'extra_options\' directory')
+    parser.add_argument('-opt', type=argparse.FileType('r'), help='Choose one option file in \'compiler_strategiess\' directory')
     input_args = parser.parse_args()
     evalue_options = input_args.opt
     get_dataset_value(evalue_options.name)

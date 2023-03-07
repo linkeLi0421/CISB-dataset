@@ -21,6 +21,6 @@ effectiveness of each compiler.
 - An example to get the effectiveness result of strategy `all-cisb` for gcc with 
 the corresponding compiler config ([all-cisb_gcc.txt](all-cisb_gcc.txt)).
 ```
-python3 effectiveness_evaluation.py -opt extra_options/all-cisb_gcc.txt 2> /dev/null
+python3 effectiveness_evaluation.py -opt compiler_strategiess/all-cisb_gcc.txt 2> /dev/null
 ```
 

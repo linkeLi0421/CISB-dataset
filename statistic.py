@@ -252,7 +252,7 @@ def table_6_eff():
     from effectiveness_evaluation import get_dataset_value
     print('Table 6: An evaluation of the mitigations provided by the compiler')
     
-    file_path = 'extra_options'
+    file_path = 'compiler_strategiess'
     strategy = ['O3', 'O2', 'O1', 'O0', 'All-ub_clang', 'All-ub_gcc', 'All-cisb_gcc', 'All-cisb_clang', 'ubsan', 'wall']
     table_header = ['Strategy', '', 'Eff.(UB-CISB)',  'Eff. (all CISB)']
     table_data = []
