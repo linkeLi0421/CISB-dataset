@@ -91,7 +91,7 @@ def table6_overhead():
                         'clang_O3.cfg', 'clang_Ubsan.cfg', 'gcc_All-cisb.cfg', 'gcc_All-ub.cfg', 'gcc_O0.cfg',
                                         'gcc_O1.cfg', 'gcc_O2.cfg', 'gcc_O3.cfg', 'gcc_Ubsan.cfg']
     
-    has_default_spec = os.path.path.isfile(f'{default_spec_cpu_path}/shrc')
+    has_default_spec = os.path.isfile(f'{default_spec_cpu_path}/shrc')
     if not spec_cpu_path and not has_default_spec:
         print('please set environment virable SEPC_CPU_2006_PATH, using \"export SEPC_CPU_2006_PATH=\'path/to/spec/cpu2006\'\"')
     else:
