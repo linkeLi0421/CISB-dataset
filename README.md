@@ -1,11 +1,9 @@
-# Overview
+# CISB-dataset
 A dataset of Compiler-Introduced-Security-bugs (CISB) with reproduction materials.
 These CISBs are manually collected from the GCC/Clang bugzilla and Linux kernel 
 through an empirical study.
 
 See our paper (to appear) for more information on the CISB taxonomy and collection methodology. 
-
-# CISB-dataset
 
 Our data is stored in *CISB-dataset/dataset*.
 More details [here](dataset/README.md).
@@ -44,7 +42,7 @@ export SEPC_CPU_2006_PATH='path/to/cpu2006'
 # Aritifact experiments
 All of our experiments can be done through a [script](statistic.py).
 
-## CISB statistics
+## E1: CISB statistics
 
 Execute the Python script to obtain the statistics of CISBs in our dataset. 
 The result should be in line with the data in Figure 2 and Figure 3 of the paper.
@@ -52,7 +50,7 @@ The result should be in line with the data in Figure 2 and Figure 3 of the paper
 ```
 python3 statistic.py -e cisb-statistics
 ```
-## Evaulation of mitigations
+## E2: Evaulation of mitigations
 1. Review a list of bugs where the prevention performed by programmers failed. 
 This list can be obtained by executing a script. The expected result is those CISBs exist.
 ```
@@ -80,13 +78,12 @@ The output results should be in line with the data shown in Table 6 of the paper
 We also provide a [guide](spec/README.md#performance-evaluation-of-compiler-mitigations) 
 to measure the overhead of each strategy separately.
 
-
-As an alternative, you can also run the script to obtain all the results in one step.
+<!-- As an alternative, you can also run the script to obtain all the results in one step.
 ```
 python3 statistic.py -e mitigation-evaluation
-```
+``` -->
 
-## Target bugs of automatic prevention works
+## E3: Target bugs of automatic prevention works
 1. Execute the script to obtain the statistics of CISBs that can theoretically 
    be prevented by automatic prevention works. 
    The result should be in line with the data in Figure 7 of the paper.
