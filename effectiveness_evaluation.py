@@ -3,15 +3,14 @@
 import argparse
 import yaml
 import os
-from reproduction_tester import bug_not_trigger
-from reproduction_tester import ubsan_testing
-from reproduction_tester import warning_testing
-from reproduction_tester import arm_file_list
+from reproduction_material.reproduction_tester import bug_not_trigger
+from reproduction_material.reproduction_tester import ubsan_testing
+from reproduction_material.reproduction_tester import warning_testing
+from reproduction_material.reproduction_tester import arm_file_list
 
-config_file_path = 'config.yml'
-reproduce_set_path = 'reproduce_set'
+config_file_path = 'reproduction_material/config.yml'
+reproduce_set_path = 'reproduction_material/testcases/'
 
-    
 def get_dataset_value(option_file_name, output = 'verbose'):
     num_bug = 0
     num_nobug = 0
@@ -147,7 +146,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                         print(file_name + ' do not support this test')
                 else:
                     try:
-                        res = ubsan_testing(cc, args, file_name, input, output = output)
+                        res = ubsan_testing(cc, args, reproduce_set_path, file_name, input, output = output)
                         if res:
                             if 'gcc' in cc:
                                 num_UBno_gcc += 1
@@ -173,7 +172,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                     if output == 'verbose':                    
                         print(file_name + ' do not support this test')
                 else:
-                    Wall_num = warning_testing(cc, args, file_name)
+                    Wall_num = warning_testing(cc, args, reproduce_set_path, file_name)
                     if Wall_num:
                         num_nobug += 1
                         if cc_type == 'clang':
@@ -202,16 +201,16 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                 section_end = ':'
                 args += ' -S -o temp.s '
                 if output == 'verbose':
-                    print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
-                ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+                    print(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
+                ret_code = os.system(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
                 assert( ret_code == 0 and 'error')
             else:
                 if output == 'verbose':
-                    print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
-                ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+                    print(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
+                ret_code = os.system(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
                 assert( ret_code == 0 and 'error')
                 
-            if bug_not_trigger(check_type, input, test_str, section_start, section_end) or warning_testing(cc, args, file_name):
+            if bug_not_trigger(check_type, input, test_str, section_start, section_end) or warning_testing(cc, args, reproduce_set_path, file_name):
                 # if but trigger or there is a warning about this bug, this bug is prevent
                 num_nobug += 1
                 if cc_type == 'clang':

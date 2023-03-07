@@ -8,8 +8,10 @@ import subprocess
 import signal
 
 arm_file_list = ['l-23.c', 'b-26.c']
+reproduce_set_path = 'testcases/'
 
-def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
+
+def ubsan_testing(cc, args, testcases_path, file_name, input = '', output = 'verbose'):
     # test ubsan here
     if file_name == arm_file_list[0] and 'gcc' in cc:
         # online compiler works
@@ -17,9 +19,8 @@ def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
             print('error: ', file_name, cc)
         return True
 
-    ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+    ret_code = os.system(cc + ' ' + args + ' ' + testcases_path + file_name)
     assert( ret_code == 0 and 'error')
-    # print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
     result = subprocess.Popen('./a.out ' + input, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         # if this returns, the process completed
@@ -36,9 +37,9 @@ def ubsan_testing(cc, args, file_name, input = '', output = 'verbose'):
         return True
     return False
 
-def warning_testing(cc, args, file_name):
+def warning_testing(cc, args, testcases_path, file_name):
     # test warning here
-    result = subprocess.Popen(cc + ' ' + args + ' ./reproduce_set/' + file_name, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    result = subprocess.Popen(cc + ' ' + args + ' ' + testcases_path + file_name, shell=True, start_new_session=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     try:
         # if this returns, the process completed
         result.wait(timeout=1)
@@ -168,14 +169,12 @@ if __name__ == '__main__':
             if check_type == 5 or check_type == 6 or check_type == 7:
                 section_end = ':'
                 args += ' -S -o temp.s '
-                ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+                ret_code = os.system(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
                 assert( ret_code == 0 and 'error')
-                # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
             else:
-                ret_code = os.system(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+                ret_code = os.system(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
                 assert( ret_code == 0 and 'error')
-                # os.system(cc + ' ' + args + ' ' + file_name + '> /dev/null 2>&1')
-            print(cc + ' ' + args + ' ./reproduce_set/' + file_name)
+            print(cc + ' ' + args + ' ' + reproduce_set_path + file_name)
             if not bug_not_trigger(check_type, input, test_str, section_start, section_end):
                 print(check_type, input, test_str, section_start, section_end)
                 print('One CISB here!')
