@@ -54,13 +54,28 @@ python3 statistic.py -e cisb-statistics
 ```
 ## Evaulation of mitigations
 1. Review a list of bugs where the prevention performed by programmers failed. 
-    This list can be obtained by executing a script. The expected result is those CISBs exist.
+This list can be obtained by executing a script. The expected result is those CISBs exist.
+```
+python3 statistic.py -e human-mitigation
+```
 2. Run a script to obtain statistics on the effectiveness of compiler mitigations.
-   The output results should be in line with the data shown in Table 6 of the paper.
+The output results should be in line with the data shown in Table 6 of the paper.
+We also provide a [guide](extra_options/README.md) to measure the effectiveness 
+of each strategy separately.
+```
+python3 statistic.py -e mitigation-effectiveness
+```
 3. Run a script to measure the overhead of different compiler prevention 
-   strategies using the SPEC CPU 2006 benchmark.
-   The output results should be in line with the data shown in Table 6 of the paper.
-   
+strategies using the SPEC CPU 2006 benchmark.
+The output results should be in line with the data shown in Table 6 of the paper.
+We also provide a [guide](spec/README.md) to measure the overhead of each strategy
+separately.
+```
+python3 statistic.py -e mitigation-overhead
+```
+
+
+As an alternative, you can also run the script to obtain all the results in one step.
 ```
 python3 statistic.py -e mitigation-evaluation
 ```
