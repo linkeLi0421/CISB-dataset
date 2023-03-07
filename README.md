@@ -65,14 +65,20 @@ to measure the effectiveness of each strategy separately.
 ```
 python3 statistic.py -e mitigation-effectiveness
 ```
-3. Run a script to measure the overhead of different compiler prevention 
+3. Run two script to measure the overhead of different compiler prevention 
 strategies using the SPEC CPU 2006 benchmark.
+First, run the script to lauch all the SPEC CPU 2006 tests. It takes 40 hours
+to finish all the tests.
+```
+# python3 spec/config/test_all.py
+```
+Second, run a script to obtain the statistics of the overhead of tested mitigations 
+```
+# python3 statistic.py -e mitigation-overhead
+```
 The output results should be in line with the data shown in Table 6 of the paper.
 We also provide a [guide](spec/README.md#performance-evaluation-of-compiler-mitigations) 
 to measure the overhead of each strategy separately.
-```
-python3 statistic.py -e mitigation-overhead
-```
 
 
 As an alternative, you can also run the script to obtain all the results in one step.

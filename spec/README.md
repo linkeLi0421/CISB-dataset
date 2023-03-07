@@ -15,13 +15,9 @@ setted if you follow the [installation guide](../README.md#aritifact-setup).
 ```
 
 # Performance evaluation of compiler mitigations
-
 To measure the performance overhead of each compiler strategy separately, we 
 provide the following script to run SPEC CPU 2006 Benchmark. Here is an example 
 of how to test the performance of gcc with O3 optimization:
-
-> Note that it may take about 3-4 hours to do this test. 
-
 ```
 # cd path/to/artifact/spec
 # bash config/spec.sh gcc_O3.cfg
@@ -29,14 +25,20 @@ of how to test the performance of gcc with O3 optimization:
 You can replace gcc_O3.cfg with the config file name of the compiler strategy 
 you want to test.
 
-TODO
-- How to read the report
-- If `config/test_all.py` is needed?
-<!-- 4. Run the following script to run all SPEC CPU2006 Benchmark. 
+> Note that it may take about 3-8 hours to do one test. 
 
-   ```
-   # python3 config/test_all.py
-   ``` -->
+The test result files generated under path/to/spec/result are in the format
+"CINT2006.*.rerf.txt", where * represents a number that increases with the number 
+of experiments.
+
+To identify which test a particular result file corresponds to, you should check 
+the compiler and compiler options listed in the report. The results will indicate 
+the performance of the compiled binary with chosen compiler options.
+
+We also provide a script to run the tests of all the compiler strategies in on step:
+```
+# python3 config/test_all.py
+```
 
 ## SPEC CPU 2006 config files
 Below is the config file and compiler options used for each compiler strategy we test. 
