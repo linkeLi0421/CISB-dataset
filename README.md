@@ -7,55 +7,15 @@ See our paper (to appear) for more information on the CISB taxonomy and collecti
 # CISB-dataset
 
 Our data is stored in *CISB-dataset/dataset*.
-
-## Dataset Format
-
-CISB-dataset/dataset has three tables.
-
-table1 CISB-dataset-classification.csv
-
-| Column | Header(\* means the key)        | Description                                                  |
-| ------ | ------------------------------- | ------------------------------------------------------------ |
-| 1      | Root cause                      | The root cause of the bug (the 1st layer of our taxonomy)    |
-| 2      | Insecure optimization behaviors | Insecure optimizations behaviors of the bug (the 2nd layer of our taxonomy) |
-| 3      | Security consequences           | Security consequences of the bug (the 3rd layer of our taxonomy) |
-| 4      | Security Impacts                | Specific security impacts of the bug                         |
-| 5      | Unique bug id\*                 | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
-| 6      | Frequency                       | The number of times we found this kind of bug                |
-
-table2 CISB-dataset-detailed-info.csv
-
-| Column | Header (\* means the key) | Description                                                  |
-| ------ | ------------------------- | ------------------------------------------------------------ |
-| 1      | Unique bug id             | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
-| 2      | Unique bug name           | A short description to name the bug                          |
-| 3      | Occurence                 | The number of times we found this kind of bug                |
-| 4      | Source                    | From where we find the bug.                                  |
-| 5      | Commit/Bugzilla ID\*      | Linux kernel git commit log or llvm/gcc bugzilla ID.         |
-| 6      | Year                      | Time when this bug report is submitted.                      |
-| 7      | First appearance          | Time when this kind of bugs is firstly submitted.            |
-| 8      | Security impacts          | Specific security impacts of the bug                         |
-| 9      | Specific cause            | The sub classification of Implicit-Specification. See the definition of No-UB, default-behavior or environment assumption in our paper |
-
-table3 CISB-dataset-reproduce.csv
-
-| Column | Header(\* means the key)   | Description                                                  |
-| ------ | -------------------------- | ------------------------------------------------------------ |
-| 1      | Unique bug id\*            | The identifier for each unique bug type with the same cause and impacts; b-(number) for the ones from Bugzilla, l-(number) for the ones from the Linux |
-| 2      | Result                     | The result of our reproducation                              |
-| 3      | Compiler version:gcc       | The compiler(gcc) version we reproduce the bug               |
-| 4      | Compiler version:llvm      | The compiler(llvm) version we reproduce the bug              |
-| 5      | Compiler Explorer snapshot | An online compiler snapshot that preserve the code to reproduce the bug |
-
-
+See more details [here](dataset/README.md).
 
 # Reproduction Material
 
 We provide the following reproduction materials:
+- test code for all the reproducted CISB;
+- an automatic tool to test whether one CISB is triggered with pre-defined oracles.
 
-- test code for all the reproducted CISB
-- an automatic tool to test whether one CISB is triggered with pre-defined oracles
-
+See more details [here]()
 ## Dependencies
 
 1. Different versions of gcc and clang to be tested
