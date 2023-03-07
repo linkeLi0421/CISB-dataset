@@ -40,7 +40,7 @@ single testcase automatically.
 ```
 # python3 reproduction_tester.py ./test_cases/b-1.c -level O3 -cc gcc -opt ../compiler_strategies/All-cisb_gcc.txt 2> /dev/null
 ```
-You can create your own config file with the compilation options you want to test and replace `all-cisb_gcc.txt` with the name of your config file when running this test script.
+You can create your own config file with the compilation options you want to test and replace `All-cisb_gcc.txt` with the name of your config file when running this test script.
 
 ## Test oracle
 

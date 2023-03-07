@@ -18,10 +18,10 @@ They are organized in the following mitigation strategies.
 Run the [script](../effectiveness_evaluation.py) to obtain the detailed 
 effectiveness of each compiler.
 - Useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-- An example to get the effectiveness result of strategy `all-cisb` for gcc with 
-the corresponding compiler config ([all-cisb_gcc.txt](all-cisb_gcc.txt)).
+- An example to get the effectiveness result of strategy `All-cisb` for gcc with 
+the corresponding compiler config ([All-cisb_gcc.txt](All-cisb_gcc.txt)).
 ```
-python3 effectiveness_evaluation.py -opt compiler_strategies/all-cisb_gcc.txt 2> /dev/null
+python3 effectiveness_evaluation.py -opt compiler_strategies/All-cisb_gcc.txt 2> /dev/null
 ```
-You can replace `all-cisb_gcc.txt` with the config file name of the compiler strategy 
+You can replace `All-cisb_gcc.txt` with the config file name of the compiler strategy 
 you want to test.
