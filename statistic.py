@@ -253,7 +253,7 @@ def table_6_eff():
     print('Table 6: An evaluation of the mitigations provided by the compiler')
     
     file_path = 'extra_options'
-    strategy = ['O3', 'O2', 'O1', 'O0', 'all-ub_clang', 'all-ub_gcc', 'all-options_gcc', 'all-options_clang', 'ubsan', 'wall']
+    strategy = ['O3', 'O2', 'O1', 'O0', 'All-ub_clang', 'All-ub_gcc', 'All-cisb_gcc', 'All-cisb_clang', 'ubsan', 'wall']
     table_header = ['Strategy', '', 'Eff.(UB-CISB)',  'Eff. (all CISB)']
     table_data = []
     for s in strategy:

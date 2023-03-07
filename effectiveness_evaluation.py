@@ -71,7 +71,7 @@ def get_dataset_value(option_file_name, output = 'verbose'):
                 if ubsan_flag or warning_flag:
                     # not UB
                     continue
-                if 'all-option' in option_file_name:
+                if 'All-cisb' in option_file_name:
                     if output == 'verbose':
                         print('no bug file:  ', file_name)
                     num_nobug += 1
