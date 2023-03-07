@@ -1,5 +1,6 @@
 import csv
 from tabulate import tabulate
+from spec.get_spec2006_result import table6_overhead
 
 bug_class = "dataset/CISB-dataset-classification.csv"
 bug_detail = "dataset/CISB-dataset-detailed-info.csv"
@@ -271,8 +272,7 @@ def table_6_eff():
     print(tabulate(table_data, headers=table_header, tablefmt='fancy_grid'))
 
 def table_6_overhead():
-    # TODO
-    pass
+    table6_overhead()
 
 def show_human_failed_prevention():
     human_fail_list = {'l-9': ["d4c5efdb97773f59a2b711754ca0953f24516739", "0b053c9518292705736329a8fe20ef4686ffc8e9", "7829fb09a2b4268b30dd9bc782fa5ebee278b137"]}
