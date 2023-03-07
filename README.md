@@ -60,7 +60,7 @@ python3 statistic.py -e human-mitigation
 ```
 2. Run a script to obtain statistics on the effectiveness of compiler mitigations.
 The output results should be in line with the data shown in Table 6 of the paper.
-We also provide a [guide](compiler_strategiess/README.md) to measure the effectiveness 
+We also provide a [guide](compiler_strategies/README.md) to measure the effectiveness 
 of each strategy separately.
 ```
 python3 statistic.py -e mitigation-effectiveness
@@ -108,14 +108,14 @@ python3 statistic.py -e target-cisb
 
    - test all test cases in  **_CISB-dataset/reproduce_set_** at one time
    - useage: `python3 effectiveness_evaluation.py [-h] [-opt OPT]`
-   - example: `python3 effectiveness_evaluation.py -opt compiler_strategiess/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/compiler_strategiess/all-cisb_gcc.txt**_ -->
+   - example: `python3 effectiveness_evaluation.py -opt compiler_strategies/all-cisb_gcc.txt 2> /dev/null` can get the result of all test cases using **gcc** with options in _**CISB-dataset/compiler_strategies/all-cisb_gcc.txt**_ -->
 
 <!-- 5. CISB-dataset/statistic.py
 
    - functions:
      - table_2(): print results of bugs reported to Bugzilla and in the Linux kernel
      - table_3(): print temporal distribution (report date) of bug classes
-     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/compiler_strategiess***
+     - table_6(): print all results using *effectiveness_evaluation.py* with 8 kinds of option strategy stored in ***CISB-dataset/compiler_strategies***
      - table_7(): print automatic prevention works
    - example: `python3 statistic.py 2> /dev/null ` to print all results in tables -->
 
