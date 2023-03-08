@@ -25,7 +25,7 @@ of how to test the performance of gcc with O3 optimization:
 You can replace gcc_O3.cfg with the config file name of the compiler strategy 
 you want to test.
 
-> Note that it may take about 3-8 hours to do one test. 
+> Note that it may take about 3-9 hours to do one test. 
 
 The test result files generated under path/to/spec/result are in the format
 "CINT2006.*.rerf.txt", where * represents a number that increases with the number 

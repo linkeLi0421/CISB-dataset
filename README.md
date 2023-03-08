@@ -65,7 +65,7 @@ python3 statistic.py -e mitigation-effectiveness
 ```
 3. Run two script to measure the overhead of different compiler prevention 
 strategies using the SPEC CPU 2006 benchmark.
-First, run the script to lauch all the SPEC CPU 2006 tests. It takes 40 hours
+First, run the script to lauch all the SPEC CPU 2006 tests. It takes 62 hours
 to finish all the tests. 
 **You might need to [set up your SPEC CPU 2006](spec/README.md#setup-for-spec-cpu-2006) before that.**
 ```
