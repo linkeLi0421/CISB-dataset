@@ -102,14 +102,15 @@ def table6_overhead():
         result_path = spec_cpu_path + '/result/'
         for parent, dirnames, filenames in os.walk(result_path,  followlinks=True):
             for filename in filenames:
-                # get testing results map from data in cpu2006/spec/result/
+                # get testing results map from data in cpu2006/result/
                 # print(filename)
                 if not filename.endswith('ref.txt'):
                     continue
                 file_path = os.path.join(parent, filename)
                 option_set = get_options(file_path)
                 testing_result = get_testing_map(file_path)
-                table6_data[option_set] = testing_result
+                if option_set != 'others':
+                    table6_data[option_set] = testing_result
         
         for option_set in config_files:
             # check all strategy
@@ -118,7 +119,7 @@ def table6_overhead():
         
         # print(table6_data)
         
-        if (len(table6_data) >= 14):
+        if (len(table6_data) == 14):
             # all 14 tests in out paper
             table_header = ['Strategy', 'Overhead']
             table_data = []
