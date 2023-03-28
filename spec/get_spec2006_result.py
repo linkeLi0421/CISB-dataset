@@ -34,11 +34,12 @@ def get_options(file_path):
     # read from the testing result file, get the options set of the testing, return it
     with open (file_path, 'r') as f:
         content = f.read()
-        begin = content.find('400.perlbench:')
-    # print(content[begin:].split('\n')[1].split('"')[1])
     pattern = "\"-O.*\""
     search = re.search(pattern, content).span()
     strategy = get_key(content[search[0]:search[1]])
+    if not strategy:
+        # this result file is not one of our 14 strategies in spec/config/
+        return 'others'
     # print(strategy)
     cc = ''
     if 'clang' in content:
@@ -101,8 +102,10 @@ def table6_overhead():
         result_path = spec_cpu_path + '/result/'
         for parent, dirnames, filenames in os.walk(result_path,  followlinks=True):
             for filename in filenames:
-                # get testing results map from data in cpu2006/result/
+                # get testing results map from data in cpu2006/spec/result/
                 # print(filename)
+                if not filename.endswith('ref.txt'):
+                    continue
                 file_path = os.path.join(parent, filename)
                 option_set = get_options(file_path)
                 testing_result = get_testing_map(file_path)
@@ -115,7 +118,7 @@ def table6_overhead():
         
         # print(table6_data)
         
-        if (len(table6_data) == 14):
+        if (len(table6_data) >= 14):
             # all 14 tests in out paper
             table_header = ['Strategy', 'Overhead']
             table_data = []
@@ -150,7 +153,7 @@ def table6_overhead():
             
             print(tabulate(table_data, headers=table_header, tablefmt='grid'))
         else:
-            print('please do all the 14 tests in cpu2006/config/ to genarate table_6_overhead results')
+            print('please do all the 14 tests in cpu2006/spec/result/ to genarate table_6_overhead results')
             
 
 if __name__ == '__main__':
